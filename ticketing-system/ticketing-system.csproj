@@ -7,4 +7,14 @@
     <RootNamespace>ticketing_system</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Group\Repositories\Implementation\" />
+    <Folder Include="Models\Group\Services\Implementation\" />
+    <Folder Include="Models\User\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+  </ItemGroup>
+
 </Project>
