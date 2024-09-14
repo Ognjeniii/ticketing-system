@@ -3,11 +3,18 @@ using ticketing_system.Models.Ticket.Repository.Abstraction;
 
 namespace ticketing_system.Models.Ticket.Repository.Implementation
 {
-    public class TicketRepository : ITicketRepostiroy
+    public class TicketRepository : ITicketRepository
     {
-        public Task<Ticket> Create(Ticket ticket)
+        private readonly ApplicationDbContext _context;
+        public TicketRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task Create(Ticket ticket)
+        {
+            _context.Tickets.Add(ticket);
+            await _context.SaveChangesAsync();
         }
 
         public Task<Ticket> GetById(int id)
