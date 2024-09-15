@@ -13,7 +13,7 @@ namespace ticketing_system.Models.Ticket
         public int TicketTypeId { get; set; } // fk
         public string Title { get; set; }   
         public string Description { get; set; }
-        public string? File { get; set; } // Blob?
+        public Blob? File { get; set; } // Blob?
         public DateTime FinishigDate { get; set; }
         public int Executor { get; set; } // fk
         public int GroupId { get; set; } // fk
@@ -28,7 +28,7 @@ namespace ticketing_system.Models.Ticket
             int ticketTypeId,
             string title,
             string description,
-            string file, 
+            Blob file, 
             DateTime finishigDate,
             int executor,
             int groupId,

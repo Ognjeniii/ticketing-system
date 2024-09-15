@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ticketing_system.Models.Ticket.Repository.Implementation;
 using ticketing_system.Models.Ticket.Services.Abstraction;
 using ticketing_system.Models.Ticket.Services.Implementation;
+using ticketing_system.Models.Ticket.Repository.Abstraction;
 
 internal class Program
 {
@@ -17,6 +18,9 @@ internal class Program
         builder.Services.AddDbContext<ApplicationDbContext>(options =>  
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+        // dependency injection
+        builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+        builder.Services.AddScoped<ITicketService, TicketService>();
 
         var app = builder.Build();
 

@@ -9,36 +9,16 @@ namespace ticketing_system.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ITicketService _ticketService;
 
-        public HomeController(ILogger<HomeController> logger, ITicketService ticketService)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _ticketService = ticketService;
         }
 
         public IActionResult Index()
         {
-            Console.WriteLine("Dodavanje novog korisnika");
-
-            Ticket ticket = new Ticket
-                (1,
-                DateTime.Now,
-                12,
-                3,
-                "Testiranje",
-                "Ovo je neko objašnjenje.",
-                "",
-                new DateTime(2025, 1, 1),
-                22,
-                12,
-                43,
-                "resenje"
-                );
-
-            _ticketService.CreateTicketAsync( ticket );
-
-            return View();
+            return RedirectToAction("Login", "Auth");
+            //return View();
         }
 
         public IActionResult Privacy()

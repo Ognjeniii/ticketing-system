@@ -13,8 +13,15 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
 
         public async Task Create(Ticket ticket)
         {
-            _context.Tickets.Add(ticket);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Tickets.Add(ticket);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Greška: " + ex.Message);
+            }
         }
 
         public Task<Ticket> GetById(int id)
