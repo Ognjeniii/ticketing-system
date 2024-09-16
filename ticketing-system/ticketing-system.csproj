@@ -10,6 +10,8 @@
   <ItemGroup>
     <Folder Include="Models\Group\Repositories\Implementation\" />
     <Folder Include="Models\Group\Services\Implementation\" />
+    <Folder Include="Models\User\Services\Abstraction\" />
+    <Folder Include="Models\User\Services\Implementation\" />
   </ItemGroup>
 
   <ItemGroup>
