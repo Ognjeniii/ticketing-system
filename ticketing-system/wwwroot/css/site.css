@@ -18,5 +18,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+
+    background-image: url('/images/background.png');
+    background-size: cover; /* Slika se prilagoðava da pokrije ceo ekran */
+    background-position: center; /* Slika je centrirana */
+    background-repeat: no-repeat; /* Spreèava ponavljanje slike */
+    background-attachment: fixed; /* Slika ostaje fiksirana dok se skroluje */
 }

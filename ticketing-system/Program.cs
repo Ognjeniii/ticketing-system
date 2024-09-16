@@ -22,6 +22,16 @@ internal class Program
         builder.Services.AddScoped<ITicketRepository, TicketRepository>();
         builder.Services.AddScoped<ITicketService, TicketService>();
 
+        // sesije
+        builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession(options =>
+        {
+            // sesija se postavlja da traje 3 minuta.
+            options.IdleTimeout = TimeSpan.FromMinutes(3);
+            options.Cookie.HttpOnly = true;
+            options.Cookie.IsEssential = true;
+        });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -36,6 +46,11 @@ internal class Program
         app.UseStaticFiles();
 
         app.UseRouting();
+
+        app.UseSession();
+
+        // za slike
+        app.UseStaticFiles();
 
         app.UseAuthorization();
 
