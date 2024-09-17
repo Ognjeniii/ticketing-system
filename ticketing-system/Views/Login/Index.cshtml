@@ -1,63 +1,57 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@* <link rel="stylesheet" type="text/css" href="~/css/styles.css" /> *@
 <style>
-
-    .form-div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
-        width: 25vw; /* Širina div-a */
-        height: 67vh; /* Visina div-a */
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        padding: 20px;
-        border: 2px solid white;
-        border-radius: 25px;
-    }
-
-    .my-input {
-        background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
-        border: 2px solid white; /* Bordura oko inputa */
-        border-radius: 10px; /* Zaobljeni uglovi */
-        backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
-        color: wheat;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 1vh 1vw;
-        font-size: 2.5vh;
-    }
-
-    .pass-change-a {
-        font-size: 2.5vh;
-    }
-
-    @@media (max-width: 768px) {
-        .form-div {
-            width: 80vw; /* Veći div na manjim ekranima */
-            height: auto;
-            padding: 10px;
-        }
-
-        .btn, .my-input {
-            font-size: 1.8vh;
-        }
-
-        a {
-            font-size: 1.6vh;
-        }
-    }
+.form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
+    width: 25vw; /* Širina div-a */
+    height: 67vh; /* Visina div-a */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 25px;
 }
 
+.my-input {
+    background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
+    border: 2px solid white; /* Bordura oko inputa */
+    border-radius: 10px; /* Zaobljeni uglovi */
+    backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
+    color: wheat;
+}
+
+.btn {
+    width: 100%;
+    padding: 1vh 1vw;
+    font-size: 2.5vh;
+}
+
+.pass-change-a {
+    font-size: 2.5vh;
+}
+
+@@media (max-width: 768px) {
+    .form-div {
+        width: 80vw; /* Veći div na manjim ekranima */
+        height: auto;
+        padding: 10px;
+    }
+
+    .btn, .my-input {
+        font-size: 1.8vh;
+    }
+
+    a {
+        font-size: 1.6vh;
+    }
+}
 </style>
+
 
 <div class="row">
     <div class="col-6">
-        <div class="container form-div m-5">
+        <div class="container form-div mt-5">
             <div class="text-center">
                 <h1 class="text-light">Login</h1>
             </div>
@@ -75,20 +69,20 @@
                 </div>
             </form>
             <div class="p-3 text-center">
-                <a href="#" class="pass-change-a">Forgot password?</a>
+                <a href="@Url.Action("Index", "ChangePass")" class="pass-change-a">Change password?</a>
             </div>
         </div>
     </div>
     <div class="col-6">
-        <div class="m-5">
-            <p class="text-light h4">
+        <div class="m-5 p-3">
+            <p class="text-light h4 mt-4 ">
                 This application enables you to to keep records for all bugs and problems in your system/company.
                 In here, you got users whitch can be admins or basic users. Admins can work with the whole system. 
                 Basic users can open new incident, close incident and update some part of incident.
             </p>
             <br />
             <p class="text-light h5">
-                Get in touch <br>
+                -Get in touch- <br>
                 Phone number: +381 62 333221 <br>
                 Email adress: info@ticketingsystem.com
             </p>

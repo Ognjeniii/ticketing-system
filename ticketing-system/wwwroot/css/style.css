@@ -1,0 +1,47 @@
+﻿.form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
+    width: 25vw; /* Širina div-a */
+    height: 67vh; /* Visina div-a */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+.my-input {
+    background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
+    border: 2px solid white; /* Bordura oko inputa */
+    border-radius: 10px; /* Zaobljeni uglovi */
+    backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
+    color: wheat;
+}
+
+.btn {
+    width: 100%;
+    padding: 1vh 1vw;
+    font-size: 2.5vh;
+}
+
+.pass-change-a {
+    font-size: 2.5vh;
+}
+
+@media (max-width: 768px) {
+    .form-div {
+        width: 80vw; /* Veći div na manjim ekranima */
+        height: auto;
+        padding: 10px;
+    }
+
+    .btn, .my-input {
+        font-size: 1.8vh;
+    }
+
+    a {
+        font-size: 1.6vh;
+    }
+}
+}

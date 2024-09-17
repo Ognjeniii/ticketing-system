@@ -11,12 +11,8 @@ namespace ticketing_system.Controllers
             {
                  return RedirectToAction("Home"); // treba da se napravi neka početna stranica
             }
-            else
-            {
-                return RedirectToAction("Login");
-            }
 
-            return View();
+            return RedirectToAction("Index", "Login");    
         }
 
         public IActionResult Error()
@@ -24,9 +20,5 @@ namespace ticketing_system.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
     }
 }
