@@ -6,33 +6,93 @@
 <style>
 
     .form-div {
-        width: 30vw; /* 30% širine prikaza */
-        height: 60vh; /* 60% visine prikaza */
-
-        background-color: rgba(255, 255, 255, 0.1); /* Bela pozadina sa 10% providnosti */
-        backdrop-filter: blur(15px); /* Zamućivanje pozadine ispod div-a */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
+        width: 25vw; /* Širina div-a */
+        height: 67vh; /* Visina div-a */
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
         padding: 20px;
-        
         border: 2px solid white;
-        border-radius: 25px; /* Zaobljeni uglovi */ 
+        border-radius: 25px;
     }
+
+    .my-input {
+        background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
+        border: 2px solid white; /* Bordura oko inputa */
+        border-radius: 10px; /* Zaobljeni uglovi */
+        backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
+        color: wheat;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1vh 1vw;
+        font-size: 2.5vh;
+    }
+
+    .pass-change-a {
+        font-size: 2.5vh;
+    }
+
+    @@media (max-width: 768px) {
+        .form-div {
+            width: 80vw; /* Veći div na manjim ekranima */
+            height: auto;
+            padding: 10px;
+        }
+
+        .btn, .my-input {
+            font-size: 1.8vh;
+        }
+
+        a {
+            font-size: 1.6vh;
+        }
+    }
+}
 
 </style>
 
-<div class="text-center p-4">
-    <h1 class="text-light">Stranica za prijavu.</h1>
+<div class="row">
+    <div class="col-6">
+        <div class="container form-div m-5">
+            <div class="text-center">
+                <h1 class="text-light">Login</h1>
+            </div>
+            <form class="">
+                <div class="form-group p-3">
+                    <label class="text-light p-1">Username</label>
+                    <input class="form-control my-input" placeholder="Enter username:" />
+                </div>
+                <div class="form-group p-3">
+                    <label class="text-light p-1">Password</label>
+                    <input class="form-control my-input" placeholder="Enter password:" type="password"/>
+                </div>
+                <div class="text-center mt-5 d-grid p-3">
+                    <input class="btn btn-outline-light" value="Login" />
+                </div>
+            </form>
+            <div class="p-3 text-center">
+                <a href="#" class="pass-change-a">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="m-5">
+            <p class="text-light h4">
+                This application enables you to to keep records for all bugs and problems in your system/company.
+                In here, you got users whitch can be admins or basic users. Admins can work with the whole system. 
+                Basic users can open new incident, close incident and update some part of incident.
+            </p>
+            <br />
+            <p class="text-light h5">
+                Get in touch <br>
+                Phone number: +381 62 333221 <br>
+                Email adress: info@ticketingsystem.com
+            </p>
+        </div>
+    </div>
 </div>
 
-
-<div class="container form-div">
-    <form>
-        <div class="form-group p-2">
-            <label class="text-light">Username</label>
-            <input class="form-control" placeholder="Enter username:" />
-        </div>
-        <div class="form-group p-2">
-            <label class ="text-light">Password</label>
-            <input class="form-control" placeholder="Enter password:" />
-        </div>
-    </form>
-</div>
