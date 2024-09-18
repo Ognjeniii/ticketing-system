@@ -1,0 +1,71 @@
+﻿<style>
+    body {
+        overflow: hidden;
+    }
+
+    .form-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
+        width: 25vw; /* Širina div-a */
+        height: 80vh; /* Visina div-a */
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        padding: 20px;
+        border: 2px solid white;
+        border-radius: 25px;
+    }
+
+    .my-input {
+        background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
+        border: 2px solid white; /* Bordura oko inputa */
+        border-radius: 10px; /* Zaobljeni uglovi */
+        backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
+        color: wheat;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1vh 1vw;
+        font-size: 2.5vh;
+    }
+
+</style>
+
+<div class="row">
+    <div class="col-6">
+        <div class="container form-div mt-4">
+            <form action="/" method="post">
+                <div class="form-group p-3">
+                    <label class="text-light m-2">Enter the code from the email here</label>
+                    <input type="text" class="form-control my-input"  placeholder="* * * * * *"/>
+                </div>
+                <div class="p-3">
+                    <input type="submit" class="btn btn-outline-light" value="Confirm" />
+                </div>
+            </form>
+            <form>
+                <div class="form-group p-3">
+                    <label class="text-light m-2">New password</label>
+                    <input type="text" class="form-control my-input" placeholder="Enter new password:" disabled />
+                </div>
+                <div class="form-group p-3">
+                    <label class="text-light m-2">Repeat new password</label>
+                    <input type="text" class="form-control my-input" placeholder="Repeat new password:" disabled />
+                </div>
+                <div class="p-3">
+                    <input type="submit" class="btn btn-outline-light" value="Update password" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="container mt-4 p-5">
+            <div class="h4 text-light p-3"> 
+                <p>You have 5 minutes to enter password into input field.
+                    If code from your email, that we sent you, is same as code which you entered, you will be able to update your password.
+                    If you didn't recieve code, go back and try again.</p>
+            </div>
+        </div>
+    </div>
+</div>

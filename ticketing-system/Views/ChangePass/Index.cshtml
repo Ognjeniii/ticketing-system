@@ -48,6 +48,10 @@
         a {
             font-size: 1.6vh;
         }
+
+        /* body {
+            overflow: visible;
+        } */
     }
 </style>
 
@@ -55,46 +59,56 @@
     <div class="col-6">
         <div class="container form-div mt-4">
             <form>
-                <div class="text-light text-center mb-2">
+                <div class="text-white-50 text-center mb-2">
                     <h3>Change your password</h3>
                 </div>
                 <div class="form-group p-3">
                     <label class="text-light p-1">Email or username</label>
-                    <input class="form-control my-input" placeholder="Entere email or username: " />
+                    <input type="text" class="form-control my-input" placeholder="Entere email or username: " />
                 </div>
                 <div class="form-group p-3">
                     <label class="text-light p-1">Old password</label>
-                    <input class="form-control my-input" placeholder="Enter old password:" />
+                    <input type="text" class="form-control my-input" placeholder="Enter old password:" />
                 </div>
                 <div class="form-group p-3">
-                    <label class="text-light p-1">New Password</label>
-                    <input class="form-control my-input" placeholder="Enter new password" />
+                    <label class="text-light p-1">New password</label>
+                    <input type="text" class="form-control my-input" placeholder="Enter new password:" />
                 </div>
                 <div class="form-group p-3">
-                    <label class="text-light p-1">Repeat new Password</label>
-                    <input class="form-control my-input" placeholder="Repeat new password" />
+                    <label class="text-light p-1">Repeat new password</label>
+                    <input type="text" class="form-control my-input" placeholder="Repeat new password:" />
                 </div>
                 <div class="form-group p-3">
-                    <input type="button" class="btn btn-outline-light" value="Update password" />
+                    <input type="submit" class="btn btn-outline-light" value="Update password" />
                 </div>
             </form>
         </div>
     </div>
     <div class="col-6">
         <div class="m-5 p-3">
-            <p class="text-light h4 mt-4 ">
-                In case you are forget your password, you need to click button bellow.
-            </p>
-            <div class="pt-4">
-                <a href="#" class="btn btn-outline-light">Change password</a>
-            </div>
-            <br />
-            <p class="text-light h5">
-                By clicking button, you will be redirected to page, where you will be able to upodate your password.
-            </p>
-            <br>
-            <div class="d-flex justify-content-right">
-                <a href="@Url.Action("")">Return on login...</a>
+            <div class="second-col-div">
+                <p class="text-light h4 mt-4 ">
+                    In case you are forget your password, you need to enter email and click button "Send email".
+                    We will send you 6-character code on your email adress.
+                </p>
+                <form action="/" method="post" class="mt-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control my-input" placeholder="Email: "/>
+                    </div>
+                    <div class="pt-4">
+                        <a href="@Url.Action("CheckMail","ForgetPass")" class="form-group btn btn-outline-light">Send email</a>
+                    </div>
+                </form>
+            
+                <br />
+                <p class="text-light h5">
+                    By clicking button, you will be redirected to page, where you will be able to update your password.
+                </p>
+
+                <br>
+                <div class="mt-5 d-flex justify-content-right">
+                    <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return on login...</a>
+                </div>
             </div>
         </div>
     </div>
