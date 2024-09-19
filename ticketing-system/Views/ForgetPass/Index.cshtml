@@ -8,12 +8,13 @@
         flex-direction: column;
         justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
         width: 25vw; /* Širina div-a */
-        height: 80vh; /* Visina div-a */
+        height: 40vh; /* Visina div-a */
         background-color: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
         padding: 20px;
         border: 2px solid white;
         border-radius: 25px;
+        margin-top: 100px;
     }
 
     .my-input {
@@ -30,33 +31,38 @@
         font-size: 2.5vh;
     }
 
+    /* Timer */
+    .timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+        color: white;
+    }
+
 </style>
 
 <div class="row">
     <div class="col-6">
-        <div class="container form-div mt-4">
-            <form action="/" method="post">
+        <div class="container form-div">
+            <div class="text-center">
+                <h3 class="text-light">Confirm code</h3>
+            </div>
+            <form asp-controller="ForgetPass" asp-action="" method="post" id="forgetPassForm">
                 <div class="form-group p-3">
                     <label class="text-light m-2">Enter the code from the email here</label>
-                    <input type="text" class="form-control my-input"  placeholder="* * * * * *"/>
+                    <input type="text" class="form-control my-input" id="code"  placeholder=" * * * * * *" required  />
                 </div>
-                <div class="p-3">
-                    <input type="submit" class="btn btn-outline-light" value="Confirm" />
+                <div class="p-3 mt-3">
+                    <input type="submit" class="btn btn-outline-light" id="stopButton" value="Confirm" />
                 </div>
-            </form>
-            <form>
-                <div class="form-group p-3">
-                    <label class="text-light m-2">New password</label>
-                    <input type="text" class="form-control my-input" placeholder="Enter new password:" disabled />
-                </div>
-                <div class="form-group p-3">
-                    <label class="text-light m-2">Repeat new password</label>
-                    <input type="text" class="form-control my-input" placeholder="Repeat new password:" disabled />
-                </div>
-                <div class="p-3">
-                    <input type="submit" class="btn btn-outline-light" value="Update password" />
+                <div id="error-msg" class="alert alert-danger" style="display:none;">
+
                 </div>
             </form>
+        </div>
+        <div>
+
         </div>
     </div>
     <div class="col-6">
@@ -66,6 +72,55 @@
                     If code from your email, that we sent you, is same as code which you entered, you will be able to update your password.
                     If you didn't recieve code, go back and try again.</p>
             </div>
+            <div class="timer text-center">
+                <h2 id="countdown">05:00</h2>
+            </div>
+            <div class="mt-5 d-flex justify-content-right p-3">
+                <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return on login...</a>
+            </div>
         </div>
     </div>
 </div>
+
+
+<script>
+
+// Funkcija za preusmeravanje na novu stranicu nakon isteka vremena
+function redirectToAnotherPage() {
+    window.location.href = "/Login"; // Zameni URL sa pravim
+}
+
+// Funkcija za formatiranje brojeva (dodaje nulu ispred ako je broj manji od 10)
+function formatTime(value) {
+    return value < 10 ? `0${value}` : value;
+}
+
+// Početno vreme u sekundama (5 minuta)
+let timeLeft = 5 * 60;
+// let timeLeft = 10;
+
+// Funkcija za ažuriranje odbrojavanja
+function updateCountdown() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    // Ažuriraj HTML element sa novim vrednostima
+    document.getElementById('countdown').innerHTML = `${formatTime(minutes)}:${formatTime(seconds)}`;
+
+    // Proveri da li je vreme isteklo
+    if (timeLeft === 0) {
+        clearInterval(timer); // Zaustavi odbrojavanje
+        redirectToAnotherPage(); // Preusmeri korisnika
+    }
+
+    timeLeft--; // Smanji vreme za 1 sekundu
+}
+
+// Podesi interval za svaku sekundu (1000 ms)
+const timer = setInterval(updateCountdown, 1000);
+
+// document.getElementById('stopButton').addEventListener('click', function () {
+//     clearInterval(timer); // Zaustavi odbrojavanje
+// });
+
+</script>

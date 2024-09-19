@@ -6,7 +6,7 @@
     .form-div {
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
+        justify-content: flex-start; /* space-between; */
         width: 25vw; /* Širina div-a */
         height: 80vh; /* Visina div-a */
         background-color: rgba(255, 255, 255, 0.1);
@@ -14,6 +14,18 @@
         padding: 20px;
         border: 2px solid white;
         border-radius: 25px;
+    }
+
+    .my-form {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Formi omogućava da popuni vertikalni prostor */
+        justify-content: space-between; /* Obezbeđuje razmak između elemenata */
+    }
+
+    .my-btn {
+        margin-top: auto; /* Gura poslednji form-group (dugme) na dno forme */
+        padding-top: 20px; /* Dodatni padding za malo prostora između input polja i dugmeta */
     }
 
     .my-input {
@@ -58,7 +70,7 @@
 <div class="row">
     <div class="col-6">
         <div class="container form-div mt-4">
-            <form>
+            <form class="my-form">
                 <div class="text-white-50 text-center mb-2">
                     <h3>Change your password</h3>
                 </div>
@@ -78,7 +90,7 @@
                     <label class="text-light p-1">Repeat new password</label>
                     <input type="text" class="form-control my-input" placeholder="Repeat new password:" />
                 </div>
-                <div class="form-group p-3">
+                <div class="form-group p-3 my-btn">
                     <input type="submit" class="btn btn-outline-light" value="Update password" />
                 </div>
             </form>

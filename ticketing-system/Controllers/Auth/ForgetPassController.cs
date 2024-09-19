@@ -13,5 +13,10 @@ namespace ticketing_system.Controllers.Auth
         {
             return RedirectToAction("Index");
         }
+
+        public IActionResult CheckCode()
+        {
+            return View(); // ovde se vraćamo na istu stranicu.
+        }
     }
 }
