@@ -6,10 +6,12 @@ namespace ticketing_system.Controllers
     {
         public IActionResult Index()
         {
-            // ovde bi trebalo da proverimo da li je korisnik prethodno prijavljen na sistem
-            if (Request.Cookies.ContainsKey("RememberMe") || HttpContext.Session.Keys.Contains("UserId"))
+            var cookie = Request.Cookies["RememberMe"];
+            var session = HttpContext.Session.GetString("token");
+
+            if (cookie != null || session != null)
             {
-                 return RedirectToAction("Home"); // treba da se napravi neka početna stranica
+                return RedirectToAction("Home");
             }
 
             return RedirectToAction("Index", "Login");    

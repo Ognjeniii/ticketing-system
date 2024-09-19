@@ -1,4 +1,7 @@
-﻿<style>
+﻿@model ticketing_system.Models.ViewModels.LoginViewModel
+
+
+<style>
     .form-div {
         display: flex;
         flex-direction: column;
@@ -89,14 +92,14 @@
             <div class="text-center">
                 <h2 class="text-white-50">Login</h2>
             </div>
-            <form>
+            <form asp-action="Login" asp-controller="Login" method="post">
                 <div class="form-group p-3">
                     <label class="text-light p-1">Username</label>
-                    <input class="form-control my-input" placeholder="Enter username:" />
+                    <input asp-for="Username" class="form-control my-input" placeholder="Enter username:" />
                 </div>
                 <div class="form-group p-3">
                     <label class="text-light p-1">Password</label>
-                    <input class="form-control my-input" placeholder="Enter password:" type="password" />
+                    <input  asp-for="Password" class="form-control my-input" placeholder="Enter password:" type="password" />
                 </div>
                 <div class="text-center mt-5 d-grid p-3">
                     <input type="submit" class="btn btn-outline-light" value="Login" />
