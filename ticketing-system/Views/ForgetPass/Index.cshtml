@@ -1,14 +1,15 @@
 ﻿<style>
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .form-div {
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
-        width: 25vw; /* Širina div-a */
-        height: 40vh; /* Visina div-a */
+        justify-content: space-between;
+        width: 25vw;
+        min-width: 300px;
+        height: 40vh;
         background-color: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
         padding: 20px;
@@ -18,10 +19,10 @@
     }
 
     .my-input {
-        background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
-        border: 2px solid white; /* Bordura oko inputa */
-        border-radius: 10px; /* Zaobljeni uglovi */
-        backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 2px solid white;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
         color: wheat;
     }
 
@@ -31,7 +32,6 @@
         font-size: 2.5vh;
     }
 
-    /* Timer */
     .timer {
         display: flex;
         justify-content: center;
@@ -40,10 +40,51 @@
         color: white;
     }
 
+    @@media (max-width: 768px) {
+        .form-div {
+            width: 80vw;
+            height: auto;
+            padding: 15px;
+        }
+
+        .btn, .my-input {
+            font-size: 1.8vh;
+        }
+
+        .timer {
+            font-size: 2.5em;
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .form-div {
+            width: 90vw;
+        }
+
+        .btn {
+            font-size: 1.6vh;
+        }
+
+        .my-input {
+            font-size: 1.6vh;
+        }
+
+        .timer {
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1.8em;
+        }
+    }
 </style>
 
-<div class="row">
-    <div class="col-6">
+<div class="row mt-5">
+    <div class="col-md-6 col-12">
         <div class="container form-div">
             <div class="text-center">
                 <h3 class="text-light">Confirm code</h3>
@@ -51,32 +92,22 @@
             <form asp-controller="ForgetPass" asp-action="" method="post" id="forgetPassForm">
                 <div class="form-group p-3">
                     <label class="text-light m-2">Enter the code from the email here</label>
-                    <input type="text" class="form-control my-input" id="code"  placeholder=" * * * * * *" required  />
+                    <input type="text" class="form-control my-input" id="code" placeholder=" * * * * * *" required />
                 </div>
                 <div class="p-3 mt-3">
                     <input type="submit" class="btn btn-outline-light" id="stopButton" value="Confirm" />
                 </div>
-                <div id="error-msg" class="alert alert-danger" style="display:none;">
-
-                </div>
+                <div id="error-msg" class="alert alert-danger" style="display:none;"></div>
             </form>
         </div>
-        <div>
-
-        </div>
     </div>
-    <div class="col-6">
-        <div class="container mt-4 p-5">
-            <div class="h4 text-light p-3"> 
-                <p>You have 5 minutes to enter password into input field.
-                    If code from your email, that we sent you, is same as code which you entered, you will be able to update your password.
-                    If you didn't recieve code, go back and try again.</p>
+    <div class="col-md-6 col-12 mt-5">
+        <div class="container mt-5">
+            <div class="h4 text-light p-3">
+                <p>You have 5 minutes to enter the code. If the code matches, you will be able to update your password. If you didn’t receive the code, go back and try again.</p>
             </div>
             <div class="timer text-center">
                 <h2 id="countdown">05:00</h2>
-            </div>
-            <div class="mt-5 d-flex justify-content-right p-3">
-                <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return on login...</a>
             </div>
         </div>
     </div>

@@ -1,68 +1,102 @@
-﻿@* <link rel="stylesheet" type="text/css" href="~/css/styles.css" /> *@
-<style>
-.form-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Obezbeđuje da se dugme i link pravilno poravnaju */
-    width: 25vw; /* Širina div-a */
-    height: 67vh; /* Visina div-a */
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 25px;
-}
-
-.my-input {
-    background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
-    border: 2px solid white; /* Bordura oko inputa */
-    border-radius: 10px; /* Zaobljeni uglovi */
-    backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
-    color: wheat;
-}
-
-.btn {
-    width: 100%;
-    padding: 1vh 1vw;
-    font-size: 2.5vh;
-}
-
-.pass-change-a {
-    font-size: 2.5vh;
-}
-
-@@media (max-width: 768px) {
+﻿<style>
     .form-div {
-        width: 80vw; /* Veći div na manjim ekranima */
-        height: auto;
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25vw;
+        min-width: 300px; /* Ensure the form doesn't get too small */
+        height: 67vh;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        padding: 20px;
+        border: 2px solid white;
+        border-radius: 25px;
     }
 
-    .btn, .my-input {
-        font-size: 1.8vh;
+    .my-input {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 2px solid white;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        color: wheat;
     }
 
-    a {
-        font-size: 1.6vh;
+    .btn {
+        width: 100%;
+        padding: 1vh 1vw;
+        font-size: 2.5vh;
     }
-}
+
+    .pass-change-a {
+        font-size: 2.5vh;
+    }
+
+    @@media (max-width: 768px) {
+        .form-div {
+            width: 80vw; /* Form takes more width on smaller screens */
+            height: auto;
+            padding: 10px;
+        }
+
+        .btn, .my-input {
+            font-size: 1.8vh;
+        }
+
+        .pass-change-a {
+            font-size: 1.8vh;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        p.text-light {
+            font-size: 1.6em;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .form-div {
+            width: 90vw;
+        }
+
+        .btn {
+            font-size: 1.6vh;
+        }
+
+        .my-input {
+            font-size: 1.6vh;
+        }
+
+        .pass-change-a {
+            font-size: 1.6vh;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        p.text-light {
+            font-size: 1.4em;
+        }
+    }
 </style>
 
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-md-6 col-12">
         <div class="container form-div mt-5">
             <div class="text-center">
                 <h2 class="text-white-50">Login</h2>
             </div>
-            <form class="">
+            <form>
                 <div class="form-group p-3">
                     <label class="text-light p-1">Username</label>
                     <input class="form-control my-input" placeholder="Enter username:" />
                 </div>
                 <div class="form-group p-3">
                     <label class="text-light p-1">Password</label>
-                    <input class="form-control my-input" placeholder="Enter password:" type="password"/>
+                    <input class="form-control my-input" placeholder="Enter password:" type="password" />
                 </div>
                 <div class="text-center mt-5 d-grid p-3">
                     <input type="submit" class="btn btn-outline-light" value="Login" />
@@ -73,20 +107,19 @@
             </div>
         </div>
     </div>
-    <div class="col-6">
-        <div class="m-5 p-3">
-            <p class="text-light h4 mt-4 ">
-                This application enables you to to keep records for all bugs and problems in your system/company.
-                In here, you got users whitch can be admins or basic users. Admins can work with the whole system. 
-                Basic users can open new incident, close incident and update some part of incident.
+    <div class="col-md-6 col-12">
+        <div class="mt-5 p-3">
+            <p class="text-light h4 mt-4">
+                This application enables you to keep records for all bugs and problems in your system/company.
+                Users can be admins or basic users. Admins can manage the system, while basic users can open,
+                close, and update incidents.
             </p>
             <br />
             <p class="text-light h5">
-                -Get in touch- <br>
-                Phone number: +381 62 333221 <br>
-                Email adress: info@ticketingsystem.com
+                - Get in touch -<br>
+                Phone number: +381 62 333221<br>
+                Email address: info@ticketingsystem.com
             </p>
         </div>
     </div>
 </div>
-

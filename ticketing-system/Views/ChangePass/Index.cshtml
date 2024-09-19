@@ -1,14 +1,15 @@
 ﻿<style>
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .form-div {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; /* space-between; */
-        width: 25vw; /* Širina div-a */
-        height: 80vh; /* Visina div-a */
+        justify-content: flex-start;
+        width: 25vw;
+        min-width: 300px;
+        height: 80vh;
         background-color: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
         padding: 20px;
@@ -19,107 +20,120 @@
     .my-form {
         display: flex;
         flex-direction: column;
-        flex-grow: 1; /* Formi omogućava da popuni vertikalni prostor */
-        justify-content: space-between; /* Obezbeđuje razmak između elemenata */
+        flex-grow: 1;
+        justify-content: space-between;
     }
 
     .my-btn {
-        margin-top: auto; /* Gura poslednji form-group (dugme) na dno forme */
-        padding-top: 20px; /* Dodatni padding za malo prostora između input polja i dugmeta */
+        margin-top: auto;
+        padding-top: 20px;
     }
 
     .my-input {
-        background-color: rgba(255, 255, 255, 0.05); /* Providna bela boja */
-        border: 2px solid white; /* Bordura oko inputa */
-        border-radius: 10px; /* Zaobljeni uglovi */
-        backdrop-filter: blur(10px); /* Blaga zamućenost pozadine ispod inputa */
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 2px solid white;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
         color: wheat;
     }
 
     .btn {
         width: 100%;
         padding: 1vh 1vw;
-        font-size: 2.5vh;
+        font-size: 1.8vh;
     }
 
     .pass-change-a {
-        font-size: 2.5vh;
+        font-size: 1.8vh;
     }
 
     @@media (max-width: 768px) {
         .form-div {
-            width: 80vw; /* Veći div na manjim ekranima */
+            width: 80vw;
             height: auto;
-            padding: 10px;
+            padding: 15px;
         }
 
         .btn, .my-input {
-            font-size: 1.8vh;
-        }
-
-        a {
             font-size: 1.6vh;
         }
 
-        /* body {
-            overflow: visible;
-        } */
+        .pass-change-a {
+            font-size: 1.5vh;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .form-div {
+            width: 90vw;
+        }
+
+        .btn {
+            font-size: 1.4vh;
+        }
+
+        .my-input {
+            font-size: 1.4vh;
+        }
+
+        a {
+            font-size: 1.3vh;
+        }
     }
 </style>
 
-<div class="row">
-    <div class="col-6">
-        <div class="container form-div mt-4">
-            <form class="my-form">
-                <div class="text-white-50 text-center mb-2">
-                    <h3>Change your password</h3>
-                </div>
-                <div class="form-group p-3">
-                    <label class="text-light p-1">Email or username</label>
-                    <input type="text" class="form-control my-input" placeholder="Entere email or username: " />
-                </div>
-                <div class="form-group p-3">
-                    <label class="text-light p-1">Old password</label>
-                    <input type="text" class="form-control my-input" placeholder="Enter old password:" />
-                </div>
-                <div class="form-group p-3">
-                    <label class="text-light p-1">New password</label>
-                    <input type="text" class="form-control my-input" placeholder="Enter new password:" />
-                </div>
-                <div class="form-group p-3">
-                    <label class="text-light p-1">Repeat new password</label>
-                    <input type="text" class="form-control my-input" placeholder="Repeat new password:" />
-                </div>
-                <div class="form-group p-3 my-btn">
-                    <input type="submit" class="btn btn-outline-light" value="Update password" />
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="m-5 p-3">
-            <div class="second-col-div">
-                <p class="text-light h4 mt-4 ">
-                    In case you are forget your password, you need to enter email and click button "Send email".
-                    We will send you 6-character code on your email adress.
-                </p>
-                <form action="/" method="post" class="mt-5">
-                    <div class="form-group">
-                        <input type="text" class="form-control my-input" placeholder="Email: "/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="container form-div mt-4">
+                <form class="my-form">
+                    <div class="text-white-50 text-center mb-2">
+                        <h3>Change your password</h3>
                     </div>
-                    <div class="pt-4">
-                        <a href="@Url.Action("CheckMail","ForgetPass")" class="form-group btn btn-outline-light">Send email</a>
+                    <div class="form-group p-3">
+                        <label class="text-light p-1">Email or username</label>
+                        <input type="text" class="form-control my-input" placeholder="Enter email or username: " />
+                    </div>
+                    <div class="form-group p-3">
+                        <label class="text-light p-1">Old password</label>
+                        <input type="password" class="form-control my-input" placeholder="Enter old password:" />
+                    </div>
+                    <div class="form-group p-3">
+                        <label class="text-light p-1">New password</label>
+                        <input type="password" class="form-control my-input" placeholder="Enter new password:" />
+                    </div>
+                    <div class="form-group p-3">
+                        <label class="text-light p-1">Repeat new password</label>
+                        <input type="password" class="form-control my-input" placeholder="Repeat new password:" />
+                    </div>
+                    <div class="form-group p-3 my-btn">
+                        <input type="submit" class="btn btn-outline-light" value="Update password" />
                     </div>
                 </form>
-            
-                <br />
-                <p class="text-light h5">
-                    By clicking button, you will be redirected to page, where you will be able to update your password.
-                </p>
-
-                <br>
-                <div class="mt-5 d-flex justify-content-right">
-                    <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return on login...</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="m-5 p-3">
+                <div class="second-col-div">
+                    <p class="text-light h4 mt-4">
+                        In case you forgot your password, enter your email and click "Send email". We will send you a 6-character code to reset your password.
+                    </p>
+                    <form action="/" method="post" class="mt-5">
+                        <div class="form-group">
+                            <input type="text" class="form-control my-input" placeholder="Email: " />
+                        </div>
+                        <div class="pt-4">
+                            <a href="@Url.Action("CheckMail", "ForgetPass")" class="form-group btn btn-outline-light">Send email</a>
+                        </div>
+                    </form>
+                    <br />
+                    <p class="text-light h5">
+                        By clicking the button, you will be redirected to a page where you can update your password.
+                    </p>
+                    <br>
+                    <div class="mt-5 d-flex justify-content-right">
+                        <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return to login...</a>
+                    </div>
                 </div>
             </div>
         </div>
