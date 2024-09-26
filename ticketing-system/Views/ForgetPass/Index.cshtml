@@ -89,10 +89,10 @@
             <div class="text-center">
                 <h3 class="text-light">Confirm code</h3>
             </div>
-            <form asp-controller="ForgetPass" asp-action="" method="post" id="forgetPassForm">
+            <form action="@Url.Action("CheckCode", "ForgetPass")" method="post" id="forgetPassForm">
                 <div class="form-group p-3">
                     <label class="text-light m-2">Enter the code from the email here</label>
-                    <input type="text" class="form-control my-input" id="code" placeholder=" * * * * * *" required />
+                    <input type="text" name="Code" class="form-control my-input" id="code" placeholder=" * * * * * * " required />
                 </div>
                 <div class="p-3 mt-3">
                     <input type="submit" class="btn btn-outline-light" id="stopButton" value="Confirm" />

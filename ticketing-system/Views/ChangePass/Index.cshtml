@@ -118,12 +118,12 @@
                     <p class="text-light h4 mt-4">
                         In case you forgot your password, enter your email and click "Send email". We will send you a 6-character code to reset your password.
                     </p>
-                    <form action="/" method="post" class="mt-5">
+                    <form action="@Url.Action("CheckMail", "ForgetPass")" method="post" class="mt-5">
                         <div class="form-group">
-                            <input type="text" class="form-control my-input" placeholder="Email: " />
+                            <input type="text" name="Email" class="form-control my-input" placeholder="Email: " />
                         </div>
                         <div class="pt-4">
-                            <a href="@Url.Action("CheckMail", "ForgetPass")" class="form-group btn btn-outline-light">Send email</a>
+                            <button type="submit" class="form-group btn btn-outline-light">Send email</button>
                         </div>
                     </form>
                     <br />
@@ -134,6 +134,7 @@
                     <div class="mt-5 d-flex justify-content-right">
                         <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return to login...</a>
                     </div>
+                    <div id="errorMessage"></div>
                 </div>
             </div>
         </div>
