@@ -7,6 +7,11 @@ namespace ticketing_system.Controllers.Auth
 {
     public class ForgetPassController : Controller
     {
+        public IConfiguration Configuration { get; }
+        public ForgetPassController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         public static int generatedCode = 0;
         public IActionResult Index()
         {
@@ -17,6 +22,9 @@ namespace ticketing_system.Controllers.Auth
             generatedCode = codeGenerator.Code;
 
             Console.WriteLine(generatedCode);
+
+            var sifra = Configuration["Values:Pass1"];
+            Console.WriteLine("Pass: " + sifra);
 
 
 

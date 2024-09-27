@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\classes\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\classes\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\controllers\\auth\\forgetpasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\auth\\forgetpasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\classes\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\classes\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,12 +43,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\appsettings.json",
+              "RelativeDocumentMoniker": "ticketing-system\\appsettings.json",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\appsettings.json",
+              "RelativeToolTip": "ticketing-system\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-27T09:11:08.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EmailSender.cs",
               "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Classes\\EmailSender.cs",
               "RelativeDocumentMoniker": "ticketing-system\\Classes\\EmailSender.cs",
               "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Classes\\EmailSender.cs",
               "RelativeToolTip": "ticketing-system\\Classes\\EmailSender.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAA4AAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBgAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T11:05:37.146Z",
               "EditorCaption": ""
@@ -57,7 +74,7 @@
               "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\ForgetPassController.cs",
               "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ForgetPassController.cs",
               "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\ForgetPassController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T06:42:47.055Z",
               "EditorCaption": ""
