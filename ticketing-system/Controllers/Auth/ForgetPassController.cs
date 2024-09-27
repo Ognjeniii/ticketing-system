@@ -10,6 +10,7 @@ namespace ticketing_system.Controllers.Auth
         public static int generatedCode = 0;
         public IActionResult Index()
         {
+            // vrv se ovde šalje mail
             CodeGenerator codeGenerator = new CodeGenerator();
             codeGenerator.generate();
 
