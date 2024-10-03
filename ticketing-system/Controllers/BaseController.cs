@@ -2,19 +2,23 @@
 
 namespace ticketing_system.Controllers
 {
+    // Ovo je početni kontroler - prvi do kog se dođe prilikom startovanja aplikacije
     public class BaseController : Controller
     {
+        // Prva metoda do koje se dolazi prilikom pokretanja aplikacije
         public IActionResult Index()
         {
             var cookie = Request.Cookies["RememberMe"];
             var session = HttpContext.Session.GetString("token");
 
+            // Korisnik je prijavlen, šalje se na početni ekran
             if (cookie != null || session != null)
             {
                 return RedirectToAction("Home");
             }
 
-            return RedirectToAction("Index", "Login");    
+            // Korisnik nije prijavljen, šalje se na prijavu
+            return RedirectToAction("Index", "Login");
         }
 
         public IActionResult Error()
@@ -22,5 +26,9 @@ namespace ticketing_system.Controllers
             return View();
         }
 
+        public IActionResult Home()
+        {
+            return View();
+        }
     }
 }

@@ -9,30 +9,38 @@ namespace ticketing_system.Controllers.Auth
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Login/Index.cshtml");
         }
 
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
-            if(model.Username.Equals("user") && model.Password.Equals("pass"))
+            if (ModelState.IsValid)
             {
-                Console.WriteLine("Uspešna prijava!");
-
-                // setujemo kuki
-                Response.Cookies.Append("RememberMe", "true", new CookieOptions
+                if (model.Username.Equals("user") && model.Password.Equals("pass"))
                 {
-                    Expires = DateTime.UtcNow.AddDays(30)
-                });
+                    if (model.RememberMe)
+                    {
+                        // Setujemo kuki
+                        Response.Cookies.Append("RememberMe", "true", new CookieOptions
+                        {
+                            Expires = DateTime.UtcNow.AddDays(30)
+                        });
+                    }
 
-                // setujemo sesiju
-                HttpContext.Session.SetString("token", model.Username);
+                    // Setujemo sesiju
+                    HttpContext.Session.SetString("token", model.Username);
 
-                return RedirectToAction("Index", "Base");
+                    // Preusmerujemo korisnika na početnu stranicu
+                    return RedirectToAction("Home", "Base");
+                }
+                else
+                {
+                    ModelState.AddModelError("invalid_login", "Invalid login attempt. Please check your email and password.");
+                }
             }
 
-            Console.WriteLine("Neuspešna prijava!");
-            return Index();
+            return View("~/Views/Login/Index.cshtml", model);
         }
     }
 }

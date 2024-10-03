@@ -12,7 +12,11 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddControllersWithViews();
+        builder.Services.AddControllersWithViews()
+            .AddSessionStateTempDataProvider();
+
+        builder.Services.AddRazorPages()
+            .AddSessionStateTempDataProvider();
 
         // ef core
         builder.Services.AddDbContext<ApplicationDbContext>(options =>  
@@ -28,8 +32,10 @@ internal class Program
         {
             // sesija se postavlja da traje 3 minuta.
             options.IdleTimeout = TimeSpan.FromMinutes(10);
+            options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            options.Cookie.SameSite = SameSiteMode.Strict;
             options.Cookie.HttpOnly = true;
-            options.Cookie.IsEssential = true;
+            // options.Cookie.IsEssential = true; 
         });
 
         var app = builder.Build();

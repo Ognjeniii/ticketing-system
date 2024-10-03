@@ -34,6 +34,10 @@
         font-size: 2.5vh;
     }
 
+    .err-msg {
+        height: 35px;
+    }
+
     @@media (max-width: 768px) {
         .form-div {
             width: 80vw; /* Form takes more width on smaller screens */
@@ -83,6 +87,17 @@
             font-size: 1.4em;
         }
     }
+
+    @@media (min-width: 1024px) {
+        .form-group {
+            padding: 0.2rem; /* Smanjite padding između labela i input polja */
+        }
+
+        .form-div {
+            margin-top: 2rem; /* Smanjite marginu između naslova i forme */
+        }
+    }
+
 </style>
 
 
@@ -93,21 +108,27 @@
                 <h2 class="text-white-50">Login</h2>
             </div>
             <form asp-action="Login" asp-controller="Login" method="post">
-                <div class="form-group p-3">
-                    <label class="text-light p-1">Username</label>
+                <div class="form-group p-2">
+                    <label asp-for="Username" class="text-light p-1">Username</label>
                     <input asp-for="Username" class="form-control my-input" placeholder="Enter username:" />
+                    <span asp-validation-for="Username" class="text-warning err-msg"></span>
                 </div>
-                <div class="form-group p-3">
-                    <label class="text-light p-1">Password</label>
-                    <input  asp-for="Password" class="form-control my-input" placeholder="Enter password:" type="password" />
+                <div class="form-group p-2">
+                    <label asp-for="Password" class="text-light p-1">Password</label>
+                    <input asp-for="Password" class="form-control my-input" placeholder="Enter password:" type="password" />
+                    <span asp-validation-for="Password" class="text-warning err-msg"></span>
+                </div>
+                <div class="form-group p-2">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-check-label text-light"></label>
                 </div>
                 <div class="text-center mt-5 d-grid p-3">
                     <input type="submit" class="btn btn-outline-light" value="Login" />
                 </div>
             </form>
-            <div class="p-3 text-center">
-                <a href="@Url.Action("Index", "ChangePass")" class="pass-change-a">Change password?</a>
-            </div>
+        </div>
+        <div class="p-3 text-center">
+            <a href="@Url.Action("Index", "ChangePass")" class="pass-change-a">Change password?</a>
         </div>
     </div>
     <div class="col-md-6 col-12">

@@ -8,6 +8,10 @@ namespace ticketing_system.Models.ViewModels
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Password is required field!")]
-        public string Password { get; set; }     
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
     }
 }
