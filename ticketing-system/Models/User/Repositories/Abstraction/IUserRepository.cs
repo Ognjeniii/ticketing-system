@@ -2,7 +2,7 @@
 {
     public interface IUserRepository
     {
-        Task<User> CreateAsync(User user);
+        Task CreateAsync(User user);
         Task<User> UpdateAsync(User user);
         Task<User> DeleteAsync(User user);
         Task<User> GetByIdAsync(int id);

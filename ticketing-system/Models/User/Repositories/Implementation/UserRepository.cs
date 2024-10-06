@@ -1,12 +1,26 @@
-﻿using ticketing_system.Models.User.Repositories.Abstraction;
+﻿using ticketing_system.DTO;
+using ticketing_system.Models.User.Repositories.Abstraction;
 
 namespace ticketing_system.Models.User.Repositories.Implementation
 {
     public class UserRepository : IUserRepository
     {
-        public Task<User> CreateAsync(User user)
+        private readonly ApplicationDbContext _context;
+        public UserRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task CreateAsync(User user)
+        {
+            try
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Greška: " + ex.Message);
+            }
         }
 
         public Task<User> DeleteAsync(User user)

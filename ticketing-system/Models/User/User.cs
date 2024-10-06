@@ -1,28 +1,33 @@
-﻿namespace ticketing_system.Models.User
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ticketing_system.Models.User
 {
     public class User
     {
+        [Key]
         public int UserId { get; }
-        public string Name { get; set; }
+        public int GroupId { get; set; } // fk
+        public int UserTypeId { get; set; } // fk
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
         public string JobTitle { get; set; }
-        public int GroupId { get; set; } // fk
-        public int UserType { get; set; } // fk
         public DateTime CreatedDate { get; set; }
 
-        public User(int userId, string name, string lastName, string email, string password, string jobTitle, int groupId, int userType)
+        public User() { }
+        public User(int groupId, int userTypeId, string firstName, string lastName, string email, string username, string password, string jobTitle, DateTime createdDate)
         {
-            UserId = userId;
-            Name = name;
+            GroupId = groupId;
+            UserTypeId = userTypeId;
+            FirstName = firstName;
             LastName = lastName;
             Email = email;
+            Username = username;
             Password = password;
             JobTitle = jobTitle;
-            GroupId = groupId;
-            UserType = userType;
-            CreatedDate = DateTime.Now;
+            CreatedDate = createdDate;
         }
     }
 }
