@@ -1,32 +1,107 @@
-﻿using ticketing_system.Models.User.Repositories.Abstraction;
+﻿using Microsoft.EntityFrameworkCore;
+using ticketing_system.DTO;
+using ticketing_system.Models.User.Repositories.Abstraction;
 
 namespace ticketing_system.Models.User.Repositories.Implementation
 {
     public class UserRepository : IUserRepository
     {
-        public Task<User> CreateAsync(User user)
+        private readonly ApplicationDbContext _context;
+        public UserRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<User> DeleteAsync(User user)
+        public async Task<User> CreateAsync(User user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+                return user;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***GREŠKA: " + ex.Message);
+                return null;
+            }
         }
 
-        public Task<User> GetByIdAsync(int id)
+        public async Task<User> UpdateAsync(int id, User user)
         {
-            throw new NotImplementedException();
+            var oldUser = await GetByIdAsync(id);
+            try
+            {
+                oldUser.GroupId = user.GroupId;
+                oldUser.UserTypeId = user.UserTypeId;
+                oldUser.FirstName = user.FirstName;
+                oldUser.LastName = user.LastName;
+                oldUser.Email = user.Email;
+                oldUser.Username = user.Username;
+                oldUser.Password = user.Password;
+                oldUser.JobTitle = user.JobTitle;
+                
+                await _context.SaveChangesAsync();
+
+                return oldUser;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***GREŠKA: " + ex.Message);
+                return null;
+            }
         }
 
-        public Task<User> GetByNameAndPasswordAsync(string name, string password)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _context.Users.Where(a => a.UserId == id)
+                    .ExecuteDeleteAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***GREŠKA: " + ex.Message);
+            }
         }
 
-        public Task<User> UpdateAsync(User user)
+        public async Task<User> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(a => a.UserId == id);
+
+                if (user == null)
+                    return null;
+
+                return user;
+
+            } 
+            catch (Exception ex)
+            {
+                Console.WriteLine("***GREŠKA: " + ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<User> GetByUsernameAndPasswordAsync(string username, string password)
+        {
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(a => a.Username == username && a.Password == password);
+
+                if (user == null)
+                    return null;
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***GREŠKA: " + ex.Message);
+                return null;
+            }
         }
     }
 }

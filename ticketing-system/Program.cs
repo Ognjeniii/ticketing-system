@@ -4,6 +4,10 @@ using ticketing_system.Models.Ticket.Repository.Implementation;
 using ticketing_system.Models.Ticket.Services.Abstraction;
 using ticketing_system.Models.Ticket.Services.Implementation;
 using ticketing_system.Models.Ticket.Repository.Abstraction;
+using ticketing_system.Models.User.Repositories.Abstraction;
+using ticketing_system.Models.User.Repositories.Implementation;
+using ticketing_system.Models.User.Services.Abstraction;
+using ticketing_system.Models.User.Services.Implementation;
 
 internal class Program
 {
@@ -19,12 +23,16 @@ internal class Program
             .AddSessionStateTempDataProvider();
 
         // ef core
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>  
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        });
 
         // dependency injection
         builder.Services.AddScoped<ITicketRepository, TicketRepository>();
         builder.Services.AddScoped<ITicketService, TicketService>();
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<IUserService, UserService>();
 
         // sesije
         builder.Services.AddDistributedMemoryCache();

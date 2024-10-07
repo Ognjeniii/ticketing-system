@@ -1,13 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ticketing_system.Models.User;
+using ticketing_system.Models.User.Services.Abstraction;
 
 namespace ticketing_system.Controllers
 {
     // Ovo je početni kontroler - prvi do kog se dođe prilikom startovanja aplikacije
     public class BaseController : Controller
     {
+<<<<<<< HEAD
         // Prva metoda do koje se dolazi prilikom pokretanja aplikacije
+=======
+        private readonly IUserService _userService;
+        public BaseController(IUserService userService)
+        {
+            _userService = userService;
+        }
+>>>>>>> 1bce940197450784c816c3812625043d820d2e0c
         public IActionResult Index()
         {
+            User user = new User
+                (
+                    3,
+                    1,
+                    "Pera",
+                    "Peric",
+                    "perap@company.rs",
+                    "perap",
+                    "pera123",
+                    "software engineer",
+                    new DateTime(2024, 10, 6)
+                );
+
+            _userService.CreateUserAsync(user);
+
             var cookie = Request.Cookies["RememberMe"];
             var session = HttpContext.Session.GetString("token");
 
