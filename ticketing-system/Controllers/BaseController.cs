@@ -7,15 +7,13 @@ namespace ticketing_system.Controllers
     // Ovo je početni kontroler - prvi do kog se dođe prilikom startovanja aplikacije
     public class BaseController : Controller
     {
-<<<<<<< HEAD
         // Prva metoda do koje se dolazi prilikom pokretanja aplikacije
-=======
         private readonly IUserService _userService;
         public BaseController(IUserService userService)
         {
             _userService = userService;
         }
->>>>>>> 1bce940197450784c816c3812625043d820d2e0c
+
         public IActionResult Index()
         {
             User user = new User
