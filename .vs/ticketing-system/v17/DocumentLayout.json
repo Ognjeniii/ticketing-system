@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\models\\user\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\user\\services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\views\\changepass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\views\\changepass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\models\\user\\services\\abstraction\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\user\\services\\abstraction\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\views\\forgetpass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\views\\forgetpass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\models\\user\\repositories\\abstraction\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\user\\repositories\\abstraction\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 212,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Models\\User\\Services\\Abstraction\\IUserService.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\User\\Services\\Abstraction\\IUserService.cs",
-              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Models\\User\\Services\\Abstraction\\IUserService.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\User\\Services\\Abstraction\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:42:46.288Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -60,40 +43,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Models\\User\\Services\\Implementation\\UserService.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\User\\Services\\Implementation\\UserService.cs",
-              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Models\\User\\Services\\Implementation\\UserService.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\User\\Services\\Implementation\\UserService.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwCIAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:31:42.681Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "RelativeDocumentMoniker": "ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "RelativeToolTip": "ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T07:59:01.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Models\\User\\Repositories\\Abstraction\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\User\\Repositories\\Abstraction\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Models\\User\\Repositories\\Abstraction\\IUserRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\User\\Repositories\\Abstraction\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:15:45.861Z",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\ForgetPass\\Index.cshtml",
+              "RelativeDocumentMoniker": "ticketing-system\\Views\\ForgetPass\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\ForgetPass\\Index.cshtml",
+              "RelativeToolTip": "ticketing-system\\Views\\ForgetPass\\Index.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T07:58:16.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "ticketing-system\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAgwB8AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:30:39.993Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "ticketing-system\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "ticketing-system\\Views\\Login\\Index.cshtml",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAAI0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-08T06:59:17.109Z",
               "EditorCaption": ""
             }
           ]
