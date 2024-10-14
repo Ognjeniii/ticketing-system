@@ -51,7 +51,17 @@ namespace ticketing_system.Controllers
 
         public IActionResult Home()
         {
-            return View();
+            var cookie = Request.Cookies["RememberMe"];
+            var session = HttpContext.Session.GetString("token");
+
+            // Korisnik je prijavlen, šalje se na početni ekran
+            if (cookie != null || session != null)
+            {
+                return RedirectToAction("Home");
+            }
+
+            // Korisnik nije prijavljen, šalje se na prijavu
+            return RedirectToAction("Index", "Login");
         }
     }
 }

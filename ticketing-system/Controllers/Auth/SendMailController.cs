@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using System.CodeDom.Compiler;
 using ticketing_system.Classes;
 
 namespace ticketing_system.Controllers.Auth
 {
-    public class ForgetPassController : Controller
+    public class SendMailController : Controller
     {
         public IConfiguration Configuration { get; }
-        public ForgetPassController(IConfiguration configuration)
+        public SendMailController(IConfiguration configuration)
         {
             Configuration = configuration;
         }
