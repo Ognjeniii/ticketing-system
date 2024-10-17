@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using ticketing_system.DTO;
 using ticketing_system.Models.User.Repositories.Abstraction;
 
@@ -7,6 +8,7 @@ namespace ticketing_system.Models.User.Repositories.Implementation
     public class UserRepository : IUserRepository
     {
         private readonly ApplicationDbContext _context;
+
         public UserRepository(ApplicationDbContext context)
         {
             _context = context;
@@ -20,9 +22,14 @@ namespace ticketing_system.Models.User.Repositories.Implementation
                 await _context.SaveChangesAsync();
                 return user;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine("***GREŠKA: " + ex.Message);
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+                return null;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
                 return null;
             }
         }
@@ -45,9 +52,24 @@ namespace ticketing_system.Models.User.Repositories.Implementation
 
                 return oldUser;
             }
-            catch (Exception ex)
+            catch (DbUpdateConcurrencyException ex)
             {
-                Console.WriteLine("***GREŠKA: " + ex.Message);
+                Console.WriteLine("***GREŠKA - DbUpdateConcurrencyException:\n" + ex.Message);
+                return null;
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine("***GREŠKA - DbUpdateException:\n" + ex.Message);
+                return null;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
+                return null;
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
                 return null;
             }
         }
@@ -59,9 +81,14 @@ namespace ticketing_system.Models.User.Repositories.Implementation
                 await _context.Users.Where(a => a.UserId == id)
                     .ExecuteDeleteAsync();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine("***GREŠKA: " + ex.Message);
+
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
             }
         }
 
@@ -77,10 +104,15 @@ namespace ticketing_system.Models.User.Repositories.Implementation
 
                 return user;
 
-            } 
-            catch (Exception ex)
+            }
+            catch (SqlException ex)
             {
-                Console.WriteLine("***GREŠKA: " + ex.Message);
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+                return null;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
                 return null;
             }
         }
@@ -97,9 +129,14 @@ namespace ticketing_system.Models.User.Repositories.Implementation
 
                 return user;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine("***GREŠKA: " + ex.Message);
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+                return null;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
                 return null;
             }
         }

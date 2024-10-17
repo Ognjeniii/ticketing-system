@@ -6,10 +6,12 @@ namespace ticketing_system.Models.User.Services.Implementation
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly ILogger _logger;
 
-        public UserService(IUserRepository userRepository) 
+        public UserService(IUserRepository userRepository, ILogger logger)
         {
             _userRepository = userRepository;
+            _logger = logger;
         }
 
         public async Task<User> CreateUserAsync(User user)
