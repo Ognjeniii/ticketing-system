@@ -22,14 +22,16 @@ namespace ticketing_system.Models.User.Repositories.Implementation
                 await _context.SaveChangesAsync();
                 return user;
             }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
-                return null;
-            }
             catch (InvalidOperationException ex)
             {
                 Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
+                Console.WriteLine("***STACK TRACE: \n" + ex.StackTrace);
+                return null;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+                Console.WriteLine("***STACK TRACE: \n" + ex.StackTrace);
                 return null;
             }
         }
