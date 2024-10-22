@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ticketing_system.Models.User;
+using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.Models.ViewModels;
 
 namespace ticketing_system.Controllers.Auth
 {
     public class LoginController : Controller
     {
-        //private readonly IUserService _userService;
+        private readonly IUserService _userService;
+        public LoginController(IUserService userService)
+        {
+            _userService = userService;
+        }
 
         public IActionResult Index()
         {
@@ -13,12 +19,15 @@ namespace ticketing_system.Controllers.Auth
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                if (model.Username.Equals("user") && model.Password.Equals("pass"))
+                User user = await _userService.GetUserByUsernameAndPasswordAsync(model.Username, model.Password);
+
+                if (user != null)
                 {
+                    // ako je korisnik označio "Zapamti me"
                     if (model.RememberMe)
                     {
                         // Setujemo kuki

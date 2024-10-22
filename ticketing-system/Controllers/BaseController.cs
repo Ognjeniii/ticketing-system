@@ -43,7 +43,7 @@ namespace ticketing_system.Controllers
             // Korisnik je prijavlen, šalje se na početni ekran
             if (cookie != null || session != null)
             {
-                return RedirectToAction("Home");
+                return View("~/Views/Base/Home.cshtml");
             }
 
             // Korisnik nije prijavljen, šalje se na prijavu
