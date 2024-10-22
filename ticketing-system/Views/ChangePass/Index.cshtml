@@ -1,4 +1,6 @@
-﻿<style>
+﻿@model ticketing_system.Models.ViewModels.ChangePassViewModel
+
+<style>
     body {
         overflow-x: hidden;
     }
@@ -86,27 +88,39 @@
     <div class="row">
         <div class="col-md-6 col-12">
             <div class="container form-div mt-4">
-                <form class="my-form">
+                <form action="@Url.Action("UpdatePassword", "ChangePass")" class="my-form">
                     <div class="text-white-50 text-center mb-2">
                         <h3>Change your password</h3>
                     </div>
-                    <div class="form-group p-3">
-                        <label class="text-light p-1">Email or username</label>
-                        <input type="text" class="form-control my-input" placeholder="Enter email or username: " />
+                    <div class="form-group p-2">
+                        <label asp-for="Username" class="text-light p-1"></label>
+                        <input asp-for="Username" type="text" class="form-control my-input" placeholder="Enter username: " />
+                        <span asp-validation-for="Username" class="text-warning"></span>
+                    </div> 
+                    <div class="form-group p-2">
+                        <label asp-for="OldPassword" class="text-light p-1"></label>
+                        <input asp-for="OldPassword" type="password" class="form-control my-input" placeholder="Enter old password:" />
+                        <span asp-validation-for="OldPassword" class="text-warning"></span>
                     </div>
-                    <div class="form-group p-3">
-                        <label class="text-light p-1">Old password</label>
-                        <input type="password" class="form-control my-input" placeholder="Enter old password:" />
+                    <div class="form-group p-2">
+                        <label asp-for="NewPassword" class="text-light p-1"></label>
+                        <input asp-for="NewPassword" type="password" class="form-control my-input" placeholder="Enter new password:" />
+                        <span asp-validation-for="NewPassword" class="text-warning"></span>
                     </div>
-                    <div class="form-group p-3">
-                        <label class="text-light p-1">New password</label>
-                        <input type="password" class="form-control my-input" placeholder="Enter new password:" />
+                    <div class="form-group p-2">
+                        <label asp-for="RepeatedNewPassword" class="text-light p-1"></label>
+                        <input asp-for="RepeatedNewPassword" type="password" class="form-control my-input" placeholder="Repeat new password:" />
+                        <span asp-validation-for="RepeatedNewPassword" class="text-warning"></span>
                     </div>
-                    <div class="form-group p-3">
-                        <label class="text-light p-1">Repeat new password</label>
-                        <input type="password" class="form-control my-input" placeholder="Repeat new password:" />
-                    </div>
-                    <div class="form-group p-3 my-btn">
+
+                    @* @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+                    } *@
+
+                    <div class="form-group p-2 my-btn">
                         <input type="submit" class="btn btn-outline-light" value="Update password" />
                     </div>
                 </form>
@@ -140,3 +154,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
