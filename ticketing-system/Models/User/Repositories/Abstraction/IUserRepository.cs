@@ -6,7 +6,7 @@
         Task<User> CreateAsync(User user);
 
         // Ažuriranje starog korisnika po id-u
-        Task<User> UpdateAsync(int id, User user);
+        Task<User> UpdateAsync(User user);
 
         // Brisanje korisnika po id-u
         Task DeleteAsync(int id);

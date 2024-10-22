@@ -36,9 +36,9 @@ namespace ticketing_system.Models.User.Repositories.Implementation
             }
         }
 
-        public async Task<User> UpdateAsync(int id, User user)
+        public async Task<User> UpdateAsync(User user)
         {
-            var oldUser = await GetByIdAsync(id);
+            var oldUser = await GetByIdAsync(user.UserId);
             try
             {
                 oldUser.GroupId = user.GroupId;

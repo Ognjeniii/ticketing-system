@@ -34,9 +34,9 @@ namespace ticketing_system.Models.User.Services.Implementation
             return await _userRepository.GetByUsernameAndPasswordAsync(username, password);
         }
 
-        public async Task<User> UpdateUserAsync(int id, User user)
+        public async Task<User> UpdateUserAsync(User user)
         {
-            return await _userRepository.UpdateAsync(id, user);
+            return await _userRepository.UpdateAsync(user);
         }
     }
 }
