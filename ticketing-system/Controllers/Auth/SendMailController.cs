@@ -18,18 +18,26 @@ namespace ticketing_system.Controllers.Auth
 
         public static int generatedCode = 0;
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            // vrv se ovde šalje mail
+            if (TempData["email"] == null || TempData["email"].ToString().Length == 0)
+            {
+                Console.WriteLine("Došlo je do neke greške!");
+                return View();
+            }
+
+            string email = TempData["email"].ToString();
+
             CodeGenerator codeGenerator = new CodeGenerator();
             codeGenerator.generate();
 
             generatedCode = codeGenerator.Code;
 
-            Console.WriteLine(generatedCode);
+            EmailSender sender = new EmailSender();
+            await sender.sendMailAsync(email, generatedCode);
 
-            var sifra = Configuration["Values:Pass1"];
-            Console.WriteLine("Pass: " + sifra);
+            //var sifra = Configuration["Values:Pass1"];
+            //Console.WriteLine("Pass: " + sifra);
 
             return View();
         }
@@ -37,23 +45,29 @@ namespace ticketing_system.Controllers.Auth
         [HttpPost]
         public async Task<IActionResult> CheckMailAsync(string email)
         {
+            // Provera da li je unet validan string.
             if (string.IsNullOrWhiteSpace(email) || email.IsNullOrEmpty())
             {
                 ModelState.AddModelError("EmailNull", "You need to enter valid email adress.");
                 return View("~/Views/ChangePass/Index.cshtml");
             }
 
+            // Pokušavamo da dobijemo korisnika po email-u.
             User user = await _userService.GetUserByEmailAsync(email);
 
+            // Ako ne postoji korisnik sa tom email adresom.
             if (user == null)
             {
                 ModelState.AddModelError("WrongEmail", "Wrong email adress.");
                 return View("~/Views/ChangePass/Index.cshtml");
             }
 
-            return RedirectToAction("Index", "SendMail");
+            TempData["email"] = email;  
+            return RedirectToAction("Index", "SendMail", email);
         }
 
+        // ovde da se preusmeri kada se unese kod i klikne na dugme.
+        // da se prvo proveri kod, pa onda i sesija (da li je korisnik već bio prijavljen)
         [HttpPost]
         public IActionResult CheckCode(string Code)
         {

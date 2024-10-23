@@ -5,35 +5,45 @@ namespace ticketing_system.Classes
 {
     public class EmailSender
     {
-        public int sendMail(string emailTo, int generatedCode)
+        public async Task sendMailAsync(string emailTo, int generatedCode)
         {
             MailMessage mailMessage = new MailMessage();
-            mailMessage.IsBodyHtml = true;
-            mailMessage.From = new MailAddress("email@maileroo.com");
+            mailMessage.From = new MailAddress
+                (
+                "mikamikictest12345@gmail.com",
+                "Your ticketing system"
+                );
             mailMessage.To.Add(emailTo);
-            mailMessage.Subject = "Tcketing system";
-            mailMessage.Body = @"<p>This email contains 6 character code which you need to enter into input field in applicaion.<\p><br>" +
+            mailMessage.IsBodyHtml = true;
+            mailMessage.Subject = "Confirm code";
+            mailMessage.Body = 
+                @"<p>This email contains 6 character code which you need to enter into input field in applicaion.<\p><br>" +
                 "<p>You got 5 minutes before code expire.</p><br>" +
                 "<p>The code is: </p>" +
                 "<h2>" + generatedCode + "</h2>";
 
-            SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Host = "smtp.maileroo.com";
-            smtpClient.Port = 587;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential("SenderEmail", "SenderPassword");
-            smtpClient.EnableSsl = true;
+            var client = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential
+                (
+                "mikamikictest12345@gmail.com",
+                "mikamika1"
+                ),
+                EnableSsl = true
+            };
 
-            try
+            using (client)
             {
-                smtpClient.Send(mailMessage);
-                Console.WriteLine("Email Sent Successfully.");
-                return generatedCode;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-                return -1;
+                try
+                {
+                    await client.SendMailAsync(mailMessage);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error while sending email: " + ex.ToString());
+                }
             }
         }
     }
