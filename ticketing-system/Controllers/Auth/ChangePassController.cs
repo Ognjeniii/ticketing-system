@@ -40,9 +40,7 @@ namespace ticketing_system.Controllers.Auth
             if (!data.NewPassword.Equals(data.RepeatedNewPassword))
             {
                 ModelState.AddModelError("PasswordsNotEqaul", "New passwords are not equal!");
-                //return View("~/Views/ChangePass/Index.cshtml"); // ovako se prikaže
-                return RedirectToAction("Index"); // kada se na ovaj način vratim,
-                                                  // iz nekog razloga, ne prikže se greška poruka
+                return View("~/Views/ChangePass/Index.cshtml");
             }
 
             // Ažurira se korisnik

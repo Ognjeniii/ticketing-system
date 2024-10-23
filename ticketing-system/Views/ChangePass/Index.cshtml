@@ -1,4 +1,4 @@
-﻿@model ChangePassViewModel
+﻿@model ticketing_system.ViewModels.ChangePassViewModel
 
 <style>
     body {
@@ -96,7 +96,7 @@
                         <label asp-for="Username" class="text-light p-1"></label>
                         <input asp-for="Username" type="text" class="form-control my-input" placeholder="Enter username: " />
                         <span asp-validation-for="Username" class="text-warning"></span>
-                    </div> 
+                    </div>
                     <div class="form-group p-2">
                         <label asp-for="OldPassword" class="text-light p-1"></label>
                         <input asp-for="OldPassword" type="password" class="form-control my-input" placeholder="Enter old password:" />
@@ -114,14 +114,14 @@
                     </div>
 
                     @{
-                        if (ViewData.ModelState["WrongData"] != null && 
+                        if (ViewData.ModelState["WrongData"] != null &&
                         ViewData.ModelState["WrongData"].Errors.Count > 0)
                         {
                             <span class="p-3 alert alert-warning show mt-3" id="hideWrongData">
                                 @ViewData.ModelState["WrongData"].Errors[0].ErrorMessage
                             </span>
                         }
-                        else if (ViewData.ModelState["PasswordsNotEqaul"] != null && 
+                        else if (ViewData.ModelState["PasswordsNotEqaul"] != null &&
                         ViewData.ModelState["PasswordsNotEqaul"].Errors.Count > 0)
                         {
                             <span class="p-3 alert alert-warning show mt-3" id="hidePasswordsNotEqual">
@@ -136,15 +136,22 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-6 col-12">
+        <div class="col-md-6 col-12 ">
             <div class="m-5 p-3">
-                <div class="second-col-div">
+                <div class="second-col-div d-flex flex-column">
                     <p class="text-light h3 mt-4">
                         In case you forgot your password, enter your email and click "Send email" button. We will send you a 6-character code to reset your password.
                     </p>
+                    <p class="text-light h3 mt-4">
+                        Enter email in text field below.
+                    </p>
+                    @* 
+                        Ovde nije moguće da se uradi asp-for (provere po ViewModel-u), zato šro već ima naveden jedan view model. 
+                        Tako da će se validacija raditi "RUČNO".
+                    *@
                     <form action="@Url.Action("CheckMail", "SendMail")" method="post" class="mt-5">
                         <div class="form-group">
-                            <input type="text" name="Email" class="form-control my-input" placeholder="Email: " />
+                            <input type="text" name="email" class="form-control my-input" placeholder="Email: " />
                         </div>
                         <div class="pt-4">
                             <button type="submit" class="form-group btn btn-outline-light">Send email</button>
@@ -155,8 +162,18 @@
                         By clicking the button, you will be redirected to a page where you can update your password.
                     </p>
                     <br>
+                    @{
+                        if (ViewData.ModelState["EmailNull"] != null && ViewData.ModelState["EmailNull"].Errors.Count > 0)
+                        {
+                            <div class="d-flex justify-content-center">
+                                <span class="p-3 alert alert-warning show mt-3" id="hideEmailNull">
+                                    @ViewData.ModelState["EmailNull"].Errors[0].ErrorMessage
+                                </span>
+                            </div>
+                        }
+                    }
                     <div class="mt-5 d-flex justify-content-right">
-                        <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return to login...</a>
+                        <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none mt-auto">Return to login...</a>
                     </div>
                     <div id="errorMessage"></div>
                 </div>
@@ -181,6 +198,13 @@
 
     setTimeout(function () {
         var messageDiv = document.getElementById("hidePasswordsNotEqual");
+        if (messageDiv) {
+            messageDiv.style.display = "none";
+        }
+    }, 5000);
+
+    setTimeout(function () {
+        var messageDiv = document.getElementById("hideEmailNull");
         if (messageDiv) {
             messageDiv.style.display = "none";
         }

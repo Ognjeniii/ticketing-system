@@ -7,15 +7,9 @@ namespace ticketing_system.Controllers
     // Ovo je početni kontroler - prvi do kog se dođe prilikom startovanja aplikacije
     public class BaseController : Controller
     {
-        private readonly IUserService _userService;
-        // Prva metoda do koje se dolazi prilikom pokretanja aplikacije 
-        public BaseController(IUserService userService)
-        {
-            _userService = userService;
-        }
 
         // Druga metoda po redu koja se pokreće
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var cookie = Request.Cookies["RememberMe"];
             var session = HttpContext.Session.GetString("token");

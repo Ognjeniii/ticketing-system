@@ -5,6 +5,8 @@ namespace ticketing_system.ViewModels
     public class EmailViewModel
     {
         [EmailAddress]
-        public string? Email { get; set; }
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "You need to enter email.")]
+        public string Email { get; set; }
     }
 }

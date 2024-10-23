@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\viewmodels\\changepassviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\viewmodels\\changepassviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\controllers\\auth\\sendmailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\auth\\sendmailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\views\\changepass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\views\\changepass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\controllers\\auth\\changepasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\auth\\changepasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,28 +42,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChangePassViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\ChangePassViewModel.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\ViewModels\\ChangePassViewModel.cs",
-              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\ChangePassViewModel.cs",
-              "RelativeToolTip": "ticketing-system\\ViewModels\\ChangePassViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "ChangePassController.cs",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
+              "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCoAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T06:39:25.873Z",
+              "WhenOpened": "2024-10-23T09:00:30.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\LoginViewModel.cs",
-              "RelativeToolTip": "ticketing-system\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "RelativeDocumentMoniker": "ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "RelativeToolTip": "ticketing-system\\Views\\ChangePass\\Index.cshtml",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAqwKgAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-23T08:16:32.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SendMailController.cs",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAwwCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T06:30:18.617Z",
+              "WhenOpened": "2024-10-23T08:11:40.928Z",
               "EditorCaption": ""
             }
           ]

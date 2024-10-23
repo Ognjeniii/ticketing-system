@@ -12,6 +12,7 @@ namespace ticketing_system.Controllers.Auth
             Configuration = configuration;
         }
         public static int generatedCode = 0;
+
         public IActionResult Index()
         {
             // vrv se ovde šalje mail
@@ -31,18 +32,25 @@ namespace ticketing_system.Controllers.Auth
         }
 
         [HttpPost]
-        public IActionResult CheckMail(string Email)
-        {   
-            if (!Email.IsNullOrEmpty())
+        public IActionResult CheckMail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email) || email.IsNullOrEmpty())
             {
-                if (Email.Equals("email"))
-                {
-                    return RedirectToAction("Index");
-                }
+                ModelState.AddModelError("EmailNull", "You need to enter valid email adress.");
+                return View("~/Views/ChangePass/Index.cshtml");
             }
 
-            Console.WriteLine("Mail ne postoji u bazi.");
-            return RedirectToAction("Index", "ChangePass");
+
+
+            //if (!Email.IsNullOrEmpty())
+            //{
+            //    if (Email.Equals("email"))
+            //    {
+            //        return RedirectToAction("Index");
+            //    }
+            //}
+
+            return RedirectToAction("Index", "SendMail");
         }
 
         [HttpPost]
