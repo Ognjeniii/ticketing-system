@@ -138,7 +138,7 @@
         </div>
         <div class="col-md-6 col-12 ">
             <div class="m-5 p-3">
-                <div class="second-col-div d-flex flex-column">
+                <div class="second-col-div">
                     <p class="text-light h3 mt-4">
                         In case you forgot your password, enter your email and click "Send email" button. We will send you a 6-character code to reset your password.
                     </p>
@@ -166,14 +166,22 @@
                         if (ViewData.ModelState["EmailNull"] != null && ViewData.ModelState["EmailNull"].Errors.Count > 0)
                         {
                             <div class="d-flex justify-content-center">
-                                <span class="p-3 alert alert-warning show mt-3" id="hideEmailNull">
+                                <span class=" alert alert-warning show " id="hideEmailNull">
                                     @ViewData.ModelState["EmailNull"].Errors[0].ErrorMessage
+                                </span>
+                            </div>
+                        }
+                        if (ViewData.ModelState["WrongEmail"] != null && ViewData.ModelState["WrongEmail"].Errors.Count > 0)
+                        {
+                            <div class="d-flex justify-content-center">
+                                <span class="p-3 alert alert-warning show mt-3" id="hideEmailNull">
+                                    @ViewData.ModelState["WrongEmail"].Errors[0].ErrorMessage
                                 </span>
                             </div>
                         }
                     }
                     <div class="mt-5 d-flex justify-content-right">
-                        <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none mt-auto">Return to login...</a>
+                        <a href="@Url.Action("Index", "Login")" class="text-light text-decoration-none">Return to login...</a>
                     </div>
                     <div id="errorMessage"></div>
                 </div>

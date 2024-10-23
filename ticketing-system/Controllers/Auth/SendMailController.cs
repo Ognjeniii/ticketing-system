@@ -1,16 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ticketing_system.Classes;
+using ticketing_system.Models.User;
+using ticketing_system.Models.User.Services.Abstraction;
 
 namespace ticketing_system.Controllers.Auth
 {
     public class SendMailController : Controller
     {
         public IConfiguration Configuration { get; }
-        public SendMailController(IConfiguration configuration)
+        private readonly IUserService _userService;
+        public SendMailController(IConfiguration configuration, IUserService userService)
         {
             Configuration = configuration;
+            _userService = userService;
         }
+
         public static int generatedCode = 0;
 
         public IActionResult Index()
@@ -26,13 +31,11 @@ namespace ticketing_system.Controllers.Auth
             var sifra = Configuration["Values:Pass1"];
             Console.WriteLine("Pass: " + sifra);
 
-
-
             return View();
         }
 
         [HttpPost]
-        public IActionResult CheckMail(string email)
+        public async Task<IActionResult> CheckMailAsync(string email)
         {
             if (string.IsNullOrWhiteSpace(email) || email.IsNullOrEmpty())
             {
@@ -40,15 +43,13 @@ namespace ticketing_system.Controllers.Auth
                 return View("~/Views/ChangePass/Index.cshtml");
             }
 
+            User user = await _userService.GetUserByEmailAsync(email);
 
-
-            //if (!Email.IsNullOrEmpty())
-            //{
-            //    if (Email.Equals("email"))
-            //    {
-            //        return RedirectToAction("Index");
-            //    }
-            //}
+            if (user == null)
+            {
+                ModelState.AddModelError("WrongEmail", "Wrong email adress.");
+                return View("~/Views/ChangePass/Index.cshtml");
+            }
 
             return RedirectToAction("Index", "SendMail");
         }

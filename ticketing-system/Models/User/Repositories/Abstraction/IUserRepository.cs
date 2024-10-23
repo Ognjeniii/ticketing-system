@@ -16,5 +16,8 @@
 
         // Dobijanje korisnika na osnovu username-a i password-a
         Task<User> GetByUsernameAndPasswordAsync(string username, string password);
+
+        // Dobijanje korisnika po email-u
+        Task<User> GetByEmailAsync(string email);
     }
 }
