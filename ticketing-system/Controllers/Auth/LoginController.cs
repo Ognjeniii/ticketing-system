@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
-using ticketing_system.Models.ViewModels;
+using ticketing_system.ViewModels;
 
 namespace ticketing_system.Controllers.Auth
 {
@@ -18,6 +18,7 @@ namespace ticketing_system.Controllers.Auth
             return View("~/Views/Login/Index.cshtml");
         }
 
+        // metoda koja se pokreće prilikom klika na dugme "login"
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -45,6 +46,7 @@ namespace ticketing_system.Controllers.Auth
                 }
                 else
                 {
+                    // ***OVO TREBA DA SE DODA U VIEW.
                     ModelState.AddModelError("invalid_login", "Invalid login attempt. Please check your email and password.");
                 }
             }

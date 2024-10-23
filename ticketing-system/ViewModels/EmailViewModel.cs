@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ticketing_system.Models.ViewModels
+namespace ticketing_system.ViewModels
 {
     public class EmailViewModel
     {

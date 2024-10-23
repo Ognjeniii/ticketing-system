@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
-using ticketing_system.Models.ViewModels;
+using ticketing_system.ViewModels;
 
 namespace ticketing_system.Controllers.Auth
 {
@@ -29,12 +29,14 @@ namespace ticketing_system.Controllers.Auth
 
             User user = await _userService.GetUserByUsernameAndPasswordAsync(data.Username, data.OldPassword);
             
+            // Ako je user null, znači da je korisnik pogrešio username ili pass
             if (user == null)
             {
                 ModelState.AddModelError("WrongData", "Wrong username or password!");
                 return View("~/Views/ChangePass/Index.cshtml");
             }
 
+            // Ne poklapaju se nove šifre
             if (!data.NewPassword.Equals(data.RepeatedNewPassword))
             {
                 ModelState.AddModelError("PasswordsNotEqaul", "New passwords are not equal!");
@@ -43,6 +45,7 @@ namespace ticketing_system.Controllers.Auth
                                                   // iz nekog razloga, ne prikže se greška poruka
             }
 
+            // Ažurira se korisnik
             user.Username = data.Username;
             user.Password = data.NewPassword;
             User newUser = await _userService.UpdateUserAsync(user);

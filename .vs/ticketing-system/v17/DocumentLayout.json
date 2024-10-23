@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\",
+  "WorkspaceRootPath": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\controllers\\auth\\changepasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\auth\\changepasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\viewmodels\\changepassviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\viewmodels\\changepassviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\user\\repositories\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\user\\repositories\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ognjeni\\desktop\\moj\\c#\\ticketing-system\\ticketing-system\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -34,49 +30,36 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ChangePassViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\ChangePassViewModel.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\ViewModels\\ChangePassViewModel.cs",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\ChangePassViewModel.cs",
+              "RelativeToolTip": "ticketing-system\\ViewModels\\ChangePassViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T16:49:38.038Z",
+              "WhenOpened": "2024-10-23T06:39:25.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "ticketing-system\\Controllers\\BaseController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAAMAAAAAAAAAA==",
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\ognjeni\\Desktop\\Moj\\C#\\ticketing-system\\ticketing-system\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ticketing-system\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T16:45:47.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChangePassController.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
-              "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\ChangePassController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAUwCcAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T10:24:55.992Z",
+              "WhenOpened": "2024-10-23T06:30:18.617Z",
               "EditorCaption": ""
             }
           ]
