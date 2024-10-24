@@ -5,7 +5,7 @@ namespace ticketing_system.Classes
 {
     public class EmailSender
     {
-        public async Task sendMailAsync(string emailTo, int generatedCode)
+        public async Task sendMailAsync(string emailTo, int generatedCode, IConfiguration configuration)
         {
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress
@@ -22,6 +22,8 @@ namespace ticketing_system.Classes
                 "<p>The code is: </p>" +
                 "<h2>" + generatedCode + "</h2>";
 
+            var pass = configuration["Values:EmailPass"];
+
             var client = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
@@ -29,7 +31,7 @@ namespace ticketing_system.Classes
                 Credentials = new NetworkCredential
                 (
                 "mikamikictest12345@gmail.com",
-                "mikamika1"
+                pass
                 ),
                 EnableSsl = true
             };

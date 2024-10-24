@@ -34,10 +34,7 @@ namespace ticketing_system.Controllers.Auth
             generatedCode = codeGenerator.Code;
 
             EmailSender sender = new EmailSender();
-            await sender.sendMailAsync(email, generatedCode);
-
-            //var sifra = Configuration["Values:Pass1"];
-            //Console.WriteLine("Pass: " + sifra);
+            await sender.sendMailAsync(email, generatedCode, Configuration);
 
             return View();
         }

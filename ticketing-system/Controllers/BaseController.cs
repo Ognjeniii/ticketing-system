@@ -7,7 +7,6 @@ namespace ticketing_system.Controllers
     // Ovo je početni kontroler - prvi do kog se dođe prilikom startovanja aplikacije
     public class BaseController : Controller
     {
-
         // Druga metoda po redu koja se pokreće
         public IActionResult Index()
         {
