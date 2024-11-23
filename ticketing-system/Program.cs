@@ -8,6 +8,7 @@ using ticketing_system.Models.User.Repositories.Abstraction;
 using ticketing_system.Models.User.Repositories.Implementation;
 using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.Models.User.Services.Implementation;
+using ticketing_system.Classes.Email;
 
 internal class Program
 {
@@ -33,6 +34,10 @@ internal class Program
         builder.Services.AddScoped<ITicketService, TicketService>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<IEmailService, EmailService>();
+
+        builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+        
 
         // sesije
         builder.Services.AddDistributedMemoryCache();

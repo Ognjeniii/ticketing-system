@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ticketing_system.Classes;
+using ticketing_system.Classes.Email;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
 
@@ -10,10 +11,12 @@ namespace ticketing_system.Controllers.Auth
     {
         public IConfiguration Configuration { get; }
         private readonly IUserService _userService;
-        public SendMailController(IConfiguration configuration, IUserService userService)
+        private readonly IEmailService _emailService;
+        public SendMailController(IConfiguration configuration, IUserService userService, IEmailService emailService)
         {
             Configuration = configuration;
             _userService = userService;
+            _emailService = emailService;
         }
 
         public static int generatedCode = 0;
@@ -33,11 +36,7 @@ namespace ticketing_system.Controllers.Auth
 
             generatedCode = codeGenerator.Code;
 
-            EmailSender sender = new EmailSender();
-            await sender.sendMailAsync(email, generatedCode);
-
-            //var sifra = Configuration["Values:Pass1"];
-            //Console.WriteLine("Pass: " + sifra);
+            await _emailService.sendMailAsync(email, generatedCode);
 
             return View();
         }

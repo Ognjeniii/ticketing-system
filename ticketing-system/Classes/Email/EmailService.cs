@@ -1,35 +1,41 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Options;
+using System.Net;
 using System.Net.Mail;
 
-namespace ticketing_system.Classes
+namespace ticketing_system.Classes.Email
 {
-    public class EmailSender
+    public class EmailService : IEmailService
     {
+        private readonly EmailSettings _emailSettings;
+        public EmailService(IOptions<EmailSettings> emailSettings)
+        {
+            _emailSettings = emailSettings.Value;
+        }   
         public async Task sendMailAsync(string emailTo, int generatedCode)
         {
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress
                 (
-                "mikamikictest12345@gmail.com",
+                _emailSettings.SenderEmail,
                 "Your ticketing system"
                 );
             mailMessage.To.Add(emailTo);
             mailMessage.IsBodyHtml = true;
             mailMessage.Subject = "Confirm code";
-            mailMessage.Body = 
-                @"<p>This email contains 6 character code which you need to enter into input field in applicaion.<\p><br>" +
+            mailMessage.Body =
+                @"<p>This email contains 6 character code which you need to enter into input field in applicaion.</p><br>" +
                 "<p>You got 5 minutes before code expire.</p><br>" +
                 "<p>The code is: </p>" +
                 "<h2>" + generatedCode + "</h2>";
 
-            var client = new SmtpClient("smtp.gmail.com")
+            var client = new SmtpClient(_emailSettings.SmtpServer)
             {
                 Port = 587,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential
                 (
-                "mikamikictest12345@gmail.com",
-                "mikamika1"
+                    _emailSettings.SenderEmail,
+                    _emailSettings.SenderPassword
                 ),
                 EnableSsl = true
             };
