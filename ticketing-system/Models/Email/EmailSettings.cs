@@ -1,4 +1,4 @@
-﻿namespace ticketing_system.Classes.Email
+﻿namespace ticketing_system.Models.Email
 {
     public class EmailSettings
     {

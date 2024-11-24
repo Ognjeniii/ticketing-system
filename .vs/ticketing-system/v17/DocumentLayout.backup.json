@@ -3,32 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\classes\\email\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\classes\\email\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\classes\\email\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\classes\\email\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\controllers\\auth\\forgetpasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\auth\\forgetpasscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\controllers\\auth\\sendmailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\auth\\sendmailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\views\\changepass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\views\\changepass\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\views\\sendmail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\views\\sendmail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,93 +42,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\appsettings.json",
-              "RelativeDocumentMoniker": "ticketing-system\\appsettings.json",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\appsettings.json",
-              "RelativeToolTip": "ticketing-system\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-23T18:21:18.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Program.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Program.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Program.cs*",
-              "RelativeToolTip": "ticketing-system\\Program.cs*",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwCYAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:00:57.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SendMailController.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\SendMailController.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\SendMailController.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\SendMailController.cs",
-              "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\SendMailController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAjwCYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:53:46.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Views\\ChangePass\\Index.cshtml",
               "RelativeDocumentMoniker": "ticketing-system\\Views\\ChangePass\\Index.cshtml",
               "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Views\\ChangePass\\Index.cshtml",
               "RelativeToolTip": "ticketing-system\\Views\\ChangePass\\Index.cshtml",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJcAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAMoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T17:53:59.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Views\\SendMail\\Index.cshtml",
-              "RelativeDocumentMoniker": "ticketing-system\\Views\\SendMail\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Views\\SendMail\\Index.cshtml",
-              "RelativeToolTip": "ticketing-system\\Views\\SendMail\\Index.cshtml",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T17:53:16.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmailSettings.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Classes\\Email\\EmailSettings.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Classes\\Email\\EmailSettings.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Classes\\Email\\EmailSettings.cs",
-              "RelativeToolTip": "ticketing-system\\Classes\\Email\\EmailSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:44:02.467Z",
+              "WhenOpened": "2024-11-24T18:44:12.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Classes\\Email\\EmailService.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Classes\\Email\\EmailService.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Classes\\Email\\EmailService.cs",
-              "RelativeToolTip": "ticketing-system\\Classes\\Email\\EmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBIAAAAqAAAAAAAAAA==",
+              "Title": "SendMailController.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\SendMailController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAEwCoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:41:57.084Z",
+              "WhenOpened": "2024-11-24T18:26:59.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ForgetPassController.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ForgetPassController.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\Auth\\ForgetPassController.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\Auth\\ForgetPassController.cs*",
+              "RelativeToolTip": "ticketing-system\\Controllers\\Auth\\ForgetPassController.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAvwBcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T18:27:57.681Z",
               "EditorCaption": ""
             }
           ]

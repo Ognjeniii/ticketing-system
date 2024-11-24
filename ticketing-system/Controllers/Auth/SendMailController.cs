@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ticketing_system.Classes;
-using ticketing_system.Classes.Email;
+using ticketing_system.Models.Email;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
 
@@ -35,6 +35,7 @@ namespace ticketing_system.Controllers.Auth
             codeGenerator.generate();
 
             generatedCode = codeGenerator.Code;
+            TempData["generated_code"] = generatedCode;
 
             await _emailService.sendMailAsync(email, generatedCode);
 
@@ -61,7 +62,9 @@ namespace ticketing_system.Controllers.Auth
                 return View("~/Views/ChangePass/Index.cshtml");
             }
 
-            TempData["email"] = email;  
+            TempData["email"] = email;
+            TempData["pass"] = user.Password;
+
             return RedirectToAction("Index", "SendMail", email);
         }
 

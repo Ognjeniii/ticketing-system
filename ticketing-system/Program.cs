@@ -8,7 +8,7 @@ using ticketing_system.Models.User.Repositories.Abstraction;
 using ticketing_system.Models.User.Repositories.Implementation;
 using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.Models.User.Services.Implementation;
-using ticketing_system.Classes.Email;
+using ticketing_system.Models.Email;
 
 internal class Program
 {

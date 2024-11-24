@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace ticketing_system.Classes.Email
+namespace ticketing_system.Models.Email
 {
     public class EmailService : IEmailService
     {
@@ -10,7 +10,7 @@ namespace ticketing_system.Classes.Email
         public EmailService(IOptions<EmailSettings> emailSettings)
         {
             _emailSettings = emailSettings.Value;
-        }   
+        }
         public async Task sendMailAsync(string emailTo, int generatedCode)
         {
             MailMessage mailMessage = new MailMessage();

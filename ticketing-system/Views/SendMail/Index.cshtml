@@ -94,13 +94,24 @@
             <form action="@Url.Action("CheckCode", "ForgetPass")" method="post" id="forgetPassForm">
                 <div class="form-group p-3">
                     <label class="text-light m-2">Enter the code from the email here</label>
-                    <input type="text" name="Code" class="form-control my-input" id="code" placeholder=" * * * * * * " required />
+                    <input type="text" name="code" class="form-control my-input" id="code" placeholder=" * * * * * * " required />
                 </div>
                 <div class="p-3 mt-3">
                     <input type="submit" class="btn btn-outline-light" id="stopButton" value="Confirm" />
                 </div>
                 <div id="error-msg" class="alert alert-danger" style="display:none;"></div>
             </form>
+            <div>
+                @{
+                    if (ViewData.ModelState["BadCode"] != null && 
+                    ViewData.ModelState["BadCode"].Errors.Count > 0)
+                    {
+                        <span class="p-3 alert alert-warning show mt-3" id="hideBadCode">
+                            @ViewData.ModelState["BadCode"].Errors[0].ErrorMessage
+                        </span>
+                    }
+                }
+            </div>
         </div>
     </div>
     <div class="col-md-6 col-12 mt-5">
@@ -155,5 +166,12 @@ const timer = setInterval(updateCountdown, 1000);
 // document.getElementById('stopButton').addEventListener('click', function () {
 //     clearInterval(timer); // Zaustavi odbrojavanje
 // });
+
+    setTimeout(function () {
+        var messageDiv = document.getElementById("hideBadCode");
+        if (messageDiv) {
+            messageDiv.style.display = "none";
+        }
+    }, 5000);
 
 </script>
