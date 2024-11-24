@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ticketing_system.Classes;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
 

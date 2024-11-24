@@ -7,7 +7,7 @@
 
         public void generate()
         {
-            Code = random.Next(999999);
+            Code = random.Next(111111, 1000000);
         }
     }
 }

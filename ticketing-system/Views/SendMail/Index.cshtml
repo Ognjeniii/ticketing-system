@@ -101,9 +101,9 @@
                 </div>
                 <div id="error-msg" class="alert alert-danger" style="display:none;"></div>
             </form>
-            <div>
+            <div class="container align-items-center mt-4">
                 @{
-                    if (ViewData.ModelState["BadCode"] != null && 
+                    if (ViewData.ModelState["BadCode"] != null &&
                     ViewData.ModelState["BadCode"].Errors.Count > 0)
                     {
                         <span class="p-3 alert alert-warning show mt-3" id="hideBadCode">

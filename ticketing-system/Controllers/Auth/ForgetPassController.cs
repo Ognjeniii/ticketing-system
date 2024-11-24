@@ -19,20 +19,22 @@ namespace ticketing_system.Controllers.Auth
             return View();
         }
 
+        // Do ove metode dolazimo kada korisnik unese kod u polje.
         public async Task<IActionResult> CheckCode(string code)
         {
-            string generatedCode = TempData["generated_code"].ToString();
+            // Dobijamo kod iz sesije.
+            string generatedCode = HttpContext.Session.GetString("generated_code");
 
+            // Ako unet i generisani kod nisu isti, vraća se greška.
             if (!code.Equals(generatedCode))
             {
                 ModelState.AddModelError("BadCode", "You entered the wrong code.");
                 return View("~/Views/SendMail/Index.cshtml");
             }
 
-            string pass = (string)TempData["pass"];
-            Console.WriteLine("Password: " + pass);
+            HttpContext.Session.SetString("right_code", "t");
 
-            return View();
+            return View("~/Views/ChangePass/Index.cshtml");
         }
     }
 }

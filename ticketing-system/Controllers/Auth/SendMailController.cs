@@ -21,27 +21,26 @@ namespace ticketing_system.Controllers.Auth
 
         public static int generatedCode = 0;
 
+        // Do ovde se dolazi iz metode CheckMailAsync.
         public async Task<IActionResult> Index()
         {
-            if (TempData["email"] == null || TempData["email"].ToString().Length == 0)
-            {
-                Console.WriteLine("Došlo je do neke greške!");
-                return View();
-            }
+            // Dobijamo email iz sesije.
+            string email = HttpContext.Session.GetString("email");
 
-            string email = TempData["email"].ToString();
-
+            // Generišemo kod.
             CodeGenerator codeGenerator = new CodeGenerator();
             codeGenerator.generate();
 
             generatedCode = codeGenerator.Code;
-            TempData["generated_code"] = generatedCode;
+            HttpContext.Session.SetString("generated_code", generatedCode.ToString());
 
+            // Šaljemo kod na email korisnika.
             await _emailService.sendMailAsync(email, generatedCode);
 
             return View();
         }
 
+        // Do ove metode se dolazi kada korisnik unese email u email u polje, da bi mu stigao gen code. 
         [HttpPost]
         public async Task<IActionResult> CheckMailAsync(string email)
         {
@@ -62,8 +61,8 @@ namespace ticketing_system.Controllers.Auth
                 return View("~/Views/ChangePass/Index.cshtml");
             }
 
-            TempData["email"] = email;
-            TempData["pass"] = user.Password;
+            HttpContext.Session.SetString("email", email);
+            HttpContext.Session.SetString("pass", user.Password);
 
             return RedirectToAction("Index", "SendMail", email);
         }

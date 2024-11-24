@@ -138,6 +138,16 @@
         </div>
         <div class="col-md-6 col-12 ">
             <div class="m-5 p-3">
+                <div>
+                    @{
+                        string right_code = ViewContext.HttpContext.Session.GetString("right_code");
+                        if (right_code != null && right_code.Equals("t"))
+                        {
+                            string pass = ViewContext.HttpContext.Session.GetString("pass");
+                                    <span class="alert alert-warning show">Your current password is: @pass</span>
+                        }
+                    }
+                </div>
                 <div class="second-col-div">
                     <p class="text-light h3 mt-4">
                         In case you forgot your password, enter your email and click "Send email" button. We will send you a 6-character code to reset your password.
