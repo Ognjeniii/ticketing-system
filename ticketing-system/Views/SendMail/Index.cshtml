@@ -106,9 +106,9 @@
                     if (ViewData.ModelState["BadCode"] != null &&
                     ViewData.ModelState["BadCode"].Errors.Count > 0)
                     {
-                        <span class="p-3 alert alert-warning show mt-3" id="hideBadCode">
-                            @ViewData.ModelState["BadCode"].Errors[0].ErrorMessage
-                        </span>
+                            <span class="p-3 alert alert-warning show mt-3" id="hideBadCode">
+                                @ViewData.ModelState["BadCode"].Errors[0].ErrorMessage
+                            </span>
                     }
                 }
             </div>
@@ -122,6 +122,10 @@
             <div class="timer text-center">
                 <h2 id="countdown">05:00</h2>
             </div>
+            @* resend email *@
+            <form>
+
+            </form>
         </div>
     </div>
 </div>
@@ -129,43 +133,45 @@
 
 <script>
 
-// Funkcija za preusmeravanje na novu stranicu nakon isteka vremena
-function redirectToAnotherPage() {
-    window.location.href = "/Login"; // Zameni URL sa pravim
-}
-
-// Funkcija za formatiranje brojeva (dodaje nulu ispred ako je broj manji od 10)
-function formatTime(value) {
-    return value < 10 ? `0${value}` : value;
-}
-
-// Početno vreme u sekundama (5 minuta)
-let timeLeft = 5 * 60;
-// let timeLeft = 10;
-
-// Funkcija za ažuriranje odbrojavanja
-function updateCountdown() {
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-
-    // Ažuriraj HTML element sa novim vrednostima
-    document.getElementById('countdown').innerHTML = `${formatTime(minutes)}:${formatTime(seconds)}`;
-
-    // Proveri da li je vreme isteklo
-    if (timeLeft === 0) {
-        clearInterval(timer); // Zaustavi odbrojavanje
-        redirectToAnotherPage(); // Preusmeri korisnika
+    // Funkcija za preusmeravanje na novu stranicu nakon isteka vremena
+    function redirectToAnotherPage() {
+        window.location.href = "/Login"; 
     }
 
-    timeLeft--; // Smanji vreme za 1 sekundu
-}
+    // Funkcija za formatiranje brojeva (dodaje nulu ispred ako je broj manji od 10)
+    function formatTime(value) {
+        return value < 10 ? `0${value}` : value;
+    }
 
-// Podesi interval za svaku sekundu (1000 ms)
-const timer = setInterval(updateCountdown, 1000);
+    const timerKey = "timeLeft";
 
-// document.getElementById('stopButton').addEventListener('click', function () {
-//     clearInterval(timer); // Zaustavi odbrojavanje
-// });
+    let timeLeft = localStorage.getItem(timerKey)
+        ? parseInt(localStorage.getItem(timerKey))
+        : 5 * 60;
+
+
+    // Funkcija za ažuriranje odbrojavanja
+    function updateCountdown() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+
+        // Ažuriranje HTML elementa sa novim vrednostima
+        document.getElementById('countdown').innerHTML = `${formatTime(minutes)}:${formatTime(seconds)}`;
+
+        // Provera da li je vreme isteklo
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            localStorage.removeItem(timerKey);
+            redirectToAnotherPage();
+        } else {
+            timeLeft--;
+            localStorage.setItem(timerKey, timeLeft);
+        }
+    }
+
+    // Podešavanje interval za svaku sekundu (1000 ms)
+    const timer = setInterval(updateCountdown, 1000);
+
 
     setTimeout(function () {
         var messageDiv = document.getElementById("hideBadCode");
