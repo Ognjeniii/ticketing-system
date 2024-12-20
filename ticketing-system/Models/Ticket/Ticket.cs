@@ -1,35 +1,58 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
 
 namespace ticketing_system.Models.Ticket
 {
+    [Table("tickets")]
     public class Ticket
     {
-        [Key]
+        [Column("ticket_id")]
         public int TicketId { get; } // pk
-        public int CreatedBy { get; set; } // fk 
-        public DateTime CreatedDate { get; set; }
+        [Column("created_by")]
+        public int CreatedBy { get; set; } // fk user_id
+        [Column("creation_date")]
+        public DateTime CreationDate { get; set; }
+        [Column("urgency_id")]
         public int UrgencyId { get; set; } // fk
+        [Column("ticket_type_id")]
         public int TicketTypeId { get; set; } // fk
-        public string Title { get; set; }   
+        [Column("title")]
+        public string Title { get; set; }
+        [Column("description")]
         public string Description { get; set; }
-        public Blob? File { get; set; } // Blob?
-        public DateTime FinishigDate { get; set; }
-        public int Executor { get; set; } // fk
-        public int GroupId { get; set; } // fk
-        public int StatusId { get; set; } // fk
+        [Column("file")]
+        public byte[]? File { get; set; } // Blob?
+        [Column("finishing_date")]
+        public DateTime? FinishingDate { get; set; }
+        [Column("executor")]
+        public int? Executor { get; set; } // fk
+        [Column("group_id")]
+        public int? GroupId { get; set; } // fk
+        [Column("status_id")]
+        public int? StatusId { get; set; } // fk
+
+        // Trebalo bi da imam comments tabelu, gde će svaki red predstavljati neki komentar, 
+        // takođe svaki red ima ticket_id, na koji se komentar odnosi.
+
+        [Column("solution_des")]
         public string? SolutionDes { get; set; }
+
+        public Ticket()
+        {
+
+        }
             
         public Ticket
             (
             int createdBy,
-            DateTime createdDate,
+            DateTime creationDate,
             int urgencyId,
             int ticketTypeId,
             string title,
             string description,
-            Blob file, 
-            DateTime finishigDate,
+            byte[] file, 
+            DateTime finishingDate,
             int executor,
             int groupId,
             int statusId,
@@ -37,13 +60,13 @@ namespace ticketing_system.Models.Ticket
             )
         {
             CreatedBy = createdBy;
-            CreatedDate = createdDate;
+            CreationDate = creationDate;
             UrgencyId = urgencyId;
             TicketTypeId = ticketTypeId;
             Title = title;
             Description = description;
             File = file;
-            FinishigDate = finishigDate;
+            FinishingDate = finishingDate;
             Executor = executor;
             GroupId = groupId;
             StatusId = statusId;

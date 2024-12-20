@@ -39,10 +39,11 @@ namespace ticketing_system.Controllers.Auth
                     }
 
                     // Setujemo sesiju
-                    HttpContext.Session.SetString("token", model.Username);
+                    HttpContext.Session.SetString("username", model.Username);
+                    HttpContext.Session.SetInt32("user_id", user.UserId);
 
-                    // Preusmerujemo korisnika na početnu stranicu
-                    return RedirectToAction("Home", "Base");
+                    // Preusmerujemo korisnika na početnu stranicu // bilo Home, Base
+                    return RedirectToAction("Index", "Base");
                 }
                 else
                 {
