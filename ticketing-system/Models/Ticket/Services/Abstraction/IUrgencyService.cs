@@ -2,8 +2,8 @@
 {
     public interface IUrgencyService
     {
-        Task<Urgency> GetUrgencyByIdAsync(int id);
-        Task<List<Urgency>> GetAllUrgencyAsync();
-        Task CreateUrgency(Urgency urgency);
+        Task CreateAsync(Urgency urgency);
+        Task<List<Urgency>> GetAllAsync();
+        Task<Urgency> GetByIdAsync(int id);
     }
 }

@@ -1,22 +1,28 @@
-﻿using ticketing_system.Models.Ticket.Services.Abstraction;
+﻿using ticketing_system.Models.Ticket.Repository.Abstraction;
+using ticketing_system.Models.Ticket.Services.Abstraction;
 
 namespace ticketing_system.Models.Ticket.Services.Implementation
 {
     public class UrgencyService : IUrgencyService
     {
-        public Task CreateUrgency(Urgency urgency)
+        private readonly IUrgencyRepository _urgencyRepository;
+        public UrgencyService(IUrgencyRepository urgencyRepository)
         {
-            throw new NotImplementedException();
+            _urgencyRepository = urgencyRepository;
+        }
+        public async Task CreateAsync(Urgency urgency)
+        {
+            await _urgencyRepository.Create(urgency);
         }
 
-        public Task<List<Urgency>> GetAllUrgencyAsync()
+        public async Task<List<Urgency>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _urgencyRepository.GetAll();
         }
 
-        public Task<Urgency> GetUrgencyByIdAsync(int id)
+        public async Task<Urgency> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _urgencyRepository.GetById(id);
         }
     }
 }

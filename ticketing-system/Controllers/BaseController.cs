@@ -11,10 +11,12 @@ namespace ticketing_system.Controllers
     public class BaseController : Controller
     {
         private readonly ITicketService _ticketService;
+        private readonly IUrgencyService _urgencyService;
 
-        public BaseController(ITicketService ticketService)
+        public BaseController(ITicketService ticketService, IUrgencyService urgencyService)
         {
             _ticketService = ticketService;
+            _urgencyService = urgencyService;
         }
 
         // Druga metoda po redu koja se pokreće
@@ -60,6 +62,8 @@ namespace ticketing_system.Controllers
 
             //await _ticketService.CreateTicketAsync(ticket);
 
+            Urgency urgency = new Urgency("High");
+            await _urgencyService.CreateAsync(urgency);
 
             return View();
         }

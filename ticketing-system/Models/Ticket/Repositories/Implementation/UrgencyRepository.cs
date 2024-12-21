@@ -1,4 +1,5 @@
-﻿using ticketing_system.DTO;
+﻿using Microsoft.EntityFrameworkCore;
+using ticketing_system.DTO;
 using ticketing_system.Models.Ticket.Repository.Abstraction;
 
 namespace ticketing_system.Models.Ticket.Repository.Implementation
@@ -24,14 +25,39 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Urgency>> GetAll()
+        public async Task<List<Urgency>> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var urgencies = await _context.Urgencies.ToListAsync();
+                return urgencies;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
         }
 
-        public Task<Urgency> GetById(int id)
+        public async Task<Urgency> GetById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var urgency = await _context.Urgencies
+                    .FirstOrDefaultAsync(u => u.UrgencyId == id);
+
+                if (urgency == null)
+                    return null;
+
+                return urgency;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
         }
     }
 }
