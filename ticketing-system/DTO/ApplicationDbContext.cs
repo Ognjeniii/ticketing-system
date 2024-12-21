@@ -8,6 +8,7 @@ namespace ticketing_system.DTO
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Urgency> Urgencies { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -17,6 +18,9 @@ namespace ticketing_system.DTO
 
             modelBuilder.Entity<Ticket>()
                 .HasKey(u => u.TicketId);
+
+            modelBuilder.Entity<Urgency>()
+                .HasKey(u => u.UrgencyId);
         }
 
     }

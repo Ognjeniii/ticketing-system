@@ -38,27 +38,28 @@ namespace ticketing_system.Controllers
             return View();
         }
 
-        public IActionResult Home()
+        public async Task<IActionResult> Home()
         {
             string user_id = HttpContext.Session.GetString("user_id");
 
-            Ticket ticket = new Ticket
-                (
-                    1,
-                    DateTime.Now,
-                    1,
-                    2,
-                    "Prvi tiket",
-                    "Testiranje metode za kreiranje tiketa",
-                    null,
-                    new DateTime(2024, 12, 28),
-                    0, 
-                    0,
-                    1,
-                    null
-                );
+            //Ticket ticket = new Ticket
+            //    (
+            //        1,
+            //        DateTime.Now,
+            //        1,
+            //        2,
+            //        "Prvi tiket",
+            //        "Testiranje metode za kreiranje tiketa",
+            //        null,
+            //        new DateTime(2024, 12, 28),
+            //        0, 
+            //        0,
+            //        1,
+            //        null
+            //    );
 
-            _ticketService.CreateTicketAsync(ticket);
+            //await _ticketService.CreateTicketAsync(ticket);
+
 
             return View();
         }

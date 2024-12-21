@@ -20,7 +20,8 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Greška: " + ex.Message);
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
             }
         }
 

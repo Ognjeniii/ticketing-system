@@ -24,13 +24,13 @@ namespace ticketing_system.Models.User.Repositories.Implementation
             }
             catch (InvalidOperationException ex)
             {
-                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
+                Console.WriteLine("***ERROR - InvalidOperationException:\n" + ex.Message);
                 Console.WriteLine("***STACK TRACE: \n" + ex.StackTrace);
                 return null;
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+                Console.WriteLine("***ERROR - SqlException:\n" + ex.Message);
                 Console.WriteLine("***STACK TRACE: \n" + ex.StackTrace);
                 return null;
             }

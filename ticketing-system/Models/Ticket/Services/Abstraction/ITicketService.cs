@@ -4,6 +4,5 @@
     {
         Task CreateTicketAsync(Ticket ticket);
         Task<Ticket> GetTicketById(int id);
-
     }
 }
