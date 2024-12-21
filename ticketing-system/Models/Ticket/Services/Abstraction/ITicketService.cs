@@ -2,7 +2,9 @@
 {
     public interface ITicketService
     {
-        Task CreateTicketAsync(Ticket ticket);
-        Task<Ticket> GetTicketById(int id);
+        Task CreateAsync(Ticket ticket);
+        Task<Ticket> GetByIdAsync(int id);
+        Task<List<Ticket>> GetByCreatorAsync(int userId);
+        Task<List<Ticket>> GetByGroupIdAsync(int groupId);
     }
 }

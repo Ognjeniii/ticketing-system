@@ -12,14 +12,24 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
         {
             _ticketRepository = ticketRepository;
         }
-        public async Task CreateTicketAsync(Ticket ticket)
+        public async Task CreateAsync(Ticket ticket)
         {
             await _ticketRepository.Create(ticket);
         }
 
-        public Task<Ticket> GetTicketById(int id)
+        public Task<Ticket> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return _ticketRepository.GetById(id);
+        }
+
+        public Task<List<Ticket>> GetByCreatorAsync(int userId)
+        {
+            return _ticketRepository.GetByCreator(userId);
+        }
+
+        public Task<List<Ticket>> GetByGroupIdAsync(int groupId)
+        {
+            return _ticketRepository.GetByGroupId(groupId);
         }
     }
 }

@@ -149,6 +149,7 @@ namespace ticketing_system.Models.User.Repositories.Implementation
             {
                 var user = await _context.Users
                 .FirstOrDefaultAsync (a => a.Email == email);
+                
                 if (user == null)
                     return null;
 

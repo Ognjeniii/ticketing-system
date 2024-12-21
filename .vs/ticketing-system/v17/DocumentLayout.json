@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\implementation\\urgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\implementation\\urgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\implementation\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\implementation\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\services\\implementation\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\services\\implementation\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\services\\abstraction\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +15,12 @@
       "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\abstraction\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\implementation\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\implementation\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\abstraction\\iurgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\abstraction\\iurgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\user\\repositories\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\user\\repositories\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,104 +55,78 @@
           ]
         },
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 155,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ITicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
               "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
               "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
               "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T12:30:51.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
               "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
               "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
               "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwFIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T12:12:53.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IUrgencyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T12:12:29.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Program.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Program.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Program.cs",
-              "RelativeToolTip": "ticketing-system\\Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwBoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T11:55:03.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "ticketing-system\\Controllers\\BaseController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwD0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T11:51:17.004Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 245,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
+              "RelativeToolTip": "ticketing-system\\Models\\User\\Repositories\\Implementation\\UserRepository.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAswJgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T12:46:06.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ITicketService.cs",
               "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Abstraction\\ITicketService.cs",
               "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Services\\Abstraction\\ITicketService.cs",
               "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Abstraction\\ITicketService.cs",
               "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Services\\Abstraction\\ITicketService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T12:32:59.619Z",
+              "WhenOpened": "2024-12-21T12:35:44.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UrgencyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBwAAAAMAAAAAAAAAA==",
+              "Title": "TicketService.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Implementation\\TicketService.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Services\\Implementation\\TicketService.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Implementation\\TicketService.cs",
+              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Services\\Implementation\\TicketService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T12:12:44.516Z",
+              "WhenOpened": "2024-12-21T12:35:47.247Z",
               "EditorCaption": ""
             }
           ]

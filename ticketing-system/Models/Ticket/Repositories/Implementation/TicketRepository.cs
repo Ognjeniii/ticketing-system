@@ -1,5 +1,7 @@
-﻿using ticketing_system.DTO;
+﻿using Microsoft.EntityFrameworkCore;
+using ticketing_system.DTO;
 using ticketing_system.Models.Ticket.Repository.Abstraction;
+using ticketing_system.Models.User;
 
 namespace ticketing_system.Models.Ticket.Repository.Implementation
 {
@@ -25,9 +27,60 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<Ticket> GetById(int id)
+        public async Task<Ticket> GetById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var ticket = await _context.Tickets
+                    .FirstOrDefaultAsync(u => u.TicketId == id);
+
+                if (ticket == null)
+                    return null;    
+
+                return ticket;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
+
+        public Task<List<Ticket>> GetByCreator(int userId)
+        {
+            try
+            {
+                var tickets = _context.Tickets
+                    .Where(u => u.CreatedBy == userId)
+                    .ToListAsync();
+
+                return tickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
+
+        public Task<List<Ticket>> GetByGroupId(int groupId)
+        {
+            try
+            {
+                var tickets = _context.Tickets
+                    .Where(u => u.GroupId == groupId)
+                    .ToListAsync();
+
+                return tickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
         }
     }
 }

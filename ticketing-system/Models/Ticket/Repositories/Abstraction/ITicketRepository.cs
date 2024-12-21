@@ -6,5 +6,7 @@ namespace ticketing_system.Models.Ticket.Repository.Abstraction
     {
         Task Create(Ticket ticket);
         Task<Ticket> GetById(int id);
+        Task<List<Ticket>> GetByCreator(int userId);
+        Task<List<Ticket>> GetByGroupId(int groupId);
     }
 }
