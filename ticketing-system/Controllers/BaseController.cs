@@ -44,26 +44,6 @@ namespace ticketing_system.Controllers
         {
             string user_id = HttpContext.Session.GetString("user_id");
 
-            //Ticket ticket = new Ticket
-            //    (
-            //        1,
-            //        DateTime.Now,
-            //        1,
-            //        2,
-            //        "Prvi tiket",
-            //        "Testiranje metode za kreiranje tiketa",
-            //        null,
-            //        new DateTime(2024, 12, 28),
-            //        0, 
-            //        0,
-            //        1,
-            //        null
-            //    );
-
-            //await _ticketService.CreateTicketAsync(ticket);
-
-            Urgency urgency = new Urgency("High");
-            await _urgencyService.CreateAsync(urgency);
 
             return View();
         }

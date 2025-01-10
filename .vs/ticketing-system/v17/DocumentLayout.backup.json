@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Migrations\\20250110120631_StatusesMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ticketing-system\\Migrations\\20250110120631_StatusesMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\dto\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\dto\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\services\\implementation\\urgencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\services\\implementation\\urgencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\services\\abstraction\\iurgencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\services\\abstraction\\iurgencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Migrations\\20250110120313_GroupsMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ticketing-system\\Migrations\\20250110120313_GroupsMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\implementation\\urgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\implementation\\urgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\abstraction\\iurgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\abstraction\\iurgencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\implementation\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\implementation\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\ticket\\repositories\\abstraction\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\ticket\\repositories\\abstraction\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|c:\\users\\ogi\\desktop\\vezbanje\\aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\models\\group\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB76320D-C343-42C3-9054-BE11144CDF51}|ticketing-system\\ticketing-system.csproj|solutionrelative:ticketing-system\\models\\group\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -73,105 +61,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Controllers\\BaseController.cs*",
-              "RelativeToolTip": "ticketing-system\\Controllers\\BaseController.cs*",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwEEAAAA3AAAAAAAAAA==",
+              "Title": "20250110120631_StatusesMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Migrations\\20250110120631_StatusesMigration.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Migrations\\20250110120631_StatusesMigration.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Migrations\\20250110120631_StatusesMigration.cs",
+              "RelativeToolTip": "ticketing-system\\Migrations\\20250110120631_StatusesMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T13:16:42.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Program.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Program.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Program.cs",
-              "RelativeToolTip": "ticketing-system\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCYAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T13:15:16.991Z",
+              "WhenOpened": "2025-01-10T12:06:31.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UrgencyService.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Implementation\\UrgencyService.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Services\\Implementation\\UrgencyService.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Implementation\\UrgencyService.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Services\\Implementation\\UrgencyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA4AAAAAAAAAA==",
+              "Title": "Status.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Status.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Status.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Status.cs",
+              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Status.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T13:12:36.942Z",
+              "WhenOpened": "2025-01-10T12:04:54.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IUrgencyService.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Abstraction\\IUrgencyService.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Services\\Abstraction\\IUrgencyService.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Services\\Abstraction\\IUrgencyService.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Services\\Abstraction\\IUrgencyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Title": "20250110120313_GroupsMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Migrations\\20250110120313_GroupsMigration.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Migrations\\20250110120313_GroupsMigration.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Migrations\\20250110120313_GroupsMigration.cs",
+              "RelativeToolTip": "ticketing-system\\Migrations\\20250110120313_GroupsMigration.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T13:12:30.534Z",
+              "WhenOpened": "2025-01-10T12:03:13.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UrgencyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\UrgencyRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwCoAAAAyAAAAAAAAAA==",
+              "Title": "Group.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Group\\Group.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\Models\\Group\\Group.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Group\\Group.cs",
+              "RelativeToolTip": "ticketing-system\\Models\\Group\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T13:07:28.346Z",
+              "WhenOpened": "2025-01-10T11:53:56.17Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IUrgencyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\IUrgencyRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\DTO\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ticketing-system\\DTO\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\DTO\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ticketing-system\\DTO\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA3wCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T13:07:24.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ITicketRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Abstraction\\ITicketRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T12:30:51.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TicketRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
-              "RelativeDocumentMoniker": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
-              "ToolTip": "C:\\Users\\Ogi\\Desktop\\Vezbanje\\Aplikacije\\moje_aplikacije\\ticketing-system\\ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
-              "RelativeToolTip": "ticketing-system\\Models\\Ticket\\Repositories\\Implementation\\TicketRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAwwFIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T12:12:53.801Z",
+              "WhenOpened": "2024-12-23T19:59:29.614Z",
               "EditorCaption": ""
             }
           ]
