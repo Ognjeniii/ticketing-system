@@ -13,6 +13,7 @@ namespace ticketing_system.DTO
         public DbSet<TicketType> TicketTypes { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Status> Statuses { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
@@ -35,6 +36,9 @@ namespace ticketing_system.DTO
 
             modelBuilder.Entity<Status>()
                 .HasKey(u => u.StatusId);
+
+            modelBuilder.Entity<UserType>()
+                .HasKey(u => u.UserTypeId);
         }
 
     }
