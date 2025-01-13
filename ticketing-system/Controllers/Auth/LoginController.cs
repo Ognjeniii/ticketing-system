@@ -36,6 +36,11 @@ namespace ticketing_system.Controllers.Auth
                         {
                             Expires = DateTime.UtcNow.AddDays(30)
                         });
+
+                        Response.Cookies.Append("UserId", user.UserId.ToString(), new CookieOptions
+                        {
+                            Expires = DateTime.UtcNow.AddDays(30)
+                        });
                     }
 
                     // Setujemo sesiju

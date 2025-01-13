@@ -1,0 +1,29 @@
+﻿@using ticketing_system.Models.Ticket
+
+@model IEnumerable<Ticket>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ticket id</th>
+            <th>Creation date</th>
+            <th>Urgency</th>
+            <th>Ticket Type</th>
+            <th>Title</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.TicketId</td>
+                <td>@ticket.CreationDate</td>
+                <td>@ticket.UrgencyId</td>
+                <td>@ticket.TicketTypeId</td>
+                <td>@ticket.Title</td>
+                <td>@ticket.StatusId</td>
+            </tr>
+        }
+    </tbody>
+</table>
