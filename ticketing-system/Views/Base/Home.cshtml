@@ -13,74 +13,84 @@
     .menu-div {
         width: 100%;
         height: 41rem;
-        background-color: lightgrey;
+        background-color: #ededed;
         padding: 0;
+    }
+
+    .ticket-manage-div {
+        background-color: #fff;
     }
 
     .list-div {
         width: 100%;
         height: 41rem;
-        background-color: yellowgreen;
+        background-color: #f2f2f2;
         padding: 0;
     }
 
     .list-by {
         background-color: #fff;
-        
     }
 
 </style>
 
 <div>
-    <div class="row">
+    <div class="row border border-info ">
         <div class="col-sm-2 p-0">
             <div class="menu-div p-3">
-                <div>
-                    <div class="border border-dark">    
-                        <div class="bg-dark ps-3 pb-2 pt-1"> 
-                            <h6 class="mb-0 text-light ">Your it group</h6>
-                        </div>
-                        <div class="list-by ps-3 pe-1 pb-1">
-                            <p class="m-0">
-                                <span class="pe-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+
+                <div class="border border-dark">    
+                    <div class="bg-dark ps-3 pb-2 pt-1"> 
+                        <h6 class="mb-0 text-light ">Your it group</h6>
+                    </div>
+                    <div class="list-by ps-3 pe-1 pb-1">
+                        <p class="m-0">
+                            <span class="pe-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                                <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
+                                </svg>
+                            </span>
+                            <small><a href="#" onclick="">Open</a></small>
+                        </p>
+                        <p class="m-0">
+                            <span class="pe-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z" />
+                                </svg>
+                            </span>
+                            <small><a href="#" onclick="">Unfinished</a></small>
+                        </p>
+                        <p class="m-0">
+                            <span class="pe-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
                                     <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
-                                    </svg>
-                                </span>
-                                <small><a href="#" onclick="">Open</a></small>
-                            </p>
-                            <p class="m-0">
-                                <span class="pe-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
-                                        <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z" />
-                                    </svg>
-                                </span>
-                                <small><a href="#" onclick="">Unfinished</a></small>
-                            </p>
-                            <p class="m-0">
-                                <span class="pe-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
-                                        <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
-                                    </svg>
-                                </span>
-                                <small><a href="#" onclick="">Assigned</a></small>
-                            </p>
-                            <p class="m-0">
-                                <span class="pe-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
-                                        <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z" />
-                                    </svg>
-                                </span>
-                                <small><a href="#" onclick="">Finished</a></small>
-                            </p>
-                        </div>
+                                </svg>
+                            </span>
+                            <small><a href="#" onclick="">Assigned</a></small>
+                        </p>
+                        <p class="m-0">
+                            <span class="pe-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z" />
+                                </svg>
+                            </span>
+                            <small><a href="#" onclick="">Finished</a></small>
+                        </p>
                     </div>
                 </div>
+
+                <div class="ticket-manage-div mt-3 p-1 d-flex flex-column">
+                    <a href="#" onclick="">New ticket</a>
+                    <a href="#" onclick="">Update ticket</a>
+                    <a href="#" onclick="">Search ticket</a>
+
+                </div>
+
             </div>
         </div>
         <div class="col-sm-10 p-0">
             <div class="list-div">
-                @Html.Partial("_TicketListPartial", Model);
+                @Html.Partial("_TicketListPartial", Model)
             </div>
         </div>
     </div>
