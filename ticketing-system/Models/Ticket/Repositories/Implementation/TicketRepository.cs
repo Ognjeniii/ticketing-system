@@ -83,13 +83,32 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Ticket>> FilterByStatusAndGroup(int status, int groupId)
+        public Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId)
         {
             try
             {
                 var tickets = _context.Tickets
                     .Where(u => u.StatusId == status
                              && u.GroupId == groupId)
+                    .ToListAsync();
+
+                return tickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
+
+        public Task<List<Ticket>> GetAssignedTicketsByGroupId(int groupId)
+        {
+            try
+            {
+                var tickets = _context.Tickets
+                    .Where(u => u.GroupId == groupId
+                                && u.Executor != null)
                     .ToListAsync();
 
                 return tickets;

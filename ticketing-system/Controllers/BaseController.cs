@@ -17,6 +17,7 @@ namespace ticketing_system.Controllers
         private readonly IUserService _userService;
 
         private static int userId = 0;
+        User user = null;
 
         public BaseController(ITicketService ticketService, IUrgencyService urgencyService, IUserService userService)
         {
@@ -54,8 +55,8 @@ namespace ticketing_system.Controllers
         // Metoda kojom se prebacujemo na početnu str. ako je korisnik prijavljen, i kojom se listaju tiketi
         public async Task<IActionResult> Home()
         {
-            userId = Int32.Parse(Request.Cookies["UserId"]);
-            User user = await _userService.GetUserByIdAsync(userId);
+            string userId = Request.Cookies["UserId"];
+            user = await _userService.GetUserByIdAsync(Int32.Parse(userId));
 
             int groupId = user.GroupId;
             List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
@@ -70,24 +71,23 @@ namespace ticketing_system.Controllers
             
             if (filter == "open") // nedodeljeni tiketi
             {
-                tickets = await _ticketService.FilterByStatusAndGroupAsync(4, userId);
+                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(4, user.GroupId);
             }
             else if (filter == "assigned") // dodeljeni tiketi
             {
-                // select * where executor is not null 
-                
+                tickets = await _ticketService.GetAssignedTicketsByGroupId(user.GroupId);
             }
             else if (filter == "inProgress") // tiketu koji su u toku
             {
-                tickets = await _ticketService.FilterByStatusAndGroupAsync(1, userId);
+                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(1, user.GroupId);
             }
             else if (filter == "waiting") // tiketi na čekanju
             {
-                tickets = await _ticketService.FilterByStatusAndGroupAsync(3, userId);
+                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(3, user.GroupId);
             }
             else if (filter == "finished") // zatvoreni tiketi
             {
-                tickets = await _ticketService.FilterByStatusAndGroupAsync(2, userId);
+                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
             }
 
             Console.WriteLine(tickets);
