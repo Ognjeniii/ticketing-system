@@ -31,5 +31,10 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
         {
             return _ticketRepository.GetByGroupId(groupId);
         }
+
+        public Task<List<Ticket>> FilterByStatusAndGroupAsync(int status, int groupId)
+        {
+            return _ticketRepository.FilterByStatusAndGroup(status, groupId);
+        }
     }
 }

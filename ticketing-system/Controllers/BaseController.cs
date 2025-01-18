@@ -16,6 +16,8 @@ namespace ticketing_system.Controllers
         private readonly IUrgencyService _urgencyService;
         private readonly IUserService _userService;
 
+        private static int userId = 0;
+
         public BaseController(ITicketService ticketService, IUrgencyService urgencyService, IUserService userService)
         {
             _ticketService = ticketService;
@@ -52,13 +54,46 @@ namespace ticketing_system.Controllers
         // Metoda kojom se prebacujemo na početnu str. ako je korisnik prijavljen, i kojom se listaju tiketi
         public async Task<IActionResult> Home()
         {
-            string user_id = Request.Cookies["UserId"];
-            User user = await _userService.GetUserByIdAsync(Int32.Parse(user_id));
+            userId = Int32.Parse(Request.Cookies["UserId"]);
+            User user = await _userService.GetUserByIdAsync(userId);
 
             int groupId = user.GroupId;
             List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
 
             return View(tickets);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FilterTickets(string filter)
+        {
+            List<Ticket> tickets = new List<Ticket>();
+            
+            if (filter == "open") // nedodeljeni tiketi
+            {
+                tickets = await _ticketService.FilterByStatusAndGroupAsync(4, userId);
+            }
+            else if (filter == "assigned") // dodeljeni tiketi
+            {
+                // select * where executor is not null 
+                
+            }
+            else if (filter == "inProgress") // tiketu koji su u toku
+            {
+                tickets = await _ticketService.FilterByStatusAndGroupAsync(1, userId);
+            }
+            else if (filter == "waiting") // tiketi na čekanju
+            {
+                tickets = await _ticketService.FilterByStatusAndGroupAsync(3, userId);
+            }
+            else if (filter == "finished") // zatvoreni tiketi
+            {
+                tickets = await _ticketService.FilterByStatusAndGroupAsync(2, userId);
+            }
+
+            Console.WriteLine(tickets);
+
+            //return RedirectToAction("Home");
+            return View("~/Views/Base/_TicketListPartial.cshtml", tickets);
         }
     }
 }

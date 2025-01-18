@@ -42,16 +42,17 @@ namespace ticketing_system.Models.Ticket
         {
 
         }
-            
+
         public Ticket
             (
+            int ticketId,
             int createdBy,
             DateTime creationDate,
             int urgencyId,
             int ticketTypeId,
             string title,
             string description,
-            byte[] file, 
+            byte[] file,
             DateTime finishingDate,
             int executor,
             int groupId,
@@ -59,6 +60,7 @@ namespace ticketing_system.Models.Ticket
             string? solutionDes
             )
         {
+            TicketId = ticketId;
             CreatedBy = createdBy;
             CreationDate = creationDate;
             UrgencyId = urgencyId;
@@ -72,5 +74,23 @@ namespace ticketing_system.Models.Ticket
             StatusId = statusId;
             SolutionDes = solutionDes;
         }
+
+        public override string ToString()
+        {
+            return "Ticket id: " + TicketId + "\n" +
+                   "Created by: " + CreatedBy + "\n" +
+                   "Cration date: " + CreationDate + "\n" +
+                   "Urgency id: " + UrgencyId + "\n" +
+                   "Ticket type id: " + TicketTypeId + "\n" +
+                   "Title: " + Title + "\n" +
+                   "Description: " + Description + "\n" +
+                   "File: " + File + "\n" +
+                   "Finishing date: " + FinishingDate + "\n" +
+                   "Executor: " + Executor + "\n" +
+                   "Group id: " + GroupId + "\n" +
+                   "Status id: " + StatusId + "\n" +
+                   "Solution description: " + SolutionDes + "\n" +
+                   "=============================================";
+        } 
     }
 }
