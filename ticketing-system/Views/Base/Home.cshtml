@@ -88,9 +88,9 @@
                 </div>
 
                 <div class="ticket-manage-div mt-3 p-1 d-flex flex-column">
-                    <a href="#" onclick="">New ticket</a>
-                    <a href="#" onclick="">Update ticket</a>
-                    <a href="#" onclick="">Search ticket</a>
+                    <a href="javascript:void(0);" onclick="createTicket()">New ticket</a>
+                    <a href="javascript:void(0);" onclick="updateTicket()">Update ticket</a>
+                    <a href="javascript:void(0);" onclick="searchTicket()">Search ticket</a>
 
                 </div>
 
@@ -120,6 +120,19 @@
             },
             Error: function(xhr) {
                 console.error('***Greška:', xhr.responseText);
+            }
+        });
+    }
+
+    function createTicket() {
+        $.ajax({
+            url: '/Base/GetCreateTicketForm',
+            type: 'GET',
+            success: function(data) {
+                $('#content-area').html(data);
+            },
+            error: function(xhr) {
+                console.error('Error:', xhr.responseText);
             }
         });
     }

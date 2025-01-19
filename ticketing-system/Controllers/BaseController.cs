@@ -16,8 +16,7 @@ namespace ticketing_system.Controllers
         private readonly IUrgencyService _urgencyService;
         private readonly IUserService _userService;
 
-        private static int userId = 0;
-        User user = null;
+        private static User user = null;
 
         public BaseController(ITicketService ticketService, IUrgencyService urgencyService, IUserService userService)
         {
@@ -75,7 +74,7 @@ namespace ticketing_system.Controllers
             }
             else if (filter == "assigned") // dodeljeni tiketi
             {
-                tickets = await _ticketService.GetAssignedTicketsByGroupId(user.GroupId);
+                tickets = await _ticketService.GetAssignedTicketsByGroupId(user.GroupId);   
             }
             else if (filter == "inProgress") // tiketu koji su u toku
             {
@@ -87,6 +86,8 @@ namespace ticketing_system.Controllers
             }
             else if (filter == "finished") // zatvoreni tiketi
             {
+                //System.NullReferenceException: 'Object reference not set to an instance of an object.'
+                //user was null.
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
             }
 
@@ -94,6 +95,12 @@ namespace ticketing_system.Controllers
 
             //return RedirectToAction("Home");
             return View("~/Views/Base/_TicketListPartial.cshtml", tickets);
+        }
+
+        [HttpGet]
+        public IActionResult GetCreateTicketForm()
+        {
+            return PartialView("~/Views/Base/_CreateTicketPartial.cshtml");
         }
     }
 }
