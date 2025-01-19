@@ -18,17 +18,17 @@ namespace ticketing_system.Models.Group.Repositories.Implementation
             throw new NotImplementedException();
         }
 
-        public Task<List<Group>> GetAllAsync()
+        public async Task<List<Group>> GetAll()
+        {
+            return await _context.Groups.ToListAsync();
+        }
+
+        public Task<Group> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Group> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Group> GetByNameAsync(string name)
+        public Task<Group> GetByName(string name)
         {
             throw new NotImplementedException();
         }

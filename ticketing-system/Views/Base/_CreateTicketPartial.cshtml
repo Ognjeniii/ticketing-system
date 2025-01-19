@@ -1,13 +1,21 @@
-﻿@model ticketing_system.Models.Ticket;
+﻿@model ticketing_system.ViewModels.Tickets.CreateTicketViewModel;
 
 <div>
     <form action="@Url.Action("CreateTicketAsync", "Tickets")" method="post">
         <h4>Create ticket</h4>
+
+        <div class="form-group">
+            <label asp-for="Urgencies"></label>
+            <select class="form-control" required></select>
+            <option value="">Select urgency</option>
+            @foreach (var urgency in Model.Urgencies)
+            {
+                <option value="@urgency.Value">@urgency.Text</option>
+            }
+        </div>
         
         <div class="form-group">
-            <label asp-for="UrgencyId" class="text-light p-1"></label>
-            <input asp-for="UrgencyId" type="text" class="form-control my-input" placeholder="Choose urgency: " />
-            <span asp-validation-for="UrgencyId" class="text-warning"></span>
+            
         </div>
 
         <div class="form-group">

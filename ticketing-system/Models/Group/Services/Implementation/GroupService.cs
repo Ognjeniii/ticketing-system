@@ -1,17 +1,23 @@
-﻿using ticketing_system.Models.Group.Services.Abstraction;
+﻿using ticketing_system.Models.Group.Repositories.Abstraction;
+using ticketing_system.Models.Group.Services.Abstraction;
 
 namespace ticketing_system.Models.Group.Services.Implementation
 {
     public class GroupService : IGroupService
     {
-        public Task Create(Group group)
+        private readonly IGroupRepository _groupRepository;
+        public GroupService(IGroupRepository groupRepository)
+        {
+            _groupRepository = groupRepository;
+        }
+        public Task CreateAsync(Group group)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Group>> GetAll()
+        public async Task<List<Group>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _groupRepository.GetAll();
         }
 
         public Task<Group> GetByIdAsync(int id)

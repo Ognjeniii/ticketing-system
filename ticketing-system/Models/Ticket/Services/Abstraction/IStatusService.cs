@@ -2,8 +2,8 @@
 {
     public interface IStatusService
     {
-        Task Create(Status status);
+        Task CreateAsync(Status status);
         Task<Status> GetByIdAsync(int id);
-        Task<List<Status>> GetAll();
+        Task<List<Status>> GetAllAsync();
     }
 }

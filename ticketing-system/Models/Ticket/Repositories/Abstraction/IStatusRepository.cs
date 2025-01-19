@@ -3,7 +3,7 @@
     public interface IStatusRepository
     {
         Task Create(Status status);
-        Task<Status> GetByIdAsync(int id);
+        Task<Status> GetById(int id);
         Task<List<Status>> GetAll();
     }
 }
