@@ -31,11 +31,11 @@ namespace ticketing_system.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CreateTicketAsync()
+        public async Task<IActionResult> CreateTicketViewModelAsync()
         {
             var urgencies = await _urgencyService.GetAllAsync();
             var ticketTypes = await _ticketTypeService.GetAllAsync();
-            var groups = await _groupService.GetAll();
+            var groups = await _groupService.GetAllAsync();
             var statuses = await _statusService.GetAllAsync();
 
             var model = new CreateTicketViewModel()
@@ -54,16 +54,10 @@ namespace ticketing_system.Controllers
                 {
                     Value = g.GroupId.ToString(),
                     Text = g.Name
-                }).ToList(),
-                Statuses = statuses.Select(s => new SelectListItem
-                {
-                    Value = s.StatusId.ToString(),
-                    Text = s.Description
                 }).ToList()
-                
             };
 
-            return View();
+            return PartialView("~/Views/Base/_CreateTicketPartial.cshtml");
         }
     }
 }

@@ -86,8 +86,6 @@ namespace ticketing_system.Controllers
             }
             else if (filter == "finished") // zatvoreni tiketi
             {
-                //System.NullReferenceException: 'Object reference not set to an instance of an object.'
-                //user was null.
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
             }
 
@@ -97,7 +95,9 @@ namespace ticketing_system.Controllers
         [HttpGet]
         public IActionResult GetCreateTicketForm()
         {
-            return PartialView("~/Views/Base/_CreateTicketPartial.cshtml");
+            //return RedirectToAction("CreateTicketViewModelAsync", "Ticket");
+            return Redirect("~/Controllers/TicketController/CreateTicketViewModelAsync"); 
+            // potrebno je napisati pravilnu putanju!!!!
         }
     }
 }

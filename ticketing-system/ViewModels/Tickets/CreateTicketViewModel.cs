@@ -17,7 +17,6 @@ namespace ticketing_system.ViewModels.Tickets
         // public DateTime? FinishingDate { get; set; }
         // public int? Executor { get; set; } // fk
         public List<SelectListItem> Groups { get; set; } // fk
-        public List<SelectListItem> Statuses { get; set; } // fk
 
 
     }
