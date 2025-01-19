@@ -3,7 +3,7 @@
     public interface ITicketTypeService
     {
         Task<TicketType> GetByIdAsync(int id);
-        Task Create(TicketType ticketType);
-        Task<List<TicketType>> GetAll();
+        Task CreateAsync(TicketType ticketType);
+        Task<List<TicketType>> GetAllAsync();
     }
 }

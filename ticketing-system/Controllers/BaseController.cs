@@ -91,10 +91,7 @@ namespace ticketing_system.Controllers
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
             }
 
-            Console.WriteLine(tickets);
-
-            //return RedirectToAction("Home");
-            return View("~/Views/Base/_TicketListPartial.cshtml", tickets);
+            return PartialView("~/Views/Base/_TicketListPartial.cshtml", tickets);
         }
 
         [HttpGet]

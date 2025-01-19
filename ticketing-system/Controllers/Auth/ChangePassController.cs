@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
-using ticketing_system.ViewModels;
+using ticketing_system.ViewModels.Auth;
 
 namespace ticketing_system.Controllers.Auth
 {

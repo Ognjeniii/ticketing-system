@@ -2,9 +2,9 @@
 {
     public interface ITicketTypeRepository
     {
-        Task<TicketType> CreateAsync(TicketType ticket);
+        Task CreateAsync(TicketType ticketType);
         Task<TicketType> GetByIdAsync(int id);
-        List<Task<TicketType>> GetAllAsync();
+        Task<List<TicketType>> GetAllAsync();
 
     }
 }

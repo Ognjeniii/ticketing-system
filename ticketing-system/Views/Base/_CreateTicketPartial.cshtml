@@ -1,7 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ticketing_system.Models.Ticket;
 
-<h1>Create ticket</h1>
+<div>
+    <form action="@Url.Action("CreateTicketAsync", "Tickets")" method="post">
+        <h4>Create ticket</h4>
+        
+        <div class="form-group">
+            <label asp-for="UrgencyId" class="text-light p-1"></label>
+            <input asp-for="UrgencyId" type="text" class="form-control my-input" placeholder="Choose urgency: " />
+            <span asp-validation-for="UrgencyId" class="text-warning"></span>
+        </div>
+
+        <div class="form-group">
+
+        </div>
+
+    </form>
+</div>
