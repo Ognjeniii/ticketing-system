@@ -30,34 +30,5 @@ namespace ticketing_system.Controllers
         {
             return View();
         }
-
-        public async Task<IActionResult> CreateTicketViewModelAsync()
-        {
-            var urgencies = await _urgencyService.GetAllAsync();
-            var ticketTypes = await _ticketTypeService.GetAllAsync();
-            var groups = await _groupService.GetAllAsync();
-            var statuses = await _statusService.GetAllAsync();
-
-            var model = new CreateTicketViewModel()
-            {
-                Urgencies = urgencies.Select(u => new SelectListItem
-                {
-                    Value = u.UrgencyId.ToString(),
-                    Text = u.Description
-                }).ToList(),
-                TicketTypes = ticketTypes.Select(tt => new SelectListItem
-                {
-                    Value = tt.TicketTypeId.ToString(),
-                    Text = tt.Description
-                }).ToList(),
-                Groups = groups.Select(g => new SelectListItem
-                {
-                    Value = g.GroupId.ToString(),
-                    Text = g.Name
-                }).ToList()
-            };
-
-            return PartialView("~/Views/Base/_CreateTicketPartial.cshtml");
-        }
     }
 }

@@ -9,6 +9,12 @@ using ticketing_system.Models.User.Repositories.Implementation;
 using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.Models.User.Services.Implementation;
 using ticketing_system.Models.Email;
+using ticketing_system.Models.Ticket.Repositories.Abstraction;
+using ticketing_system.Models.Ticket.Repositories.Implementation;
+using ticketing_system.Models.Group.Repositories.Abstraction;
+using ticketing_system.Models.Group.Repositories.Implementation;
+using ticketing_system.Models.Group.Services.Abstraction;
+using ticketing_system.Models.Group.Services.Implementation;
 
 internal class Program
 {
@@ -32,11 +38,24 @@ internal class Program
         // dependency injection
         builder.Services.AddScoped<ITicketRepository, TicketRepository>();
         builder.Services.AddScoped<ITicketService, TicketService>();
+
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
+
         builder.Services.AddScoped<IEmailService, EmailService>();
+
         builder.Services.AddScoped<IUrgencyRepository, UrgencyRepository>();
         builder.Services.AddScoped<IUrgencyService, UrgencyService>();
+
+        builder.Services.AddScoped<ITicketTypeRepository, TicketTypeRepository>();
+        builder.Services.AddScoped<ITicketTypeService, TicketTypeService>();
+
+        builder.Services.AddScoped<IStatusRepository, StatusRepository>();
+        builder.Services.AddScoped<IStatusService, StatusService>();
+
+        builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+        builder.Services.AddScoped<IGroupService, GroupService>();
+
 
         builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
         

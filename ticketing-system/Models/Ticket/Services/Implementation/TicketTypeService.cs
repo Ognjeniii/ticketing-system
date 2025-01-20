@@ -1,8 +1,9 @@
 ﻿using ticketing_system.Models.Ticket.Repositories.Abstraction;
+using ticketing_system.Models.Ticket.Services.Abstraction;
 
 namespace ticketing_system.Models.Ticket.Services.Implementation
 {
-    public class TicketTypeService : ITicketTypeRepository
+    public class TicketTypeService : ITicketTypeService
     {
         private readonly ITicketTypeRepository _ticketTypeRepository;
         public TicketTypeService(ITicketTypeRepository ticketTypeRepository)
