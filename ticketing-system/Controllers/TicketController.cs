@@ -1,22 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using ticketing_system.Models.Group.Services.Abstraction;
 using ticketing_system.Models.Ticket.Services.Abstraction;
 using ticketing_system.ViewModels.Tickets;
 
 namespace ticketing_system.Controllers
 {
-    public class TicketsController : Controller
+    public class TicketController : Controller
     {
         private readonly IUrgencyService _urgencyService;
         private readonly ITicketTypeService _ticketTypeService;
         private readonly IGroupService _groupService;
         private readonly IStatusService _statusService;
 
-        public TicketsController(
-            IUrgencyService urgencyService, 
-            ITicketTypeService ticketTypeService, 
-            IGroupService groupService, 
+        public TicketController(
+            IUrgencyService urgencyService,
+            ITicketTypeService ticketTypeService,
+            IGroupService groupService,
             IStatusService statusService
             )
         {
@@ -25,9 +24,15 @@ namespace ticketing_system.Controllers
             _groupService = groupService;
             _statusService = statusService;
         }
-
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateTicket(CreateTicketViewModel model)
+        {
+            Console.WriteLine(model);
             return View();
         }
     }

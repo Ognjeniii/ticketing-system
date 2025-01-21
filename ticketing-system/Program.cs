@@ -36,23 +36,30 @@ internal class Program
         });
 
         // dependency injection
+        /* TICKETS */
         builder.Services.AddScoped<ITicketRepository, TicketRepository>();
         builder.Services.AddScoped<ITicketService, TicketService>();
 
+        /* USER */
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
 
+        /* EMAIL */
         builder.Services.AddScoped<IEmailService, EmailService>();
 
+        /* URGENCY */
         builder.Services.AddScoped<IUrgencyRepository, UrgencyRepository>();
         builder.Services.AddScoped<IUrgencyService, UrgencyService>();
 
+        /* TICKET TYPE */
         builder.Services.AddScoped<ITicketTypeRepository, TicketTypeRepository>();
         builder.Services.AddScoped<ITicketTypeService, TicketTypeService>();
 
+        /* STATUS */
         builder.Services.AddScoped<IStatusRepository, StatusRepository>();
         builder.Services.AddScoped<IStatusService, StatusService>();
 
+        /* GROUP */
         builder.Services.AddScoped<IGroupRepository, GroupRepository>();
         builder.Services.AddScoped<IGroupService, GroupService>();
 
@@ -77,7 +84,7 @@ internal class Program
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
-            app.UseExceptionHandler("/Base/Error");
+            app.UseExceptionHandler("/Home/Error");
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
@@ -96,7 +103,7 @@ internal class Program
 
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Base}/{action=Index}/{id?}");
+            pattern: "{controller=Home}/{action=Index}/{id?}");
 
         app.Run();
     }

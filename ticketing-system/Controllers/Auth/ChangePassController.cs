@@ -48,7 +48,7 @@ namespace ticketing_system.Controllers.Auth
             user.Password = data.NewPassword;
             User newUser = await _userService.UpdateUserAsync(user);
 
-            return RedirectToAction("Index", "Base");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

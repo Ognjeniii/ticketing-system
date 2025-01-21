@@ -1,0 +1,63 @@
+﻿@model ticketing_system.ViewModels.Tickets.CreateTicketViewModel;
+
+<div class="container p-3">
+    @* action="@Url.Action("CreateTicketAsync", "Tickets")" NE RADI!!! *@
+    <form asp-action="CreateTicket" asp-controller="Ticket" method="post">
+        
+        <h4>Create ticket</h4>
+
+        <div class="form-group  m-1">
+            <label asp-for="Urgencies"></label>
+            <select class="" required>
+                <option value="">Select urgency</option>
+                @foreach (var urgency in Model.Urgencies)
+                {
+                    <option value="@urgency.Value">@urgency.Text</option>
+                }
+            </select>
+        </div>
+        
+        <div class="form-group  m-1">
+            <label asp-for="TicketTypes"></label>
+            <select class="" required>
+                <option value="">Select ticket type</option>
+                @foreach (var ticketType in Model.TicketTypes)
+                {
+                    <option value="@ticketType.Value">@ticketType.Text</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group  m-1">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" placeholder="Enter title here" />
+           
+        </div>
+
+        <div class="form-group m-1">
+            <label asp-for="Description"></label>
+            <input type="text" asp-for="Description" class="form-control" style="width: 20rem; height: 10rem;" placeholder="Enter description here" />
+        </div>
+
+        <div class="form-group  m-1">
+            <label asp-for="File"></label>
+            <input type="file" asp-for="File" class="form-control" placeholder="Enter file here" />
+        </div>
+
+        <div class="form-group  m-1">
+            <label asp-for="Groups"></label>
+            <select class="" required>
+                <option value="">Select group</option>
+                @foreach (var group in Model.Groups)
+                {
+                    <option value="@group.Value">@group.Text</option>
+                }
+            </select>
+        </div>
+
+        <div class="m-1">
+            <input type="submit" name="" value="Create" />
+        </div>
+
+    </form>
+</div>

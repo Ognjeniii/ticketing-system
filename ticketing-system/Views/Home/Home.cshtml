@@ -111,7 +111,7 @@
     
     function filterTickets(filter) {
         $.ajax({
-            url: '/Base/FilterTickets',
+            url: '/Home/FilterTickets',
             type: 'GET',
             data: 
                 { 
@@ -128,7 +128,7 @@
 
     function createTicket() {
         $.ajax({
-            url: '/Base/GetCreateTicketForm',
+            url: '/Home/GetCreateTicketForm',
             type: 'GET',
             success: function(data) {
                 $('#content-area').html(data);

@@ -48,7 +48,7 @@ namespace ticketing_system.Controllers.Auth
                     HttpContext.Session.SetInt32("user_id", user.UserId);
 
                     // Preusmerujemo korisnika na početnu stranicu // bilo Home, Base
-                    return RedirectToAction("Index", "Base");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

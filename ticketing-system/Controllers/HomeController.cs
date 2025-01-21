@@ -14,7 +14,7 @@ using ticketing_system.ViewModels.Tickets;
 namespace ticketing_system.Controllers
 {
     // Ovo je početni kontroler - prvi do kog se dođe prilikom startovanja aplikacije
-    public class BaseController : Controller
+    public class HomeController : Controller
     {
         private readonly ITicketService _ticketService;
         private readonly IUrgencyService _urgencyService;
@@ -25,7 +25,7 @@ namespace ticketing_system.Controllers
 
         private static User user = null;
 
-        public BaseController(
+        public HomeController(
             ITicketService ticketService, 
             IUrgencyService urgencyService, 
             IUserService userService,
@@ -77,7 +77,7 @@ namespace ticketing_system.Controllers
             int groupId = user.GroupId;
             List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
 
-            return View(tickets);
+            return View("~/Views/Home/Home.cshtml", tickets);
         }
 
         [HttpGet]
@@ -106,7 +106,7 @@ namespace ticketing_system.Controllers
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
             }
 
-            return PartialView("~/Views/Base/_TicketListPartial.cshtml", tickets);
+            return PartialView("~/Views/Home/_TicketListPartial.cshtml", tickets);
         }
 
         [HttpGet]
@@ -136,7 +136,7 @@ namespace ticketing_system.Controllers
                 }).ToList()
             };
 
-            return PartialView("~/Views/Base/_CreateTicketPartial.cshtml", model);
+            return PartialView("~/Views/Home/_CreateTicketPartial.cshtml", model);
         }
     }
 }
