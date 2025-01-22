@@ -8,7 +8,7 @@
 
         <div class="form-group  m-1">
             <label asp-for="Urgencies"></label>
-            <select class="" required>
+            <select asp-for="SelectedUrgencyId" class="" required>
                 <option value="">Select urgency</option>
                 @foreach (var urgency in Model.Urgencies)
                 {
@@ -19,7 +19,7 @@
         
         <div class="form-group  m-1">
             <label asp-for="TicketTypes"></label>
-            <select class="" required>
+            <select asp-for="SelectedTicketTypeId" class="" required>
                 <option value="">Select ticket type</option>
                 @foreach (var ticketType in Model.TicketTypes)
                 {
@@ -46,7 +46,7 @@
 
         <div class="form-group  m-1">
             <label asp-for="Groups"></label>
-            <select class="" required>
+            <select asp-for="SelectedGroupId" class="" required>
                 <option value="">Select group</option>
                 @foreach (var group in Model.Groups)
                 {

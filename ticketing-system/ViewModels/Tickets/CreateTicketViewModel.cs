@@ -18,19 +18,21 @@ namespace ticketing_system.ViewModels.Tickets
         public string Description { get; set; }
         [Display(Name = "File")]
         public byte[]? File { get; set; } // Blob?
-        // public DateTime? FinishingDate { get; set; }
-        // public int? Executor { get; set; } // fk
         [Display(Name = "Group")]
         public List<SelectListItem> Groups { get; set; } // fk
 
+        public int SelectedUrgencyId { get; set; }
+        public int SelectedTicketTypeId { get; set; }
+        public int SelectedGroupId { get; set; }
+
         public override string ToString()
         {
-            return "Urgency: " + Urgencies + "\n" +
-                "Ticket type:" + TicketTypes + "\n" +
+            return "Urgency: " + SelectedUrgencyId + "\n" +
+                "Ticket type:" + SelectedTicketTypeId + "\n" +
                 "Title: " + Title + "\n" +
                 "Description: " + Description + "\n" +
                 "File: " + File + "\n" +
-                "Groups: " + Groups + "\n";
+                "Groups: " + SelectedGroupId + "\n";
         }
     }
 }

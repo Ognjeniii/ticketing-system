@@ -89,7 +89,7 @@ namespace ticketing_system.Controllers
             {
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(4, user.GroupId);
             }
-            else if (filter == "assigned") // dodeljeni tiketi
+            else if (filter == "assigned") // dodeljeni tiketi - da li da ovde budu tiketi koje je tekuci korisnik kreirao?
             {
                 tickets = await _ticketService.GetAssignedTicketsByGroupId(user.GroupId);   
             }
