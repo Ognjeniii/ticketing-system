@@ -65,6 +65,11 @@ internal class Program
 
 
         builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+
+        builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(options =>
+        {
+            options.MultipartBodyLengthLimit = 20971520; // 104857600 - 100mb, current 20mb
+        });
         
 
         // sesije

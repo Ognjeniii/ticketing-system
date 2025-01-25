@@ -2,7 +2,7 @@
 
 <div class="container p-3">
     @* action="@Url.Action("CreateTicketAsync", "Tickets")" NE RADI!!! *@
-    <form asp-action="CreateTicket" asp-controller="Ticket" method="post">
+    <form asp-action="CreateTicket" asp-controller="Ticket" enctype="multipart/form-data" method="post">
         
         <h4>Create ticket</h4>
 

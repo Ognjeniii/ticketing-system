@@ -85,23 +85,19 @@ namespace ticketing_system.Controllers
         {
             List<Ticket> tickets = new List<Ticket>();
             
-            if (filter == "open") // nedodeljeni tiketi
+            if (filter == "open") // nedodeljeni tiketi - dodeljeni mojoj grupi
             {
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(4, user.GroupId);
             }
-            else if (filter == "assigned") // dodeljeni tiketi - da li da ovde budu tiketi koje je tekuci korisnik kreirao?
+            else if (filter == "assigned") // dodeljeni tiketi - koji su dodeljeni meni
             {
-                tickets = await _ticketService.GetAssignedTicketsByGroupId(user.GroupId);   
-            }
-            else if (filter == "inProgress") // tiketu koji su u toku
-            {
-                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(1, user.GroupId);
+                tickets = await _ticketService.GetTicketsByExecutorAsync(user.GroupId);
             }
             else if (filter == "waiting") // tiketi na čekanju
             {
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(3, user.GroupId);
             }
-            else if (filter == "finished") // zatvoreni tiketi
+            else if (filter == "finished") // zatvoreni tiketi - moje grupe
             {
                 tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
             }

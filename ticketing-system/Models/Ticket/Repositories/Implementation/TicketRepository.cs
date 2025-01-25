@@ -102,13 +102,12 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Ticket>> GetAssignedTicketsByGroupId(int groupId)
+        public Task<List<Ticket>> GetTicketsByExecutor(int userId)
         {
             try
             {
                 var tickets = _context.Tickets
-                    .Where(u => u.GroupId == groupId
-                                && u.Executor != null)
+                    .Where(u => u.Executor == userId)
                     .ToListAsync();
 
                 return tickets;

@@ -9,7 +9,7 @@ namespace ticketing_system.Models.Ticket.Repository.Abstraction
         Task<List<Ticket>> GetByCreator(int userId);
         Task<List<Ticket>> GetByGroupId(int groupId);
         Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId);
-        Task<List<Ticket>> GetAssignedTicketsByGroupId(int groupId);
+        Task<List<Ticket>> GetTicketsByExecutor(int userId);
 
     }
 }

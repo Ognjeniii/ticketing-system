@@ -46,8 +46,27 @@ namespace ticketing_system.Controllers
             ticket.TicketTypeId = model.SelectedTicketTypeId;
             ticket.Title = model.Title;
             ticket.Description = model.Description;
-            ticket.File = model.File;
+
+            if (model.File != null && model.File.Length > 0)
+            {
+                if (model.File.Length > 20971520)
+                {
+                    ModelState.AddModelError("File", "The uploaded file exceeds the size limit of 20 MB.");
+                    return View(model); // ovde treba izmena
+                }
+
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.File.CopyToAsync(memoryStream);
+                    byte[] fileData = memoryStream.ToArray();
+
+                    ticket.File = fileData;
+                }
+            }
+
             ticket.GroupId = model.SelectedGroupId;
+
+            ticket.StatusId = 4;
 
             await _ticketService.CreateAsync(ticket);
 

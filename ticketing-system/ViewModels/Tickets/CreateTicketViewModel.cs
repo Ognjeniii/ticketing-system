@@ -17,7 +17,7 @@ namespace ticketing_system.ViewModels.Tickets
         [Display(Name = "Description")]
         public string Description { get; set; }
         [Display(Name = "File")]
-        public byte[]? File { get; set; } // Blob?
+        public IFormFile File { get; set; } // Blob?
         [Display(Name = "Group")]
         public List<SelectListItem> Groups { get; set; } // fk
 

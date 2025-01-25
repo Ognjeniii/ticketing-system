@@ -32,16 +32,14 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
             return _ticketRepository.GetByGroupId(groupId);
         }
 
-        // Možda ne bi trebalo da se isto zovu repository metoda i service metoda
         public Task<List<Ticket>> FilterByStatusAndGroupIdAsync(int status, int groupId)
         {
             return _ticketRepository.FilterByStatusAndGroupId(status, groupId);
         }
 
-        // Možda ne bi trebalo da se isto zovu repository metoda i service metoda
-        public Task<List<Ticket>> GetAssignedTicketsByGroupId(int groupId)
+        public Task<List<Ticket>> GetTicketsByExecutorAsync(int userId)
         {
-            return _ticketRepository.GetAssignedTicketsByGroupId(groupId);
+            return _ticketRepository.GetTicketsByExecutor(userId);
         }
     }
 }
