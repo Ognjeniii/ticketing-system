@@ -1,6 +1,6 @@
-﻿@using ticketing_system.Models.Ticket
+﻿@using ticketing_system.ViewModels.Tickets
 
-@model IEnumerable<Ticket>
+@model IEnumerable<ListTicketsViewModel>
 
 @{
     Layout = null;
@@ -24,10 +24,10 @@
             <tr>
                 <td>@ticket.TicketId</td>
                 <td>@ticket.CreationDate</td>
-                <td>@ticket.UrgencyId</td>
-                <td>@ticket.TicketTypeId</td>
+                <td>@ticket.UrgencyDes</td>
+                <td>@ticket.TicketTypeDesc</td>
                 <td>@ticket.Title</td>
-                <td>@ticket.StatusId</td>
+                <td>@ticket.Status</td>
                 <td>@ticket.Executor</td>
             </tr>
         }

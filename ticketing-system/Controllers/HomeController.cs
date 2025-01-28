@@ -75,11 +75,11 @@ namespace ticketing_system.Controllers
             user = await _userService.GetUserByIdAsync(Int32.Parse(userId));
 
             int groupId = user.GroupId;
-            List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
+            //List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
 
             List<ListTicketsViewModel> ticketViewModelList = await _ticketService.GetListTicketsViewModelAsync(groupId);
 
-            return View("~/Views/Home/Home.cshtml", tickets);
+            return View("~/Views/Home/Home.cshtml", ticketViewModelList);
         }
 
         [HttpGet]

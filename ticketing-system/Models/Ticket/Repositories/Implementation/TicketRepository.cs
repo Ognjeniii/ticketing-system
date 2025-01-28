@@ -129,10 +129,10 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             var query = @"
                 SELECT t.ticket_id, 
                        t.creation_date, 
-                       u.description, 
-                       tt.description, 
+                       u.description AS urgencydes, 
+                       tt.description AS tickettypedes, 
                        t.title, 
-                       s.description, 
+                       s.description AS statusdes, 
                        us.username
                 FROM tickets t
                 JOIN urgencies u ON t.urgency_id = u.urgency_id
@@ -163,11 +163,11 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                                     new ListTicketsViewModel(
                                         reader.GetInt32(reader.GetOrdinal("ticket_id")),
                                         reader.GetDateTime(reader.GetOrdinal("creation_date")),
-                                        reader.GetString(reader.GetOrdinal("description")),
+                                        reader.GetString(reader.GetOrdinal("urgencydes")),
                                         reader.GetString(reader.GetOrdinal("title")),
-                                        reader.GetString(reader.GetOrdinal("description")),
+                                        reader.GetString(reader.GetOrdinal("tickettypedes")),
                                         reader.GetString(reader.GetOrdinal("username")),
-                                        reader.GetString(reader.GetOrdinal("description"))
+                                        reader.GetString(reader.GetOrdinal("statusdes"))
                                     )
                                 );
                             }
