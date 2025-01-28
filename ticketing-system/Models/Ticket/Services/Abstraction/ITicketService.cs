@@ -1,4 +1,6 @@
-﻿namespace ticketing_system.Models.Ticket.Services.Abstraction
+﻿using ticketing_system.ViewModels.Tickets;
+
+namespace ticketing_system.Models.Ticket.Services.Abstraction
 {
     public interface ITicketService
     {
@@ -19,5 +21,8 @@
 
         // Method used for getting tickets by executor
         Task<List<Ticket>> GetTicketsByExecutorAsync(int userId);
+
+        // Method that returns list of tickets, but in ListTicketsViewModel type
+        Task<List<ListTicketsViewModel>> GetListTicketsViewModelAsync(int groupId);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ticketing_system.ViewModels.Tickets;
 
 namespace ticketing_system.Models.Ticket.Repository.Abstraction
 {
@@ -10,6 +11,7 @@ namespace ticketing_system.Models.Ticket.Repository.Abstraction
         Task<List<Ticket>> GetByGroupId(int groupId);
         Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId);
         Task<List<Ticket>> GetTicketsByExecutor(int userId);
+        Task<List<ListTicketsViewModel>> GetListTicketsViewModel(int groupId);
 
     }
 }

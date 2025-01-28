@@ -2,6 +2,7 @@
 using ticketing_system.Models.Ticket.Repository.Abstraction;
 using ticketing_system.Models.Ticket.Repository.Implementation;
 using ticketing_system.Models.Ticket.Services.Abstraction;
+using ticketing_system.ViewModels.Tickets;
 
 namespace ticketing_system.Models.Ticket.Services.Implementation
 {
@@ -17,29 +18,34 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
             await _ticketRepository.Create(ticket);
         }
 
-        public Task<Ticket> GetByIdAsync(int id)
+        public async Task<Ticket> GetByIdAsync(int id)
         {
-            return _ticketRepository.GetById(id);
+            return await _ticketRepository.GetById(id);
         }
 
-        public Task<List<Ticket>> GetByCreatorAsync(int userId)
+        public async Task<List<Ticket>> GetByCreatorAsync(int userId)
         {
-            return _ticketRepository.GetByCreator(userId);
+            return await _ticketRepository.GetByCreator(userId);
         }
 
-        public Task<List<Ticket>> GetByGroupIdAsync(int groupId)
+        public async Task<List<Ticket>> GetByGroupIdAsync(int groupId)
         {
-            return _ticketRepository.GetByGroupId(groupId);
+            return await _ticketRepository.GetByGroupId(groupId);
         }
 
-        public Task<List<Ticket>> FilterByStatusAndGroupIdAsync(int status, int groupId)
+        public async Task<List<Ticket>> FilterByStatusAndGroupIdAsync(int status, int groupId)
         {
-            return _ticketRepository.FilterByStatusAndGroupId(status, groupId);
+            return await _ticketRepository.FilterByStatusAndGroupId(status, groupId);
         }
 
-        public Task<List<Ticket>> GetTicketsByExecutorAsync(int userId)
+        public async Task<List<Ticket>> GetTicketsByExecutorAsync(int userId)
         {
-            return _ticketRepository.GetTicketsByExecutor(userId);
+            return await _ticketRepository.GetTicketsByExecutor(userId);
+        }
+
+        public async Task<List<ListTicketsViewModel>> GetListTicketsViewModelAsync(int groupId)
+        {
+            return await _ticketRepository.GetListTicketsViewModel(groupId);
         }
     }
 }

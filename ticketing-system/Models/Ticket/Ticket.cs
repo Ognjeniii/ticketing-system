@@ -38,6 +38,8 @@ namespace ticketing_system.Models.Ticket
         [Column("solution_des")]
         public string? SolutionDes { get; set; }
 
+ 
+
         public Ticket()
         {
 

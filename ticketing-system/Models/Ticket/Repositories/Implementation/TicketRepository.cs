@@ -1,16 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using ticketing_system.DTO;
 using ticketing_system.Models.Ticket.Repository.Abstraction;
 using ticketing_system.Models.User;
+using ticketing_system.ViewModels.Tickets;
 
 namespace ticketing_system.Models.Ticket.Repository.Implementation
 {
     public class TicketRepository : ITicketRepository
     {
         private readonly ApplicationDbContext _context;
-        public TicketRepository(ApplicationDbContext context)
+        private readonly IConfiguration _configuration;
+        public TicketRepository(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         public async Task Create(Ticket ticket)
@@ -47,11 +51,11 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Ticket>> GetByCreator(int userId)
+        public async Task<List<Ticket>> GetByCreator(int userId)
         {
             try
             {
-                var tickets = _context.Tickets
+                var tickets = await _context.Tickets
                     .Where(u => u.CreatedBy == userId)
                     .ToListAsync();
 
@@ -65,11 +69,11 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Ticket>> GetByGroupId(int groupId)
+        public async Task<List<Ticket>> GetByGroupId(int groupId)
         {
             try
             {
-                var tickets = _context.Tickets
+                var tickets = await _context.Tickets
                     .Where(u => u.GroupId == groupId)
                     .ToListAsync();
 
@@ -83,11 +87,11 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId)
+        public async Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId)
         {
             try
             {
-                var tickets = _context.Tickets
+                var tickets = await _context.Tickets
                     .Where(u => u.StatusId == status
                              && u.GroupId == groupId)
                     .ToListAsync();
@@ -102,15 +106,76 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public Task<List<Ticket>> GetTicketsByExecutor(int userId)
+        public async Task<List<Ticket>> GetTicketsByExecutor(int userId)
         {
             try
             {
-                var tickets = _context.Tickets
+                var tickets = await _context.Tickets
                     .Where(u => u.Executor == userId)
                     .ToListAsync();
 
                 return tickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
+
+        public async Task<List<ListTicketsViewModel>> GetListTicketsViewModel(int groupId)
+        {
+            var query = @"
+                SELECT t.ticket_id, 
+                       t.creation_date, 
+                       u.description, 
+                       tt.description, 
+                       t.title, 
+                       s.description, 
+                       us.username
+                FROM tickets t
+                JOIN urgencies u ON t.urgency_id = u.urgency_id
+                JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
+                JOIN statuses s ON t.status_id = s.status_id
+                JOIN users us ON t.executor = us.user_id
+                WHERE t.group_id = @GroupId";
+
+            var listTicketsVM = new List<ListTicketsViewModel>();
+
+            try
+            {
+                string connString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var conn = new SqlConnection(connString))
+                {
+                    await conn.OpenAsync();
+
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@GroupId", groupId);
+
+                        using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                listTicketsVM.Add(
+                                    new ListTicketsViewModel(
+                                        reader.GetInt32(reader.GetOrdinal("ticket_id")),
+                                        reader.GetDateTime(reader.GetOrdinal("creation_date")),
+                                        reader.GetString(reader.GetOrdinal("description")),
+                                        reader.GetString(reader.GetOrdinal("title")),
+                                        reader.GetString(reader.GetOrdinal("description")),
+                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.GetString(reader.GetOrdinal("description"))
+                                    )
+                                );
+                            }
+                        }
+                    }
+                }
+
+                return listTicketsVM;
             }
             catch (Exception ex)
             {

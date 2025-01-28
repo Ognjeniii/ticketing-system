@@ -23,6 +23,7 @@ namespace ticketing_system.Models.User
         [Column("creation_date")]
         public DateTime CreationDate { get; set; }
 
+
         public User() { }
         public User(int groupId, int userTypeId, string firstName, string lastName, string email, string username, string password, string jobTitle, DateTime creationDate)
         {

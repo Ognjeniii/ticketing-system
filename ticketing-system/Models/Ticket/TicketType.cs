@@ -8,5 +8,6 @@ namespace ticketing_system.Models.Ticket
         [Column("ticket_type_id")]
         public int TicketTypeId { get; }
         public string Description { get; set; }
+
     }
 }
