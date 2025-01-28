@@ -77,6 +77,7 @@ namespace ticketing_system.Controllers
             int groupId = user.GroupId;
             List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
 
+
             return View("~/Views/Home/Home.cshtml", tickets);
         }
 
