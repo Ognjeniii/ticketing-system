@@ -16,13 +16,15 @@ namespace ticketing_system.Models.Ticket.Services.Abstraction
         // Method used for getting tickets by groupId
         Task<List<Ticket>> GetByGroupIdAsync(int groupId);
 
-        // Method used for getting list of tickets by statusId and grouId
-        Task<List<Ticket>> FilterByStatusAndGroupIdAsync(int status, int groupId);
+        // Method that returns list of tickets for group id, but in ListTicketsViewModel type,
+        // where status_id (finished) is not 2
+        Task<List<ListTicketsViewModel>> GetVMByGroupAsync(int groupId);
 
-        // Method used for getting tickets by executor
-        Task<List<Ticket>> GetTicketsByExecutorAsync(int userId);
+        // Method that retrieves list of ListTicketViewModel objects for given status id and group id 
+        Task<List<ListTicketsViewModel>> GetVMByStatusAndGroupAsync(int status, int groupId);
 
-        // Method that returns list of tickets, but in ListTicketsViewModel type
-        Task<List<ListTicketsViewModel>> GetListTicketsViewModelAsync(int groupId);
+        // Method that retrieves list of ListTicketViewModel objects for given user id (for column executor),
+        // where status_id (finished) is not 2
+        Task<List<ListTicketsViewModel>> GetVMByExecutorAsync(int userId);
     }
 }

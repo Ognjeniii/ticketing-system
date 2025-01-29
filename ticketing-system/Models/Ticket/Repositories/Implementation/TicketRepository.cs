@@ -87,44 +87,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public async Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId)
-        {
-            try
-            {
-                var tickets = await _context.Tickets
-                    .Where(u => u.StatusId == status
-                             && u.GroupId == groupId)
-                    .ToListAsync();
-
-                return tickets;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("***ERROR: " + ex.Message);
-                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
-                return null;
-            }
-        }
-
-        public async Task<List<Ticket>> GetTicketsByExecutor(int userId)
-        {
-            try
-            {
-                var tickets = await _context.Tickets
-                    .Where(u => u.Executor == userId)
-                    .ToListAsync();
-
-                return tickets;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("***ERROR: " + ex.Message);
-                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
-                return null;
-            }
-        }
-
-        public async Task<List<ListTicketsViewModel>> GetListTicketsViewModel(int groupId)
+        public async Task<List<ListTicketsViewModel>> GetVMByGroup(int groupId)
         {
             var query = @"
                 SELECT t.ticket_id, 
@@ -139,7 +102,8 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                 JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
                 JOIN statuses s ON t.status_id = s.status_id
                 JOIN users us ON t.executor = us.user_id
-                WHERE t.group_id = @GroupId";
+                WHERE t.group_id = @GroupId
+                AND t.status_id != 2";
 
             var listTicketsVM = new List<ListTicketsViewModel>();
 
@@ -154,6 +118,131 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                     using (var cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@GroupId", groupId);
+
+                        using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                listTicketsVM.Add(
+                                    new ListTicketsViewModel(
+                                        reader.GetInt32(reader.GetOrdinal("ticket_id")),
+                                        reader.GetDateTime(reader.GetOrdinal("creation_date")),
+                                        reader.GetString(reader.GetOrdinal("urgencydes")),
+                                        reader.GetString(reader.GetOrdinal("title")),
+                                        reader.GetString(reader.GetOrdinal("tickettypedes")),
+                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.GetString(reader.GetOrdinal("statusdes"))
+                                    )
+                                );
+                            }
+                        }
+                    }
+                }
+
+                return listTicketsVM;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
+
+        public async Task<List<ListTicketsViewModel>> GetVMByStatusAndGroup(int statusId, int groupId)
+        {
+            var query = @"
+                SELECT t.ticket_id, 
+                       t.creation_date, 
+                       u.description AS urgencydes, 
+                       tt.description AS tickettypedes, 
+                       t.title, 
+                       s.description AS statusdes, 
+                       us.username
+                FROM tickets t
+                JOIN urgencies u ON t.urgency_id = u.urgency_id
+                JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
+                JOIN statuses s ON t.status_id = s.status_id
+                JOIN users us ON t.executor = us.user_id
+                WHERE t.group_id = @GroupId 
+                AND t.status_id = @StatusId";
+
+            var listTicketsVM = new List<ListTicketsViewModel>();
+
+            try
+            {
+                string connString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var conn = new SqlConnection(connString))
+                {
+                    await conn.OpenAsync();
+
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@GroupId", groupId);
+                        cmd.Parameters.AddWithValue("@StatusId", statusId);
+
+                        using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                listTicketsVM.Add(
+                                    new ListTicketsViewModel(
+                                        reader.GetInt32(reader.GetOrdinal("ticket_id")),
+                                        reader.GetDateTime(reader.GetOrdinal("creation_date")),
+                                        reader.GetString(reader.GetOrdinal("urgencydes")),
+                                        reader.GetString(reader.GetOrdinal("title")),
+                                        reader.GetString(reader.GetOrdinal("tickettypedes")),
+                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.GetString(reader.GetOrdinal("statusdes"))
+                                    )
+                                );
+                            }
+                        }
+                    }
+                }
+
+                return listTicketsVM;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
+
+        public async Task<List<ListTicketsViewModel>> GetVMByExecutor(int userId)
+        {
+            var query = @"
+                SELECT t.ticket_id, 
+                       t.creation_date, 
+                       u.description AS urgencydes, 
+                       tt.description AS tickettypedes, 
+                       t.title, 
+                       s.description AS statusdes, 
+                       us.username
+                FROM tickets t
+                JOIN urgencies u ON t.urgency_id = u.urgency_id
+                JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
+                JOIN statuses s ON t.status_id = s.status_id
+                JOIN users us ON t.executor = us.user_id
+                WHERE t.executor = @Executor 
+                AND t.status_id != 2";
+
+            var listTicketsVM = new List<ListTicketsViewModel>();
+
+            try
+            {
+                string connString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var conn = new SqlConnection(connString))
+                {
+                    await conn.OpenAsync();
+
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Executor", userId);
 
                         using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                         {

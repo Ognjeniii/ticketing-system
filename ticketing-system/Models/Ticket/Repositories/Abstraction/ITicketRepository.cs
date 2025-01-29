@@ -9,9 +9,9 @@ namespace ticketing_system.Models.Ticket.Repository.Abstraction
         Task<Ticket> GetById(int id);
         Task<List<Ticket>> GetByCreator(int userId);
         Task<List<Ticket>> GetByGroupId(int groupId);
-        Task<List<Ticket>> FilterByStatusAndGroupId(int status, int groupId);
-        Task<List<Ticket>> GetTicketsByExecutor(int userId);
-        Task<List<ListTicketsViewModel>> GetListTicketsViewModel(int groupId);
+        Task<List<ListTicketsViewModel>> GetVMByGroup(int groupId);
+        Task<List<ListTicketsViewModel>> GetVMByStatusAndGroup(int statusId, int groupId);
+        Task<List<ListTicketsViewModel>> GetVMByExecutor(int userId);
 
     }
 }

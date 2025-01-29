@@ -75,9 +75,8 @@ namespace ticketing_system.Controllers
             user = await _userService.GetUserByIdAsync(Int32.Parse(userId));
 
             int groupId = user.GroupId;
-            //List<Ticket> tickets = await _ticketService.GetByGroupIdAsync(groupId);
 
-            List<ListTicketsViewModel> ticketViewModelList = await _ticketService.GetListTicketsViewModelAsync(groupId);
+            List<ListTicketsViewModel> ticketViewModelList = await _ticketService.GetVMByGroupAsync(groupId);
 
             return View("~/Views/Home/Home.cshtml", ticketViewModelList);
         }
@@ -85,23 +84,27 @@ namespace ticketing_system.Controllers
         [HttpGet]
         public async Task<IActionResult> FilterTickets(string filter)
         {
-            List<Ticket> tickets = new List<Ticket>();
-            
-            if (filter == "open") // nedodeljeni tiketi - dodeljeni mojoj grupi
+            List<ListTicketsViewModel> tickets = new List<ListTicketsViewModel>();
+
+            if (filter == "all") // all tickets assigned to my group which don't have the status finished
             {
-                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(4, user.GroupId);
+                tickets = await _ticketService.GetVMByGroupAsync(user.GroupId);
             }
-            else if (filter == "assigned") // dodeljeni tiketi - koji su dodeljeni meni
+            else if (filter == "open") // unassigned tickets - assigned to my group
             {
-                tickets = await _ticketService.GetTicketsByExecutorAsync(user.GroupId);
+                tickets = await _ticketService.GetVMByStatusAndGroupAsync(4, user.GroupId);
             }
-            else if (filter == "waiting") // tiketi na čekanju
+            else if (filter == "assigned") // tickets assigned to me, and not finished
             {
-                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(3, user.GroupId);
+                tickets = await _ticketService.GetVMByExecutorAsync(user.UserId);
             }
-            else if (filter == "finished") // zatvoreni tiketi - moje grupe
+            else if (filter == "waiting") // tickets on waiting
             {
-                tickets = await _ticketService.FilterByStatusAndGroupIdAsync(2, user.GroupId);
+                tickets = await _ticketService.GetVMByStatusAndGroupAsync(3, user.GroupId);
+            }
+            else if (filter == "finished") // closed tickets (top 100)?
+            {
+                tickets = await _ticketService.GetVMByStatusAndGroupAsync(2, user.GroupId);
             }
 
             return PartialView("~/Views/Home/_TicketListPartial.cshtml", tickets);

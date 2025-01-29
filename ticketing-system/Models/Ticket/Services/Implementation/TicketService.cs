@@ -33,19 +33,19 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
             return await _ticketRepository.GetByGroupId(groupId);
         }
 
-        public async Task<List<Ticket>> FilterByStatusAndGroupIdAsync(int status, int groupId)
+        public async Task<List<ListTicketsViewModel>> GetVMByGroupAsync(int groupId)
         {
-            return await _ticketRepository.FilterByStatusAndGroupId(status, groupId);
+            return await _ticketRepository.GetVMByGroup(groupId);
         }
 
-        public async Task<List<Ticket>> GetTicketsByExecutorAsync(int userId)
+        public async Task<List<ListTicketsViewModel>> GetVMByStatusAndGroupAsync(int status, int groupId)
         {
-            return await _ticketRepository.GetTicketsByExecutor(userId);
+            return await _ticketRepository.GetVMByStatusAndGroup(status, groupId);
         }
 
-        public async Task<List<ListTicketsViewModel>> GetListTicketsViewModelAsync(int groupId)
+        public async Task<List<ListTicketsViewModel>> GetVMByExecutorAsync(int userId)
         {
-            return await _ticketRepository.GetListTicketsViewModel(groupId);
+            return await _ticketRepository.GetVMByExecutor(userId);
         }
     }
 }

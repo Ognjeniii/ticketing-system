@@ -24,7 +24,7 @@ namespace ticketing_system.Models.Email
             mailMessage.Subject = "Confirm code";
             mailMessage.Body =
                 @"<p>This email contains 6 character code which you need to enter into input field in applicaion.</p><br>" +
-                "<p>You got 5 minutes before code expire.</p><br>" +
+                "<p>You have 5 minutes before code expire.</p><br>" +
                 "<p>The code is: </p>" +
                 "<h2>" + generatedCode + "</h2>";
 
