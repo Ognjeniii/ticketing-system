@@ -1,63 +1,130 @@
 ﻿@model ticketing_system.ViewModels.Tickets.CreateTicketViewModel;
 
-<div class="container p-3">
-    @* action="@Url.Action("CreateTicketAsync", "Tickets")" NE RADI!!! *@
-    <form asp-action="CreateTicket" asp-controller="Ticket" enctype="multipart/form-data" method="post">
-        
-        <h4>Create ticket</h4>
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+    }
 
-        <div class="form-group  m-1">
-            <label asp-for="Urgencies"></label>
-            <select asp-for="SelectedUrgencyId" class="" required>
-                <option value="">Select urgency</option>
-                @foreach (var urgency in Model.Urgencies)
-                {
-                    <option value="@urgency.Value">@urgency.Text</option>
-                }
-            </select>
-        </div>
-        
-        <div class="form-group  m-1">
-            <label asp-for="TicketTypes"></label>
-            <select asp-for="SelectedTicketTypeId" class="" required>
-                <option value="">Select ticket type</option>
-                @foreach (var ticketType in Model.TicketTypes)
-                {
-                    <option value="@ticketType.Value">@ticketType.Text</option>
-                }
-            </select>
-        </div>
+        .form-container h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
 
-        <div class="form-group  m-1">
-            <label asp-for="Title"></label>
-            <input asp-for="Title" class="form-control" placeholder="Enter title here" />
-           
-        </div>
+    .form-group label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 5px;
+    }
 
-        <div class="form-group m-1">
-            <label asp-for="Description"></label>
-            <input type="text" asp-for="Description" class="form-control" style="width: 20rem; height: 10rem;" placeholder="Enter description here" />
-        </div>
+    .form-control, .form-select {
+        font-size: 14px;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
 
-        <div class="form-group  m-1">
-            <label asp-for="File"></label>
-            <input type="file" asp-for="File" class="form-control" placeholder="Enter file here" />
-        </div>
+        .form-control:focus, .form-select:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+        }
 
-        <div class="form-group  m-1">
-            <label asp-for="Groups"></label>
-            <select asp-for="SelectedGroupId" class="" required>
-                <option value="">Select group</option>
-                @foreach (var group in Model.Groups)
-                {
-                    <option value="@group.Value">@group.Text</option>
-                }
-            </select>
-        </div>
+    .btn-submit {
+        font-size: 14px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-        <div class="m-1">
-            <input type="submit" name="" value="Create" />
-        </div>
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
 
-    </form>
+    .description-input {
+        width: 100%;
+        height: 80px;
+        resize: vertical; /* Allow vertical resizing */
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div class="container p-2">
+    <div class="form-container">
+        <form asp-action="CreateTicket" asp-controller="Ticket" enctype="multipart/form-data" method="post">
+            <h4>Create Ticket</h4>
+
+            <!-- Urgency Dropdown -->
+            <div class="form-group">
+                <label asp-for="Urgencies" class="form-label">Urgency</label>
+                <select asp-for="SelectedUrgencyId" class="form-select" required>
+                    <option value="">Select urgency</option>
+                    @foreach (var urgency in Model.Urgencies)
+                    {
+                        <option value="@urgency.Value">@urgency.Text</option>
+                    }
+                </select>
+            </div>
+
+            <!-- Ticket Type Dropdown -->
+            <div class="form-group">
+                <label asp-for="TicketTypes" class="form-label">Ticket Type</label>
+                <select asp-for="SelectedTicketTypeId" class="form-select" required>
+                    <option value="">Select ticket type</option>
+                    @foreach (var ticketType in Model.TicketTypes)
+                    {
+                        <option value="@ticketType.Value">@ticketType.Text</option>
+                    }
+                </select>
+            </div>
+
+            <!-- Title Input -->
+            <div class="form-group">
+                <label asp-for="Title" class="form-label">Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Enter title here" />
+            </div>
+
+            <!-- Description Input -->
+            <div class="form-group">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control description-input" placeholder="Enter description here"></textarea>
+            </div>
+
+            <!-- File Upload -->
+            <div class="form-group">
+                <label asp-for="File" class="form-label">Attach File</label>
+                <input type="file" asp-for="File" class="form-control" />
+            </div>
+
+            <!-- Group Dropdown -->
+            <div class="form-group">
+                <label asp-for="Groups" class="form-label">Group</label>
+                <select asp-for="SelectedGroupId" class="form-select" required>
+                    <option value="">Select group</option>
+                    @foreach (var group in Model.Groups)
+                    {
+                        <option value="@group.Value">@group.Text</option>
+                    }
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-submit" />
+            </div>
+        </form>
+    </div>
 </div>

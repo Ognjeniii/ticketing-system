@@ -6,7 +6,17 @@
     Layout = null;
 }
 
-<table class="table table-striped">
+<style>
+    .small-rows tr {
+        height: 30px;
+    }
+    .small-rows td {
+        padding: 4px;
+        font-size: 15px;
+    }
+</style>
+
+<table class="table table-striped small-rows">
     <thead>
         <tr>
             <th>Ticket id</th>
@@ -28,7 +38,14 @@
                 <td>@ticket.TicketTypeDesc</td>
                 <td>@ticket.Title</td>
                 <td>@ticket.Status</td>
-                <td>@ticket.Executor</td>
+                @if (!ticket.Executor.Equals("admin"))
+                {
+                    <td>@ticket.Executor</td>
+                }
+                else
+                {
+                    <td></td>
+                }
             </tr>
         }
     </tbody>

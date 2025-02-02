@@ -139,5 +139,10 @@ namespace ticketing_system.Controllers
 
             return PartialView("~/Views/Home/_CreateTicketPartial.cshtml", model);
         }
+
+        public IActionResult GetSearchTicketsForm()
+        {
+            return PartialView("~/Views/Home/_SearchTicketsPartial.cshtml");
+        }
     }
 }
