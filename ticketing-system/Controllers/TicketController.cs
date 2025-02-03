@@ -72,5 +72,12 @@ namespace ticketing_system.Controllers
 
             return RedirectToAction("Home", "Home");
         }
+
+        public async Task<IActionResult> SearchTicket(SearchTicketViewModel model)
+        {
+            Console.WriteLine(model);
+
+            return RedirectToAction("Home", "Home");
+        }
     }
 }

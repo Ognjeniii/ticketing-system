@@ -14,12 +14,13 @@
     .menu-div {
         width: 100%;
         height: 41rem;
-        background-color: #ededed;
+        @* background-color: #ededed; *@
         padding: 0;
     }
 
     .ticket-manage-div {
-        background-color: #E5FeFD;
+        /* background-color: #AECCE4;   */
+        /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
     }
 
     .list-div {
@@ -33,11 +34,23 @@
         background-color: #fff;
     }
 
-    .filter-tickets {
-        color: dimgray;
+    /* .filter-tickets {
+        background-color: #ededed;
+    } */
+
+    .error-analytics-text {
         text-decoration: none;
-        font: 1rem Arial, sans-serif;
+        color: #3A3B3C;
+        /* font-family: Noto+Sans; */
+        
     }
+
+    .error-analytics-text:hover {
+        color: blueviolet;
+        transform: scale(0.95);
+    }
+
+ 
 
 </style>
 
@@ -46,9 +59,9 @@
         <div class="col-sm-2 p-0">
             <div class="menu-div p-3">
 
-                <div class="border border-dark">    
+                <div class="border border-dark filter-tickets">
                     <div class="bg-dark ps-3 pb-2 pt-1"> 
-                        <h6 class="mb-0 text-light ">Your it group</h6>
+                        <h6 class="mb-0 text-light ">Your it group</h6> @* možda ovde da stavim baš grupu *@
                     </div>
                     <div class="list-by ps-3 pe-1 pb-1">
                         <p class="m-0">
@@ -94,20 +107,30 @@
                     </div>
                 </div>
 
-                <div class="ticket-manage-div mt-3 p-1 d-flex flex-column">
-                    <a href="javascript:void(0);" onclick="createTicket()">New ticket</a>
+                <div class="ticket-manage-div mt-3 mb-3 p-1 d-flex flex-column">
+                    <a href="javascript:void(0);" onclick="createTicket()" 
+                       class="text-decoration-none text-dark btn btn-outline-secondary mb-1">New ticket</a>
                     @* ZA ADMINA *@
                     @* <a href="javascript:void(0);" onclick="updateTicket()">Update ticket</a> *@
-                    <a href="javascript:void(0);" onclick="searchTicket()">Search ticket</a>
+                    <a href="javascript:void(0);" onclick="searchTicket()"
+                       class="text-decoration-none text-dark btn btn-outline-secondary">Search ticket</a>
 
                 </div>
 
-                <div>
-                    <a href="javascript:void(0);">Report an error</a>
+                <div class="d-flex flex-column p-3 ">
+                    <a href="javascript:void(0);" class="error-analytics-text h5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bug" viewBox="0 0 16 16">
+                            <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A5 5 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A5 5 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623M4 7v4a4 4 0 0 0 3.5 3.97V7zm4.5 0v7.97A4 4 0 0 0 12 11V7zM12 6a4 4 0 0 0-1.334-2.982A3.98 3.98 0 0 0 8 2a3.98 3.98 0 0 0-2.667 1.018A4 4 0 0 0 4 6z" />
+                        </svg>  Report an error
+                    </a>
                     
-                    <a href="javascript:void(0);">Export data to .csv file</a>
-                    <a href="javascript:void(0);">Report an error</a>
-                    
+                    @* <a href="javascript:void(0);">Export data to .csv file</a> *@
+
+                    <a href="javascript:void(0);" class="error-analytics-text h5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" />
+                        </svg>  Analitycs
+                    </a>
                 </div>
 
             </div>

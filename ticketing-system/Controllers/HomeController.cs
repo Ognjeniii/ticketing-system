@@ -140,9 +140,26 @@ namespace ticketing_system.Controllers
             return PartialView("~/Views/Home/_CreateTicketPartial.cshtml", model);
         }
 
-        public IActionResult GetSearchTicketsForm()
+        public async Task<IActionResult> GetSearchTicketsForm()
         {
-            return PartialView("~/Views/Home/_SearchTicketsPartial.cshtml");
+            var ticketTypes = await _ticketTypeService.GetAllAsync();
+            var groups = await _groupService.GetAllAsync();
+
+            var model = new SearchTicketViewModel()
+            {
+                TicketTypes = ticketTypes.Select(u => new SelectListItem
+                {
+                    Value = u.TicketTypeId.ToString(),
+                    Text = u.Description
+                }).ToList(),
+                Groups = groups.Select(u => new SelectListItem
+                {
+                    Value = u.GroupId.ToString(),
+                    Text= u.Name
+                }).ToList()
+            };
+
+            return PartialView("~/Views/Home/_SearchTicketsPartial.cshtml", model);
         }
     }
 }
