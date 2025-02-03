@@ -29,6 +29,7 @@
         padding: 6px;
         border-radius: 4px;
         border: 1px solid #ccc;
+        width: 100%; /* Ensure inputs take full width */
     }
 
         .form-control:focus, .form-select:focus {
@@ -44,6 +45,7 @@
         padding: 8px 16px;
         border-radius: 4px;
         cursor: pointer;
+        width: 100%; /* Make button full width on smaller screens */
     }
 
         .btn-submit:hover {
@@ -60,10 +62,68 @@
         margin-bottom: 10px;
     }
 
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .form-container {
+            padding: 10px;
+        }
+
+            .form-container h4 {
+                font-size: 16px;
+            }
+
+        .form-group label {
+            font-size: 13px;
+        }
+
+        .form-control, .form-select {
+            font-size: 13px;
+            padding: 5px;
+        }
+
+        .btn-submit {
+            font-size: 13px;
+            padding: 6px 12px;
+        }
+
+        .description-input {
+            height: 60px;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .form-container {
+            max-width: 100%; /* Allow form to take full width on small screens */
+            border: none;
+            background-color: transparent;
+        }
+
+            .form-container h4 {
+                font-size: 15px;
+            }
+
+        .form-group label {
+            font-size: 12px;
+        }
+
+        .form-control, .form-select {
+            font-size: 12px;
+            padding: 4px;
+        }
+
+        .btn-submit {
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+
+        .description-input {
+            height: 50px;
+        }
+    }
 </style>
 
 <div class="container p-2">
-    <div class="form-container">                                  @* za postavljanje fajlova *@
+    <div class="form-container">
         <form asp-action="CreateTicket" asp-controller="Ticket" enctype="multipart/form-data" method="post">
             <h4>Create Ticket</h4>
 
