@@ -2,6 +2,8 @@
 using ticketing_system.Models.Group.Services.Abstraction;
 using ticketing_system.Models.Ticket;
 using ticketing_system.Models.Ticket.Services.Abstraction;
+using ticketing_system.Models.User;
+using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.ViewModels.Tickets;
 
 namespace ticketing_system.Controllers
@@ -13,13 +15,15 @@ namespace ticketing_system.Controllers
         private readonly IGroupService _groupService;
         private readonly IStatusService _statusService;
         private readonly ITicketService _ticketService;
+        private readonly IUserService _userService;
 
         public TicketController(
             IUrgencyService urgencyService,
             ITicketTypeService ticketTypeService,
             IGroupService groupService,
             IStatusService statusService,
-            ITicketService ticketService
+            ITicketService ticketService,
+            IUserService userService
             )
         {
             _urgencyService = urgencyService;
@@ -27,6 +31,7 @@ namespace ticketing_system.Controllers
             _groupService = groupService;
             _statusService = statusService;
             _ticketService = ticketService;
+            _userService = userService;
         }
         public IActionResult Index()
         {
@@ -75,7 +80,19 @@ namespace ticketing_system.Controllers
 
         public async Task<IActionResult> SearchTicket(SearchTicketViewModel model)
         {
-            Console.WriteLine(model);
+            if (model.CreatedBy != null)
+            {
+                User creator = await _userService.GetByUsernameAsync(model.CreatedBy);
+                model.CreatedByUserId = creator.UserId;
+            }
+
+            if (model.Executor != null)
+            {
+                User executor = await _userService.GetByUsernameAsync(model.Executor);
+                model.ExecutorUserId = executor.UserId;
+            }
+
+            List<ListTicketsViewModel> tickets = await _ticketService.SearchTicketsAsync(model);
 
             return RedirectToAction("Home", "Home");
         }

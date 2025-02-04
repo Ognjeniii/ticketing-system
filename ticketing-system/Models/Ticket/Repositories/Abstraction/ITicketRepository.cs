@@ -12,6 +12,7 @@ namespace ticketing_system.Models.Ticket.Repository.Abstraction
         Task<List<ListTicketsViewModel>> GetVMByGroup(int groupId);
         Task<List<ListTicketsViewModel>> GetVMByStatusAndGroup(int statusId, int groupId);
         Task<List<ListTicketsViewModel>> GetVMByExecutor(int userId);
+        Task<List<ListTicketsViewModel>> SearchTicket(SearchTicketViewModel ticket);
 
     }
 }

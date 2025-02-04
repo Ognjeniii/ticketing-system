@@ -47,5 +47,10 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
         {
             return await _ticketRepository.GetVMByExecutor(userId);
         }
+
+        public async Task<List<ListTicketsViewModel>> SearchTicketsAsync(SearchTicketViewModel model)
+        {
+            return await _ticketRepository.SearchTicket(model);
+        }
     }
 }

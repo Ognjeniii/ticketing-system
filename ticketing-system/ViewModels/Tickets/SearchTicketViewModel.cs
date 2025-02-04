@@ -14,6 +14,8 @@ namespace ticketing_system.ViewModels.Tickets
 
         public int? SelectedTicketTypeId { get; set; }
         public int? SelectedGroupId { get; set; }
+        public int? CreatedByUserId { get; set; }
+        public int? ExecutorUserId { get; set; }
 
         public override string ToString()
         {

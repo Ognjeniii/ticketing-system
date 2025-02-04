@@ -148,8 +148,32 @@ namespace ticketing_system.Models.User.Repositories.Implementation
             try
             {
                 var user = await _context.Users
-                .FirstOrDefaultAsync (a => a.Email == email);
+                .FirstOrDefaultAsync(a => a.Email == email);
                 
+                if (user == null)
+                    return null;
+
+                return user;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("***GREŠKA - SqlException:\n" + ex.Message);
+                return null;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("***GREŠKA - InvalidOperationException:\n" + ex.Message);
+                return null;
+            }
+        }
+
+        public Task<User> GetByUsername(string username)
+        {
+            try
+            {
+                var user = _context.Users
+                    .FirstOrDefaultAsync(a => a.Username == username);
+
                 if (user == null)
                     return null;
 

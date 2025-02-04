@@ -22,6 +22,11 @@ namespace ticketing_system.Models.User.Services.Implementation
             await _userRepository.DeleteAsync(id);
         }
 
+        public async Task<User> GetByUsernameAsync(string username)
+        {
+            return await _userRepository.GetByUsername(username);
+        }
+
         public async Task<User> GetUserByEmailAsync(string email)
         {
             return await _userRepository.GetByEmailAsync(email);

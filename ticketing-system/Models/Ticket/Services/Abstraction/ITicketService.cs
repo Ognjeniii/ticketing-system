@@ -26,5 +26,8 @@ namespace ticketing_system.Models.Ticket.Services.Abstraction
         // Method that retrieves list of ListTicketViewModel objects for given user id (for column executor),
         // where status_id (finished) is not 2
         Task<List<ListTicketsViewModel>> GetVMByExecutorAsync(int userId);
+
+        // The method we use to search for tickets
+        Task<List<ListTicketsViewModel>> SearchTicketsAsync(SearchTicketViewModel model);
     }
 }

@@ -19,5 +19,8 @@
 
         // Dobijanje korisnika po email-u
         Task<User> GetUserByEmailAsync(string email);
+
+        // Getting user by given username
+        Task<User> GetByUsernameAsync(string username); 
     }
 }
