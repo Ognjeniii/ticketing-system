@@ -275,7 +275,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
             }
         }
 
-        public async Task<List<ListTicketsViewModel>> SearchTicket(SearchTicketViewModel ticket)
+        public async Task<List<ListTicketsViewModel>> SearchTicket(SearchTicketViewModelComposite ticket)
         {
             string connString = _configuration.GetConnectionString("DefaultConnection");
             List<ListTicketsViewModel> listTicketsVM = new List<ListTicketsViewModel>();
@@ -305,46 +305,46 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                     {
                         command.Connection = connection;
 
-                        if (ticket.TicketId.HasValue)
+                        if (ticket.searchTicketViewModel.TicketId.HasValue)
                         {
                             sql.Append(" AND t.ticket_id = @TicketId");
-                            command.Parameters.AddWithValue("@TicketId", ticket.TicketId);
+                            command.Parameters.AddWithValue("@TicketId", ticket.searchTicketViewModel.TicketId);
                         }
 
-                        if (ticket.CreatedByUserId.HasValue)
+                        if (ticket.searchTicketViewModel.CreatedByUserId.HasValue)
                         {
                             sql.Append(" AND t.created_by = @CreatedBy");
-                            command.Parameters.AddWithValue("@CreatedBy", ticket.CreatedByUserId);
+                            command.Parameters.AddWithValue("@CreatedBy", ticket.searchTicketViewModel.CreatedByUserId);
                         }
 
-                        if (ticket.CreationDate.HasValue)
+                        if (ticket.searchTicketViewModel.CreationDate.HasValue)
                         {
                             sql.Append(" AND t.creation_date = @CreationDate");
-                            command.Parameters.AddWithValue("@CreationDate", ticket.CreationDate);
+                            command.Parameters.AddWithValue("@CreationDate", ticket.searchTicketViewModel.CreationDate);
                         }
 
-                        if (ticket.SelectedTicketTypeId.HasValue)
+                        if (ticket.searchTicketViewModel.SelectedTicketTypeId.HasValue)
                         {
                             sql.Append(" AND t.ticket_type_id = @TicketTypeId");
-                            command.Parameters.AddWithValue("@TicketTypeId", ticket.SelectedTicketTypeId);
+                            command.Parameters.AddWithValue("@TicketTypeId", ticket.searchTicketViewModel.SelectedTicketTypeId);
                         }
 
-                        if (ticket.FinishingDate.HasValue)
+                        if (ticket.searchTicketViewModel.FinishingDate.HasValue)
                         {
                             sql.Append(" AND t.finishing_date = @FinishingDate");
-                            command.Parameters.AddWithValue("@FinishingDate", ticket.FinishingDate);
+                            command.Parameters.AddWithValue("@FinishingDate", ticket.searchTicketViewModel.FinishingDate);
                         }
 
-                        if (ticket.ExecutorUserId.HasValue)
+                        if (ticket.searchTicketViewModel.ExecutorUserId.HasValue)
                         {
                             sql.Append(" AND t.executor = @ExecutorId");
-                            command.Parameters.AddWithValue("@ExecutorId", ticket.ExecutorUserId);
+                            command.Parameters.AddWithValue("@ExecutorId", ticket.searchTicketViewModel.ExecutorUserId);
                         }
 
-                        if (ticket.SelectedGroupId.HasValue)
+                        if (ticket.searchTicketViewModel.SelectedGroupId.HasValue)
                         {
                             sql.Append(" AND t.group_id = @GroupId");
-                            command.Parameters.AddWithValue("@GroupId", ticket.SelectedGroupId);
+                            command.Parameters.AddWithValue("@GroupId", ticket.searchTicketViewModel.SelectedGroupId);
                         }
 
                         sql.Append(" ORDER BY t.creation_date DESC");

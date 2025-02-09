@@ -28,6 +28,6 @@ namespace ticketing_system.Models.Ticket.Services.Abstraction
         Task<List<ListTicketsViewModel>> GetVMByExecutorAsync(int userId);
 
         // The method we use to search for tickets
-        Task<List<ListTicketsViewModel>> SearchTicketsAsync(SearchTicketViewModel model);
+        Task<List<ListTicketsViewModel>> SearchTicketsAsync(SearchTicketViewModelComposite model);
     }
 }

@@ -1,4 +1,4 @@
-﻿@model ticketing_system.ViewModels.Tickets.SearchTicketViewModel;
+﻿@model ticketing_system.ViewModels.Tickets.SearchTicketViewModelComposite;
 
 <style>
     .form-container {
@@ -115,28 +115,28 @@
                 <h4>Search Ticket</h4> <!-- Added a heading for better context -->
                 <!-- Ticket ID Input -->
                 <div class="form-group">
-                    <label asp-for="TicketId" class="form-label">Ticket ID</label>
-                    <input type="text" asp-for="TicketId" class="form-control" placeholder="Enter ticket ID" />
+                    <label asp-for="searchTicketViewModel.TicketId" class="form-label">Ticket ID</label>
+                    <input type="text" asp-for="searchTicketViewModel.TicketId" class="form-control" placeholder="Enter ticket ID" />
                 </div>
 
                 <!-- Created By Input -->
                 <div class="form-group">
-                    <label asp-for="CreatedBy" class="form-label">Created By</label>
-                    <input type="text" asp-for="CreatedBy" class="form-control" placeholder="Enter creator" />
+                    <label asp-for="searchTicketViewModel.CreatedBy" class="form-label">Created By</label>
+                    <input type="text" asp-for="searchTicketViewModel.CreatedBy" class="form-control" placeholder="Enter creator" />
                 </div>
 
                 <!-- Creation Date Input -->
                 <div class="form-group">
-                    <label asp-for="CreationDate" class="form-label">Creation Date</label>
-                    <input type="date" asp-for="CreationDate" class="form-control" />
+                    <label asp-for="searchTicketViewModel.CreationDate" class="form-label">Creation Date</label>
+                    <input type="date" asp-for="searchTicketViewModel.CreationDate" class="form-control" />
                 </div>
 
                 <!-- Ticket Type Dropdown -->
                 <div class="form-group">
-                    <label asp-for="TicketTypes" class="form-label">Ticket Type</label>
-                    <select asp-for="SelectedTicketTypeId" class="form-select">
+                    <label asp-for="searchTicketViewModel.TicketTypes" class="form-label">Ticket Type</label>
+                    <select asp-for="searchTicketViewModel.SelectedTicketTypeId" class="form-select">
                         <option value="">Select ticket type</option>
-                        @foreach (var ticketType in Model.TicketTypes)
+                        @foreach (var ticketType in Model.searchTicketViewModel.TicketTypes)
                         {
                             <option value="@ticketType.Value">@ticketType.Text</option>
                         }
@@ -145,22 +145,22 @@
 
                 <!-- Finishing Date Input -->
                 <div class="form-group">
-                    <label asp-for="FinishingDate" class="form-label">Finishing Date</label>
-                    <input type="date" asp-for="FinishingDate" class="form-control" />
+                    <label asp-for="searchTicketViewModel.FinishingDate" class="form-label">Finishing Date</label>
+                    <input type="date" asp-for="searchTicketViewModel.FinishingDate" class="form-control" />
                 </div>
 
                 <!-- Executor Input -->
                 <div class="form-group">
-                    <label asp-for="Executor" class="form-label">Executor</label>
-                    <input type="text" asp-for="Executor" class="form-control" placeholder="Enter executor" />
+                    <label asp-for="searchTicketViewModel.Executor" class="form-label">Executor</label>
+                    <input type="text" asp-for="searchTicketViewModel.Executor" class="form-control" placeholder="Enter executor" />
                 </div>
 
                 <!-- Group Dropdown -->
                 <div class="form-group">
-                    <label asp-for="Groups" class="form-label">Group</label>
-                    <select asp-for="SelectedGroupId" class="form-select">
+                    <label asp-for="searchTicketViewModel.Groups" class="form-label">Group</label>
+                    <select asp-for="searchTicketViewModel.SelectedGroupId" class="form-select">
                         <option value="">Select group</option>
-                        @foreach (var group in Model.Groups)
+                        @foreach (var group in Model.searchTicketViewModel.Groups)
                         {
                             <option value="@group.Value">@group.Text</option>
                         }
@@ -175,6 +175,10 @@
         </div>
     </div>
     <div class="col-7">
-
+        @* Here I need to display tickets *@
     </div>
 </div>
+
+<script>
+
+</script>

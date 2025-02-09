@@ -159,7 +159,9 @@ namespace ticketing_system.Controllers
                 }).ToList()
             };
 
-            return PartialView("~/Views/Home/_SearchTicketsPartial.cshtml", model);
+            SearchTicketViewModelComposite composite = new SearchTicketViewModelComposite(model);
+
+            return PartialView("~/Views/Home/_SearchTicketsPartial.cshtml", composite);
         }
     }
 }

@@ -78,18 +78,18 @@ namespace ticketing_system.Controllers
             return RedirectToAction("Home", "Home");
         }
 
-        public async Task<IActionResult> SearchTicket(SearchTicketViewModel model)
+        public async Task<IActionResult> SearchTicket(SearchTicketViewModelComposite model)
         {
-            if (model.CreatedBy != null)
+            if (model.searchTicketViewModel.CreatedBy != null)
             {
-                User creator = await _userService.GetByUsernameAsync(model.CreatedBy);
-                model.CreatedByUserId = creator.UserId;
+                User creator = await _userService.GetByUsernameAsync(model.searchTicketViewModel.CreatedBy);
+                model.searchTicketViewModel.CreatedByUserId = creator.UserId;
             }
 
-            if (model.Executor != null)
+            if (model.searchTicketViewModel.Executor != null)
             {
-                User executor = await _userService.GetByUsernameAsync(model.Executor);
-                model.ExecutorUserId = executor.UserId;
+                User executor = await _userService.GetByUsernameAsync(model.searchTicketViewModel.Executor);
+                model.searchTicketViewModel.ExecutorUserId = executor.UserId;
             }
 
             List<ListTicketsViewModel> tickets = await _ticketService.SearchTicketsAsync(model);
