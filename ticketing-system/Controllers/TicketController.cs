@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.Json;
 using ticketing_system.Models.Group.Services.Abstraction;
 using ticketing_system.Models.Ticket;
 using ticketing_system.Models.Ticket.Services.Abstraction;
@@ -80,6 +82,8 @@ namespace ticketing_system.Controllers
 
         public async Task<IActionResult> SearchTicket(SearchTicketViewModelComposite model)
         {
+            HttpContext.Session.Remove("SearchModel");
+
             if (model.searchTicketViewModel.CreatedBy != null)
             {
                 User creator = await _userService.GetByUsernameAsync(model.searchTicketViewModel.CreatedBy);
@@ -93,8 +97,30 @@ namespace ticketing_system.Controllers
             }
 
             List<ListTicketsViewModel> tickets = await _ticketService.SearchTicketsAsync(model);
+            model.listTicketsViewModel = tickets;
 
-            return RedirectToAction("Home", "Home");
+            var ticketTypes = await _ticketTypeService.GetAllAsync();
+            var groups = await _groupService.GetAllAsync();
+
+            var searchModel = new SearchTicketViewModel()
+            {
+                TicketTypes = ticketTypes.Select(u => new SelectListItem
+                {
+                    Value = u.TicketTypeId.ToString(),
+                    Text = u.Description
+                }).ToList(),
+                Groups = groups.Select(u => new SelectListItem
+                {
+                    Value = u.GroupId.ToString(),
+                    Text = u.Name
+                }).ToList()
+            };
+
+            model.searchTicketViewModel = searchModel;
+
+            HttpContext.Session.SetString("SearchModel", JsonSerializer.Serialize(model));
+
+            return RedirectToAction("GetSearchTicketsForm", "Home");
         }
     }
 }

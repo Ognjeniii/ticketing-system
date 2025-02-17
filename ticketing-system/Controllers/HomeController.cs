@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using ticketing_system.Classes;
 using ticketing_system.Models.Group.Services.Abstraction;
@@ -142,6 +143,16 @@ namespace ticketing_system.Controllers
 
         public async Task<IActionResult> GetSearchTicketsForm()
         {
+            string modelJson = HttpContext.Session.GetString("SearchModel");
+
+            if (!string.IsNullOrEmpty(modelJson))
+            {
+                SearchTicketViewModelComposite searchModel = new SearchTicketViewModelComposite();
+                searchModel = JsonSerializer.Deserialize<SearchTicketViewModelComposite>(modelJson);
+
+                return PartialView("~/Views/Search/SearchTicket.cshtml", searchModel);
+            }
+            
             var ticketTypes = await _ticketTypeService.GetAllAsync();
             var groups = await _groupService.GetAllAsync();
 
@@ -155,13 +166,13 @@ namespace ticketing_system.Controllers
                 Groups = groups.Select(u => new SelectListItem
                 {
                     Value = u.GroupId.ToString(),
-                    Text= u.Name
+                    Text = u.Name
                 }).ToList()
             };
 
             SearchTicketViewModelComposite composite = new SearchTicketViewModelComposite(model);
 
-            return PartialView("~/Views/Home/_SearchTicketsPartial.cshtml", composite);
+            return PartialView("~/Views/Search/SearchTicket.cshtml", composite);
         }
     }
 }

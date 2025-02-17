@@ -1,0 +1,408 @@
+[33mcommit 0d41d6c1d4a2f8777efd0f19f12137c8922b5175[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Feb 9 15:09:02 2025 +0100
+
+    composite search vm
+
+[33mcommit 4f647661859aa94a64fc56527c9b48b8b91f7707[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Feb 4 20:41:14 2025 +0100
+
+    searching ticket functionality
+
+[33mcommit 58ecc852fa3e96fb5b2da28af7d1a410206aec29[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Mon Feb 3 22:34:09 2025 +0100
+
+    style ticket search page
+
+[33mcommit ed78e09fdb4e42b7ccf503f23fe8e9a80f69c7b0[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Mon Feb 3 22:03:29 2025 +0100
+
+    search ticket vm and page
+
+[33mcommit 6b7a3d526cda63a43c9577d04138f38ae72bd83c[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Feb 2 13:39:15 2025 +0100
+
+    routing to search tickets
+
+[33mcommit f49282bd6dd59c733b8f6cee87bad6c3a1a9c95d[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Wed Jan 29 19:29:20 2025 +0100
+
+    filtering tickets vm
+
+[33mcommit 5463a3bb830b22da04e1e3a7976d998b79632f74[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Jan 28 20:55:52 2025 +0100
+
+    display listticketsvm data
+
+[33mcommit e48553a7fed18fc29338d059b7d31ba40fb43750[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Jan 28 20:47:05 2025 +0100
+
+    getting data for listticketsvm
+
+[33mcommit 61c91d64913a8cc3189527580af37307ea65bf96[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Jan 28 19:16:30 2025 +0100
+
+    before eager loading
+
+[33mcommit 72526bd4a366e45c71fcea3623cb74e6fe7ca4be[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Jan 25 14:16:03 2025 +0100
+
+    file insert functionality
+
+[33mcommit 25fd4763e4fc0203a38a37adb336218617a40d7e[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Wed Jan 22 19:36:46 2025 +0100
+
+    create ticket feature
+
+[33mcommit 6e9168552f78be5c7f1cf51d52fad84cbb95ca19[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Jan 21 21:28:34 2025 +0100
+
+    redirecting to ticket controller
+
+[33mcommit 823cbb5d9fc7dd1f15a71898bd59c2451de373fd[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Mon Jan 20 19:18:10 2025 +0100
+
+    get create t form
+
+[33mcommit e8138b58a4ca5c5a52937475a4945c7a0c0faa9f[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Jan 19 22:54:44 2025 +0100
+
+    create ticket
+
+[33mcommit 149b00c8b86eb63894e35468cc9cc5bb3e0c1916[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Jan 19 19:11:45 2025 +0100
+
+    status and group services
+
+[33mcommit 69778e14dd72d2f358f574efd20611ad3428afdf[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Jan 19 16:51:44 2025 +0100
+
+    ticket type service
+
+[33mcommit de4213981fc3edddf028f471459ccded61782e8c[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Jan 19 13:17:02 2025 +0100
+
+    Create ticket ajax
+
+[33mcommit 6d16bea8b39cd4acc93a1decc7a22596f31c2ca3[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Jan 18 21:15:28 2025 +0100
+
+    Get assigned tickets f
+
+[33mcommit 13d3bad91e859887518d99176f52266e0b94cfbe[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Jan 18 20:53:04 2025 +0100
+
+    Filtering data f
+
+[33mcommit 30134e9e3077a57d42b0bcd7984769d8614c37ec[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Wed Jan 15 20:19:38 2025 +0100
+
+    style menu
+
+[33mcommit 3d6a61c766db8d6be7f6db30056ce343ca9d8afb[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Mon Jan 13 19:46:01 2025 +0100
+
+    displaying tickets
+
+[33mcommit 61a7293cf65bca0c101a5f297b88f6f7c5ae5d51[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Jan 12 22:25:41 2025 +0100
+
+    menu view
+
+[33mcommit 92aa9b347dc6ef06571f3099afdb71b9c53f47c4[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Jan 12 17:15:15 2025 +0100
+
+    user types model
+
+[33mcommit 17a0db1026a4b57b8d2e36e1e149dfb6b04ea259[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Fri Jan 10 13:09:07 2025 +0100
+
+    ticket parts migrations
+
+[33mcommit 2fedae112aa8e87268549531db1f95851d0dc38c[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Dec 21 14:20:19 2024 +0100
+
+    urgency services
+
+[33mcommit 7abeae3d4ca2d4742dfce0720014ed7b00ee690a[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Dec 21 14:04:56 2024 +0100
+
+    ticket services
+
+[33mcommit 07b80dab2e135298be7c512671da737cede14adb[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Dec 21 13:34:20 2024 +0100
+
+    added urgency model
+
+[33mcommit 2327c5ef64dab158b9716b3bb88a46523a79a879[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Fri Dec 20 19:41:29 2024 +0100
+
+    x
+
+[33mcommit 50e2f9f358a3d4ec1d18232b5c54f8c1b456c666[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Nov 30 23:11:00 2024 +0100
+
+    prevent timer reset
+
+[33mcommit e7082b146e88a445071a5571c69bb31e42abca0b[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Nov 24 21:29:15 2024 +0100
+
+    display user pass
+
+[33mcommit 9600f586330f712f66db53a8418be66c2a253d91[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Nov 24 20:09:21 2024 +0100
+
+    check generated code
+
+[33mcommit 636469b538a7bed7cb4dec145788cea3c4f3989f[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Nov 23 19:29:58 2024 +0100
+
+    send email
+
+[33mcommit 8d1b41f64e6b64b997d9556d628e79e18bf0ffc5[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Wed Oct 23 22:30:06 2024 +0200
+
+    mail sender
+
+[33mcommit 1e9d83c5777bd000fe46090e46de6492d9dd799b[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Wed Oct 23 11:48:22 2024 +0200
+
+    email check
+
+[33mcommit c5049a4d6d30fb879cda886b9550dfa14a550207[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Wed Oct 23 11:25:52 2024 +0200
+
+    regex and validation
+
+[33mcommit 5f284281a8653a2e023523e90b3b26e0703e39d8[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Wed Oct 23 08:43:31 2024 +0200
+
+    login model
+
+[33mcommit 8b649533c5b75c79388e72a8ea47118c7135251d[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Oct 22 19:11:57 2024 +0200
+
+    updatepass validation and logic
+
+[33mcommit d734d4e936d1036c8f1b31a487d3e2b678852389[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Oct 22 13:27:59 2024 +0200
+
+    changepass validation
+
+[33mcommit 999043e6b38d23ea1b60455cbabb5d7b3453f0e1[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Tue Oct 22 12:22:10 2024 +0200
+
+    login user
+
+[33mcommit 278bcc07985f2de32227360700ab8558afaab1bf[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Mon Oct 21 23:01:07 2024 +0200
+
+    user insert setup
+
+[33mcommit 300d359904e9c3d951d1a7838a17eb2484352193[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Oct 17 15:17:57 2024 +0200
+
+    ILogger
+
+[33mcommit 67e9569e774b9cc5235bcd90a42b336aaebd3bc4[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Oct 14 07:27:34 2024 +0200
+
+    send mail controller
+
+[33mcommit d3f08cba2fca59d5eb38b84804941ab6840df3f0[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Tue Oct 8 10:00:04 2024 +0200
+
+    style
+
+[33mcommit 7e5035107ef9573e8fe76765881cfae311bb7b15[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Oct 7 12:48:06 2024 +0200
+
+    User update
+
+[33mcommit 705f0b185be8d3a796fa53bf87acd12fe700c20e[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Oct 7 11:22:14 2024 +0200
+
+    User service
+
+[33mcommit 19f5797290faf9c2d63b686209aa4ec006d7419e[m
+Merge: 3dd06df 1bce940
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Oct 7 11:08:20 2024 +0200
+
+    User repository
+
+[33mcommit 1bce940197450784c816c3812625043d820d2e0c[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Oct 6 22:42:44 2024 +0200
+
+    ef core
+
+[33mcommit 3dd06df775fb9b1c0a394a297817f4497e2fe09a[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Oct 3 14:20:16 2024 +0200
+
+    cookies and style
+
+[33mcommit 196bb9601a4b922f825e8f5b875e73f44b98fa1d[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Fri Sep 27 14:47:19 2024 +0200
+
+    json
+
+[33mcommit ff81ae9feb794818ac7049b54f2f02643e33eca6[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Fri Sep 27 11:33:51 2024 +0200
+
+    json
+
+[33mcommit fe7a1f05261e389936d76838327cf25f17648089[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Fri Sep 27 10:46:07 2024 +0200
+
+    email send method
+
+[33mcommit 9c5d42ef354879547542986d8f11cf606592da7f[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 26 12:24:39 2024 +0200
+
+    generating code
+
+[33mcommit 76d7ddb60d665d3ecec3419a207a416fa962d698[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 19 14:56:17 2024 +0200
+
+    Cookies and sessions
+
+[33mcommit 67defb1043bb5f854b766b80af24d63f40a3cc2f[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 19 13:31:11 2024 +0200
+
+    Responsive added
+
+[33mcommit 90b206f7350b65fb067377fd3925b659f85710ef[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 19 10:46:06 2024 +0200
+
+    Timer added
+
+[33mcommit 285af959834e70e9da71d46dc49efbdf2791641e[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Wed Sep 18 15:45:05 2024 +0200
+
+    Change pass style
+
+[33mcommit cd88dce5780d58ad527c4172e0b3bd12cd4e521a[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Tue Sep 17 15:11:19 2024 +0200
+
+    Update pass style
+
+[33mcommit ef1d862a9c38c6e904469c7d164ab4ea7e7dc0e0[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Tue Sep 17 10:10:10 2024 +0200
+
+    Added login style
+
+[33mcommit 3ccf654fc6b851e88f2ef95b322a85d701426d8a[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Sep 16 15:01:30 2024 +0200
+
+    Added style for login
+
+[33mcommit 84c1f03e5cc54d095927d320ea571e5bc442ad85[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Sep 16 10:07:57 2024 +0200
+
+    Login func
+
+[33mcommit bd8e6483a53c7f9807ab22356561558f96cdd93a[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Mon Sep 16 08:57:25 2024 +0200
+
+    User and UserRepository
+
+[33mcommit 4e5bd00f0dcfec01676f89c651caa663044c57b3[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sun Sep 15 18:34:45 2024 +0200
+
+    EF core config
+
+[33mcommit 6afb247fa8c3c2b651e3b033c80f0d7b22c1d203[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Sep 14 22:47:40 2024 +0200
+
+    User class
+
+[33mcommit fc0e69e9685b85549978570463c3b62324912fde[m
+Author: ognjeniii <ilicognjen02@gmail.com>
+Date:   Sat Sep 14 22:45:44 2024 +0200
+
+    Create ticket
+
+[33mcommit bcaaba147b869a70c593f5b4334c68e91619d9d8[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Fri Sep 13 11:44:46 2024 +0200
+
+    Creating skeleton
+
+[33mcommit bea3cea47941dd1c12bddab46a494f1daf846a18[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 12 10:58:51 2024 +0200
+
+    update .gitignore
+
+[33mcommit 508eb6dd2391d209db6272b4df32b73e4f865168[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 12 10:57:47 2024 +0200
+
+    .gitignore add
+
+[33mcommit 649aa0d3d89af6282087f03d5ec03e6b7d64ad95[m
+Author: Ognjen Ilić <ognjeni@telekom.rs>
+Date:   Thu Sep 12 10:55:13 2024 +0200
+
+    initial commit
