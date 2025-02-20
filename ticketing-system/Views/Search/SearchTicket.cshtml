@@ -1,6 +1,19 @@
-﻿@model ticketing_system.ViewModels.Tickets.SearchTicketViewModelComposite;
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ticketing_system.ViewModels.Tickets.SearchTicketViewModelComposite;
 
 <style>
+
+    body {
+        background-color: aliceblue;
+        background-image: none;
+        margin-bottom: 0;
+        overflow: hidden;
+        height: 100%
+    }
+
     .form-container {
         max-width: 800px;
         margin: 0 auto;
@@ -106,10 +119,20 @@
             padding: 5px 10px;
         }
     }
+
+    .small-rows tr {
+        height: 30px;
+    }
+
+    .small-rows td {
+        padding: 4px;
+        font-size: 15px;
+    }
+
 </style>
 
-<div class="row">
-    <div class="col-5 container p-2">
+<div class="row m-3">
+    <div class="col-4 ">
         <div class="">
             <form asp-action="SearchTicket" asp-controller="Ticket" method="post" id="searchForm">
                 <h4>Search Ticket</h4> <!-- Added a heading for better context -->
@@ -174,7 +197,8 @@
             </form>
         </div>
     </div>
-    <div class="col-7">
+
+    <div class="col-8">
         <table class="table table-striped small-rows">
             <thead>
                 <tr>
