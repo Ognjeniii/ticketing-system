@@ -1,4 +1,4 @@
-﻿@{
+﻿    @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -192,46 +192,70 @@
 
                 <!-- Submit Button -->
                 <div class="form-group">
-                    <input type="submit" value="Search" class="btn btn-submit" />
+                   @*  <input type="submit" value="Search" class="btn btn-submit" /> *@
+                   <button type="submit" class="btn btn-submit">Search</button>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="col-8">
-        <table class="table table-striped small-rows">
-            <thead>
-                <tr>
-                    <th>Ticket id</th>
-                    <th>Creation date</th>
-                    <th>Urgency</th>
-                    <th>Ticket Type</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Executor</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var ticket in Model.listTicketsViewModel)
-                {
+        <div id="ticketsTableContainer">
+            <table class="table table-striped small-rows">
+                <thead>
                     <tr>
-                        <td>@ticket.TicketId</td>
-                        <td>@ticket.CreationDate</td>
-                        <td>@ticket.UrgencyDes</td>
-                        <td>@ticket.TicketTypeDesc</td>
-                        <td>@ticket.Title</td>
-                        <td>@ticket.Status</td>
-                        @if (!ticket.Executor.Equals("admin"))
-                        {
-                            <td>@ticket.Executor</td>
-                        }
-                        else
-                        {
-                            <td></td>
-                        }
+                        <th>Ticket id</th>
+                        <th>Creation date</th>
+                        <th>Urgency</th>
+                        <th>Ticket Type</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Executor</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model.listTicketsViewModel)
+                    {
+                        <tr>
+                            <td>@ticket.TicketId</td>
+                            <td>@ticket.CreationDate</td>
+                            <td>@ticket.UrgencyDes</td>
+                            <td>@ticket.TicketTypeDesc</td>
+                            <td>@ticket.Title</td>
+                            <td>@ticket.Status</td>
+                            @if (!ticket.Executor.Equals("admin"))
+                            {
+                                <td>@ticket.Executor</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $("#searchForm").submit(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: "@Url.Action("SearchTicket","Ticket")",
+                type: "POST",
+                data: $(this).serialize(),
+                success: function (data) {
+                    $("#ticketsTableContainer").html(data);
+                },
+                error: function () {
+                    alert("Greška prilikom pretrage!");
+                }
+            });
+        });
+    });
+</script>

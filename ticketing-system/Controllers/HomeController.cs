@@ -143,16 +143,6 @@ namespace ticketing_system.Controllers
 
         public async Task<IActionResult> GetSearchTicketsForm()
         {
-            string modelJson = HttpContext.Session.GetString("SearchModel");
-
-            if (!string.IsNullOrEmpty(modelJson))
-            {
-                SearchTicketViewModelComposite searchModel = new SearchTicketViewModelComposite();
-                searchModel = JsonSerializer.Deserialize<SearchTicketViewModelComposite>(modelJson);
-
-                return PartialView("~/Views/Search/SearchTicket.cshtml", searchModel);
-            }
-            
             var ticketTypes = await _ticketTypeService.GetAllAsync();
             var groups = await _groupService.GetAllAsync();
 

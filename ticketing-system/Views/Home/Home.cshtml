@@ -113,7 +113,7 @@
                     @* ZA ADMINA *@
                     @* <a href="javascript:void(0);" onclick="updateTicket()">Update ticket</a> *@
                     @*        href="@Url.Action("GetSearchTicketsForm", "Home")" *@
-                    <a href="@Url.Action("GetSearchTicketsForm", "Home")" @* onclick="searchTicket() *@"
+                    <a href="@Url.Action("GetSearchTicketsForm", "Home")"
                        class="text-decoration-none text-dark btn btn-outline-secondary">Search ticket</a>
 
                 </div>
@@ -172,21 +172,6 @@
             type: 'GET',
             success: function(data) {
                 $('#content-area').html(data);
-            },
-            error: function(xhr) {
-                console.error('Error:', xhr.responseText);
-            }
-        });
-    }
-
-    function searchTicket() {
-        $.ajax({
-            url: '/Home/GetSearchTicketsForm',
-            type: 'GET',
-            success: function(response) {
-                if (response.success) {
-                    window.location.href = response.redirectUrl;
-                }
             },
             error: function(xhr) {
                 console.error('Error:', xhr.responseText);
