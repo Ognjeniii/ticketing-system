@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -43,24 +44,28 @@ namespace ticketing_system.Controllers
             _statusService = statusService;
         }
 
-        // Druga metoda po redu koja se pokreće
+        // Second method from starting application
         public IActionResult Index()
         {
-            var cookie = Request.Cookies["RememberMe"];
+            var rememberMeCookie = Request.Cookies["RememberMe"];
             var userIdCookie = Request.Cookies["UserId"];
-            var session = HttpContext.Session.GetString("username");
+            var usernameSession = HttpContext.Session.GetString("username");
+            var userIdSession = HttpContext.Session.GetInt32("user_id");
 
-            // kada se neko prijavio pre pet dana, ostaje mu samo cookie, bez podatka o tome koji je
-            // user u pitanju. Tj. nemamo user_id
-            // dodao sam user id za cookie, OBAVEZNO PREGLEDATI CEO TOK OD POCETKA DO KRAJA!!!
-
-            // Korisnik je prijavlen, šalje se na početni ekran
-            if (cookie != null || session != null || userIdCookie != null)
+            // User checked "Remember me" in the last 30 days.
+            if (rememberMeCookie != null && userIdCookie != null)
             {
+                HttpContext.Session.SetInt32("user_id", Int32.Parse(userIdCookie));
+
                 return RedirectToAction("Home");
             }
 
-            // Korisnik nije prijavljen, šalje se na prijavu
+            // User is coming from login page
+            if (userIdSession != null && usernameSession != null) 
+            { 
+                return RedirectToAction("Home"); 
+            }
+
             return RedirectToAction("Index", "Login");
         }
 
@@ -72,8 +77,8 @@ namespace ticketing_system.Controllers
         // Metoda kojom se prebacujemo na početnu str. ako je korisnik prijavljen, i kojom se listaju tiketi
         public async Task<IActionResult> Home()
         {
-            string userId = Request.Cookies["UserId"];
-            user = await _userService.GetUserByIdAsync(Int32.Parse(userId));
+            int userId = (int)HttpContext.Session.GetInt32("user_id");
+            user = await _userService.GetUserByIdAsync(userId);
 
             int groupId = user.GroupId;
 
