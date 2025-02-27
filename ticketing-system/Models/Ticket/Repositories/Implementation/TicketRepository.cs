@@ -103,7 +103,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                 JOIN urgencies u ON t.urgency_id = u.urgency_id
                 JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
                 JOIN statuses s ON t.status_id = s.status_id
-                JOIN users us ON t.executor = us.user_id
+                LEFT JOIN users us ON t.executor = us.user_id
                 WHERE t.group_id = @GroupId
                 AND t.status_id != 2";
 
@@ -132,7 +132,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                                         reader.GetString(reader.GetOrdinal("urgencydes")),
                                         reader.GetString(reader.GetOrdinal("title")),
                                         reader.GetString(reader.GetOrdinal("tickettypedes")),
-                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.IsDBNull(reader.GetOrdinal("username")) ? null : reader.GetString(reader.GetOrdinal("username")),
                                         reader.GetString(reader.GetOrdinal("statusdes"))
                                     )
                                 );
@@ -165,7 +165,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                 JOIN urgencies u ON t.urgency_id = u.urgency_id
                 JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
                 JOIN statuses s ON t.status_id = s.status_id
-                JOIN users us ON t.executor = us.user_id
+                LEFT JOIN users us ON t.executor = us.user_id
                 WHERE t.group_id = @GroupId 
                 AND t.status_id = @StatusId";
 
@@ -195,7 +195,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                                         reader.GetString(reader.GetOrdinal("urgencydes")),
                                         reader.GetString(reader.GetOrdinal("title")),
                                         reader.GetString(reader.GetOrdinal("tickettypedes")),
-                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.IsDBNull(reader.GetOrdinal("username")) ? null : reader.GetString(reader.GetOrdinal("username")),
                                         reader.GetString(reader.GetOrdinal("statusdes"))
                                     )
                                 );
@@ -228,7 +228,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                 JOIN urgencies u ON t.urgency_id = u.urgency_id
                 JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
                 JOIN statuses s ON t.status_id = s.status_id
-                JOIN users us ON t.executor = us.user_id
+                LEFT JOIN users us ON t.executor = us.user_id
                 WHERE t.executor = @Executor 
                 AND t.status_id != 2";
 
@@ -256,7 +256,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                                         reader.GetString(reader.GetOrdinal("urgencydes")),
                                         reader.GetString(reader.GetOrdinal("title")),
                                         reader.GetString(reader.GetOrdinal("tickettypedes")),
-                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.IsDBNull(reader.GetOrdinal("username")) ? null : reader.GetString(reader.GetOrdinal("username")),
                                         reader.GetString(reader.GetOrdinal("statusdes"))
                                     )
                                 );
@@ -298,7 +298,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                     JOIN urgencies u ON t.urgency_id = u.urgency_id
                     JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
                     JOIN statuses s ON t.status_id = s.status_id
-                    JOIN users us ON t.executor = us.user_id
+                    LEFT JOIN users us ON t.executor = us.user_id
                     WHERE 1=1");
 
                     using (var command = new SqlCommand())
@@ -362,7 +362,7 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                                         reader.GetString(reader.GetOrdinal("urgencydes")),
                                         reader.GetString(reader.GetOrdinal("title")),
                                         reader.GetString(reader.GetOrdinal("tickettypedes")),
-                                        reader.GetString(reader.GetOrdinal("username")),
+                                        reader.IsDBNull(reader.GetOrdinal("username")) ? null : reader.GetString(reader.GetOrdinal("username")),
                                         reader.GetString(reader.GetOrdinal("statusdes"))
                                     )
                                 );

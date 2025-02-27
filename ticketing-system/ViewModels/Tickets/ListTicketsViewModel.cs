@@ -9,7 +9,7 @@ namespace ticketing_system.ViewModels.Tickets
         public string UrgencyDes { get; set; } 
         public string TicketTypeDesc { get; set; } 
         public string Title { get; set; }
-        public string Executor { get; set; }
+        public string? Executor { get; set; }
         public string Status { get; set; }
 
         public ListTicketsViewModel()

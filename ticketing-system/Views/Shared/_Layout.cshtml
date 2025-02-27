@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -26,6 +28,19 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                </div>
+                @* mesto na kome bi trebalo da ima kao ona ikonica za fejs, i ime, dugme koje vodi do profila korisnika *@
+                <div class="">
+                    @{
+                        var username = HttpContextAccessor.HttpContext?.Session.GetString("username");
+                        if (username != null) {
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="Index">@username</a>
+                        }
+                        else
+                        {
+                            <a class ="nav-link text-light">Pozz</a>
+                        }
+                    }
                 </div>
             </div>
         </nav>

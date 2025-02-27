@@ -7,6 +7,7 @@
 }
 
 <style>
+
     .small-rows tr {
         height: 30px;
     }
@@ -38,7 +39,7 @@
                 <td>@ticket.TicketTypeDesc</td>
                 <td>@ticket.Title</td>
                 <td>@ticket.Status</td>
-                @if (!ticket.Executor.Equals("admin"))
+                @if (ticket.Executor != null)
                 {
                     <td>@ticket.Executor</td>
                 }

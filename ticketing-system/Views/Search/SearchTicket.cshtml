@@ -133,9 +133,9 @@
 
 <div class="row m-3">
     <div class="col-4 ">
-        <div class="">
+        <div class="border rounded p-3">
             <form asp-action="SearchTicket" asp-controller="Ticket" method="post" id="searchForm">
-                <h4>Search Ticket</h4> <!-- Added a heading for better context -->
+                <h4 class="mb-3">Search Ticket</h4> <!-- Added a heading for better context -->
                 <!-- Ticket ID Input -->
                 <div class="form-group">
                     <label asp-for="searchTicketViewModel.TicketId" class="form-label">Ticket ID</label>
@@ -223,7 +223,7 @@
                             <td>@ticket.TicketTypeDesc</td>
                             <td>@ticket.Title</td>
                             <td>@ticket.Status</td>
-                            @if (!ticket.Executor.Equals("admin"))
+                            @if (ticket.Executor != null)
                             {
                                 <td>@ticket.Executor</td>
                             }
