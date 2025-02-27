@@ -1,15 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-using ticketing_system.Classes;
 using ticketing_system.Models.Group.Services.Abstraction;
-using ticketing_system.Models.Ticket;
 using ticketing_system.Models.Ticket.Services.Abstraction;
-using ticketing_system.Models.Ticket.Services.Implementation;
 using ticketing_system.Models.User;
-using ticketing_system.Models.User.Repositories.Abstraction;
 using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.ViewModels.Tickets;
 
@@ -45,7 +38,7 @@ namespace ticketing_system.Controllers
         }
 
         // Second method from starting application
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var rememberMeCookie = Request.Cookies["RememberMe"];
             var userIdCookie = Request.Cookies["UserId"];
@@ -55,7 +48,11 @@ namespace ticketing_system.Controllers
             // User checked "Remember me" in the last 30 days.
             if (rememberMeCookie != null && userIdCookie != null)
             {
-                HttpContext.Session.SetInt32("user_id", Int32.Parse(userIdCookie));
+                int userId = Int32.Parse(userIdCookie);
+
+                var user = await _userService.GetUserByIdAsync(userId);
+                HttpContext.Session.SetString("username", user.Username);
+                HttpContext.Session.SetInt32("user_id", userId);
 
                 return RedirectToAction("Home");
             }

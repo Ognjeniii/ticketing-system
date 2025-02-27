@@ -29,16 +29,22 @@
                         </li>
                     </ul>
                 </div>
-                @* mesto na kome bi trebalo da ima kao ona ikonica za fejs, i ime, dugme koje vodi do profila korisnika *@
                 <div class="">
                     @{
                         var username = HttpContextAccessor.HttpContext?.Session.GetString("username");
                         if (username != null) {
-                            <a class="nav-link text-light" asp-controller="Home" asp-action="Index">@username</a>
-                        }
-                        else
-                        {
-                            <a class ="nav-link text-light">Pozz</a>
+
+                            <div class="dropdown me-4">
+                                <a class="dropdown-toggle nav-link text-light me-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    </svg>     @username
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </div>
                         }
                     }
                 </div>
