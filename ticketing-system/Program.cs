@@ -15,6 +15,7 @@ using ticketing_system.Models.Group.Repositories.Abstraction;
 using ticketing_system.Models.Group.Repositories.Implementation;
 using ticketing_system.Models.Group.Services.Abstraction;
 using ticketing_system.Models.Group.Services.Implementation;
+using ticketing_system.Filters;
 
 internal class Program
 {
@@ -82,6 +83,12 @@ internal class Program
             options.Cookie.SameSite = SameSiteMode.Strict;
             options.Cookie.HttpOnly = true;
             // options.Cookie.IsEssential = true; 
+        });
+
+
+        builder.Services.AddControllersWithViews(options =>
+        {
+            options.Filters.Add<SessionAuthFilter>(); // Dodavanje globalne provere prijave
         });
 
         builder.Services.AddHttpContextAccessor();

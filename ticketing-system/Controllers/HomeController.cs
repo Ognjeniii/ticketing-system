@@ -74,8 +74,6 @@ namespace ticketing_system.Controllers
         // Metoda kojom se prebacujemo na početnu str. ako je korisnik prijavljen, i kojom se listaju tiketi
         public async Task<IActionResult> Home()
         {
-            // POTREBNO JE DODATI MEHANIZAM KOJI ĆE SVUDA, NA SVAKOJ STRANICI PROVERAVATI DA LI JE KORISNIK PRIJAVLJEN
-            // KADA SE RUČNO UNESE localhost.../Home/Home, DOBIJA SE GREŠKA, JER JE VEROVATNO user_id = NULL
             var userId = HttpContext.Session.GetInt32("user_id");
             user = await _userService.GetUserByIdAsync((int)userId);
 
