@@ -64,6 +64,7 @@ internal class Program
         builder.Services.AddScoped<IGroupRepository, GroupRepository>();
         builder.Services.AddScoped<IGroupService, GroupService>();
 
+        builder.Services.AddScoped<SessionAuthFilter>(); // registracija filtera
 
         builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
