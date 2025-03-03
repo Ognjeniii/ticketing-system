@@ -380,5 +380,66 @@ namespace ticketing_system.Models.Ticket.Repository.Implementation
                 return null;
             }
         }
+
+        public async Task<List<ListTicketsViewModel>> GetVMByCreator(int userId)
+        {
+            var query = @"
+                SELECT top (30)
+                       t.ticket_id, 
+                       t.creation_date, 
+                       u.description AS urgencydes, 
+                       tt.description AS tickettypedes, 
+                       t.title, 
+                       s.description AS statusdes, 
+                       us.username
+                FROM tickets t
+                JOIN urgencies u ON t.urgency_id = u.urgency_id
+                JOIN ticket_types tt ON t.ticket_type_id = tt.ticket_type_id
+                JOIN statuses s ON t.status_id = s.status_id
+                LEFT JOIN users us ON t.executor = us.user_id
+                WHERE t.created_by = @CreatedBy";
+
+            var listTicketsVM = new List<ListTicketsViewModel>();
+            string connString = _configuration.GetConnectionString("DefaultConnection");
+
+            try
+            {
+                using (var conn = new SqlConnection(connString))
+                {
+                    await conn.OpenAsync();
+
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CreatedBy", userId);
+
+                        using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                listTicketsVM.Add(
+                                    new ListTicketsViewModel(
+                                        reader.GetInt32(reader.GetOrdinal("ticket_id")),
+                                        reader.GetDateTime(reader.GetOrdinal("creation_date")),
+                                        reader.GetString(reader.GetOrdinal("urgencydes")),
+                                        reader.GetString(reader.GetOrdinal("title")),
+                                        reader.GetString(reader.GetOrdinal("tickettypedes")),
+                                        reader.IsDBNull(reader.GetOrdinal("username")) ? null : reader.GetString(reader.GetOrdinal("username")),
+                                        reader.GetString(reader.GetOrdinal("statusdes"))
+                                    )
+                                );
+                            }
+                        }
+                    }
+                }
+
+                return listTicketsVM;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("***ERROR: " + ex.Message);
+                Console.WriteLine("***STACK TRACE: " + ex.StackTrace);
+                return null;
+            }
+        }
     }
 }

@@ -18,6 +18,9 @@ namespace ticketing_system.Models.Ticket.Services.Abstraction
 
         // Method that returns list of tickets for group id, but in ListTicketsViewModel type,
         // where status_id (finished) is not 2
+
+        #region Ticket View Models 
+
         Task<List<ListTicketsViewModel>> GetVMByGroupAsync(int groupId);
 
         // Method that retrieves list of ListTicketViewModel objects for given status id and group id 
@@ -27,7 +30,12 @@ namespace ticketing_system.Models.Ticket.Services.Abstraction
         // where status_id (finished) is not 2
         Task<List<ListTicketsViewModel>> GetVMByExecutorAsync(int userId);
 
+        // Retrieving tickets for given creator
+        Task<List<ListTicketsViewModel>> GetVMByCreatorAsync(int userId);   
+
         // The method we use to search for tickets
         Task<List<ListTicketsViewModel>> SearchTicketsAsync(SearchTicketViewModelComposite model);
+
+        #endregion
     }
 }

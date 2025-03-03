@@ -33,6 +33,8 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
             return await _ticketRepository.GetByGroupId(groupId);
         }
 
+        #region Ticket View Models
+
         public async Task<List<ListTicketsViewModel>> GetVMByGroupAsync(int groupId)
         {
             return await _ticketRepository.GetVMByGroup(groupId);
@@ -48,9 +50,16 @@ namespace ticketing_system.Models.Ticket.Services.Implementation
             return await _ticketRepository.GetVMByExecutor(userId);
         }
 
+        public async Task<List<ListTicketsViewModel>> GetVMByCreatorAsync(int userId)
+        {
+            return await _ticketRepository.GetVMByCreator(userId);
+        }
+
         public async Task<List<ListTicketsViewModel>> SearchTicketsAsync(SearchTicketViewModelComposite model)
         {
             return await _ticketRepository.SearchTicket(model);
         }
+
+        #endregion
     }
 }

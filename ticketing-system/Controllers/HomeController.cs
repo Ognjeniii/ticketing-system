@@ -40,30 +40,6 @@ namespace ticketing_system.Controllers
         // Second method from starting application
         public async Task<IActionResult> Index()
         {
-            //var rememberMeCookie = Request.Cookies["RememberMe"];
-            //var userIdCookie = Request.Cookies["UserId"];
-            //var usernameSession = HttpContext.Session.GetString("username");
-            //var userIdSession = HttpContext.Session.GetInt32("user_id");
-
-            //// User checked "Remember me" in the last 30 days.
-            //if (rememberMeCookie != null && userIdCookie != null)
-            //{
-            //    int userId = Int32.Parse(userIdCookie);
-
-            //    var user = await _userService.GetUserByIdAsync(userId);
-            //    HttpContext.Session.SetString("username", user.Username);
-            //    HttpContext.Session.SetInt32("user_id", userId);
-
-            //    return RedirectToAction("Home");
-            //}
-
-            //// User is coming from login page
-            //if (userIdSession != null && usernameSession != null) 
-            //{ 
-            //    return RedirectToAction("Home"); 
-            //}
-
-            //return RedirectToAction("Index", "Login");
             return RedirectToAction("Home");
         }
 
@@ -109,6 +85,10 @@ namespace ticketing_system.Controllers
             else if (filter == "finished") // closed tickets (top 100)?
             {
                 tickets = await _ticketService.GetVMByStatusAndGroupAsync(2, user.GroupId);
+            }
+            else if (filter == "createdByMe") // tickets created by logged in user (top 30)
+            {
+                tickets = await _ticketService.GetVMByCreatorAsync(user.UserId);
             }
 
             return PartialView("~/Views/Home/_TicketListPartial.cshtml", tickets);
