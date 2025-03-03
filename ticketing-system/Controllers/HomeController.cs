@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.Json;
 using ticketing_system.Models.Group.Services.Abstraction;
 using ticketing_system.Models.Ticket.Services.Abstraction;
 using ticketing_system.Models.User;
@@ -51,12 +52,10 @@ namespace ticketing_system.Controllers
         // Metoda kojom se prebacujemo na početnu str. ako je korisnik prijavljen, i kojom se listaju tiketi
         public async Task<IActionResult> Home()
         {
-            var userId = HttpContext.Session.GetInt32("user_id");
-            user = await _userService.GetUserByIdAsync((int)userId);
+            string userSession = HttpContext.Session.GetString("user_object");
+            user = JsonSerializer.Deserialize<User>(userSession);
 
-            int groupId = user.GroupId;
-
-            List<ListTicketsViewModel> ticketViewModelList = await _ticketService.GetVMByGroupAsync(groupId);
+            List<ListTicketsViewModel> ticketViewModelList = await _ticketService.GetVMByGroupAsync(user.GroupId);
 
             return View("~/Views/Home/Home.cshtml", ticketViewModelList);
         }

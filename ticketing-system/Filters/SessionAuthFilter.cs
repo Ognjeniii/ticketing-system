@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Linq;
+using System.Text.Json;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
 
@@ -30,10 +31,10 @@ namespace ticketing_system.Filters
                 return;
             }
 
-            var usernameSession = httpContext.Session.GetString("username");
+            var userStringSession = httpContext.Session.GetString("user_object");
             var userIdSession = httpContext.Session.GetString("user_id");
 
-            if (string.IsNullOrEmpty(usernameSession) || string.IsNullOrEmpty(userIdSession))
+            if (string.IsNullOrEmpty(userStringSession) || string.IsNullOrEmpty(userIdSession))
             {
                 // Request.Cookies - collection contains cookies received from the client, readonly
                 var rememberMeCookie = httpContext.Request.Cookies["RememberMe"];
@@ -47,7 +48,7 @@ namespace ticketing_system.Filters
 
                     if (user != null)
                     {
-                        httpContext.Session.SetString("username", user.Username);
+                        httpContext.Session.SetString("user_object", JsonSerializer.Serialize(user));
                         httpContext.Session.SetInt32("user_id", userId);
 
                         await next();

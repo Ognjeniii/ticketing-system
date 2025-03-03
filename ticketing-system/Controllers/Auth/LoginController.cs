@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using ticketing_system.Models.User;
 using ticketing_system.Models.User.Services.Abstraction;
 using ticketing_system.ViewModels.Auth;
@@ -31,7 +32,7 @@ namespace ticketing_system.Controllers.Auth
                     // ako je korisnik označio "Zapamti me"
                     if (model.RememberMe)
                     {
-                        // Setujemo kuki
+                        // Setujemo kukiS
                         Response.Cookies.Append("RememberMe", "true", new CookieOptions
                         {
                             Expires = DateTime.UtcNow.AddDays(30)
@@ -43,8 +44,8 @@ namespace ticketing_system.Controllers.Auth
                         });
                     }
 
-                    // Setujemo sesiju
-                    HttpContext.Session.SetString("username", model.Username);
+                    // Setujemo sesije
+                    HttpContext.Session.SetString("user_object", JsonSerializer.Serialize(user));
                     HttpContext.Session.SetInt32("user_id", user.UserId);
 
                     // Preusmerujemo korisnika na početnu stranicu // bilo Home, Base

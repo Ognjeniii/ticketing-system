@@ -44,9 +44,10 @@ namespace ticketing_system.Controllers
         public async Task<IActionResult> CreateTicket(CreateTicketViewModel model)
         {
             Ticket ticket = new Ticket();
-            int userId = Int32.Parse(Request.Cookies["UserId"]);
+            string userSession = HttpContext.Session.GetString("user_object");
+            User user = JsonSerializer.Deserialize<User>(userSession);
 
-            ticket.CreatedBy = userId;
+            ticket.CreatedBy = user.UserId;
             ticket.CreationDate = DateTime.Now;
 
             ticket.UrgencyId = model.SelectedUrgencyId;
@@ -72,7 +73,6 @@ namespace ticketing_system.Controllers
             }
 
             ticket.GroupId = model.SelectedGroupId;
-
             ticket.StatusId = 4;
 
             await _ticketService.CreateAsync(ticket);
