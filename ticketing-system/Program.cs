@@ -79,7 +79,7 @@ internal class Program
         builder.Services.AddSession(options =>
         {
             // sesija se postavlja da traje 3 minuta.
-            options.IdleTimeout = TimeSpan.FromMinutes(10);
+            options.IdleTimeout = TimeSpan.FromMinutes(1);
             options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
             options.Cookie.SameSite = SameSiteMode.Strict;
             options.Cookie.HttpOnly = true;

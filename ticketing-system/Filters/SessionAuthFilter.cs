@@ -56,7 +56,7 @@ namespace ticketing_system.Filters
                     }
                 }
 
-                context.Result = new RedirectToActionResult("Login", "Account", null);
+                context.Result = new RedirectToActionResult("Index", "Login", null);
                 return;
             }
 

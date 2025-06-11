@@ -33,9 +33,10 @@
                 <div class="">
                     @{
                         string? userObjectString = HttpContextAccessor.HttpContext?.Session.GetString("user_object");
-                        User user = userObjectString != null ? System.Text.Json.JsonSerializer.Deserialize<User>(userObjectString) : null;
-                        string username = user.Username;
+                        
                         if (!string.IsNullOrEmpty(userObjectString)) {
+                            User user = userObjectString != null ? System.Text.Json.JsonSerializer.Deserialize<User>(userObjectString) : null;
+                            string username = user.Username;
 
                             <div class="dropdown me-4">
                                 <a class="dropdown-toggle nav-link text-light me-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
